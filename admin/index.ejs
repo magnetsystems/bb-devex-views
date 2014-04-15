@@ -356,6 +356,7 @@
                 <td>Last Updated</td>
                 <td><%- cloudAccount.attributes.updatedAt %></td>
             </tr>
+        <% if(cloudAccount.attributes.provider == 'Magnet'){ %>
             <tr>
                 <td>Actions</td>
                 <td>
@@ -364,6 +365,7 @@
                 </td>
             </tr>
         </table>
+        <% } %>
         <% }); %>
     </td>
     <% } %>

@@ -100,6 +100,7 @@
                     [% } %]
                 </div>
             </div>
+            [% if(tokens[i].provider == 'Magnet'){ %]
             <div class="control-group">
                 <label class="control-label"></label>
                 <div class="controls">
@@ -107,6 +108,7 @@
                     [% if(tokens[i].enabled === true){ %]<button did="revoke" class="btn btn-primary">Revoke</button>[% } %]
                 </div>
             </div>
+            [% } %]
         </div>
         [% } %]
         [% }else{ %]
