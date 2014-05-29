@@ -431,12 +431,15 @@ protected void onCreate(Bundle savedInstanceState) {
 <h3>7. Run the app</h3>
 
 <p>You are now ready to run the Jumpstart app on the Android emulator using Eclipse!</p>
-   
 
-<h3>8. Where To Go From Here?</h3>
+<h3>
+    8. Where To Go From Here?
+</h3>
+<p>
+    You can download the completed project from <a href="https://github.com/magnetsystems/jumpstart-android">here</a> or clone this project using git:
+</p>
+<pre>$ git clone https://github.com/magnetsystems/jumpstart-android</pre>
 
-<p>You can download the completed project from <a href="https://someurl.git">here</a> or clone this project using git:</p>
-<pre>$ git clone https://someurl.git</pre>
 
 </div>
 <div class="tab-pane" id="gs-ios-flow">
@@ -493,13 +496,11 @@ protected void onCreate(Bundle savedInstanceState) {
 
 <p>
     Create a new Single View Application called "Jumpstart" using Xcode:
-    <img alt="Create Project" src=
-    "/images/getstarted/getstarted_ios_img1.png">
+    <img alt="Create Project" src="/images/getstarted/getstarted_ios_img1.png">
 </p>
 
-<h3 id="4-import-mobile-sdk-and-mobile-apis-using-cocopods">
-    4. Import
-    Mobile SDK and Mobile APIs using CocoPods
+<h3>
+    4. Import Mobile SDK and Mobile APIs using CocoPods
 </h3>
 
 <h4>
@@ -749,9 +750,9 @@ simpleEntityBean.value = simpleValueBean;
 </h3>
 
 <p>
-    You can download the completed project from <a href="https://someurl.git">here</a> or clone this project using git:
+    You can download the completed project from <a href="https://github.com/magnetsystems/jumpstart-ios">here</a> or clone this project using git:
 </p>
-<pre>$ git clone https://someurl.git</pre>
+<pre>$ git clone https://github.com/magnetsystems/jumpstart-ios</pre>
 
 </div>
 <div class="tab-pane" id="gs-js-flow">
@@ -999,9 +1000,11 @@ helloWorldController.getHello({
 }, {
     success : function(data, details){
         // executed if the Mobile Backend returns a valid response
+        alert('HelloWorldController: '+data);
     },
     error : function(error, details){
         // executed if the Mobile Backend returns an error
+        alert('HelloWorldController: '+JSON.stringify(error));
     }
 });
 
@@ -1029,9 +1032,11 @@ simpleEntityController.create({
 }, {
     success : function(data, details){
         // executed if the Mobile Backend returns a valid response
+        alert('SimpleEntityController: '+data);
     },
     error : function(error, details){
         // executed if the Mobile Backend returns an error
+        alert('SimpleEntityController: '+JSON.stringify(error));
     }
 });
 
@@ -1059,7 +1064,6 @@ simpleEntityController.create({
     Before you run the app, make sure you have configured your PhoneGap project to allow all origins.
     In <code>www/config.xml</code>, set <code>&lt;access origin=&quot;*&quot; /&gt;</code>.
 </p>
-
 <p>
     To run the Jumpstart app, use the <code>cordova</code> command-line tool
     to add platforms and deploy to a simulator. The following commands will add an iOS platform,
@@ -1071,6 +1075,10 @@ cordova run ios</pre>
 <h3>
     8. Where To Go From Here?
 </h3>
+<p>
+    You can download the completed project from <a href="https://github.com/magnetsystems/jumpstart-javascript">here</a> or clone this project using git:
+</p>
+<pre>$ git clone https://github.com/magnetsystems/jumpstart-javascript</pre>
 
 </div>
 </div>
