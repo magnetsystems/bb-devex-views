@@ -1,766 +1,923 @@
 
 <div id="get-started" class="row-fluid page-view">
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs" did="gs-nav-main">
     <li class="first">
         <h4 class="page-h4">Get Started</h4>
     </li>
-    <li id="gs-android-tab">
-        <a href="#gs-android">Android Developer</a>
+    <li id="gs-step0-tab" class="active">
+        <a href="#gs-step0">Introduction</a>
         <img src="/images/getstarted/gtstrtd_nav_selbg.png" />
     </li>
-    <li id="gs-ios-tab">
-        <a href="#gs-ios">iOS Developer</a>
+    <li id="gs-step1-tab">
+        <a href="#gs-step1">Setup</a>
+        <div>1</div>
         <img src="/images/getstarted/gtstrtd_nav_selbg.png" />
     </li>
-    <li id="gs-javascript-tab">
-        <a href="#gs-javascript">JavaScript Developer</a>
+    <li id="gs-step2-tab">
+        <a href="#gs-step2">Build Mobile Backend</a>
+        <div>2</div>
         <img src="/images/getstarted/gtstrtd_nav_selbg.png" />
     </li>
-    <li id="gs-server-tab">
-        <a href="#gs-server">Server Developer</a>
+    <li id="gs-step3-tab">
+        <a href="#gs-step3">Build Mobile Project</a>
+        <div>3</div>
         <img src="/images/getstarted/gtstrtd_nav_selbg.png" />
     </li>
 </ul>
-<div class="tab-content">
-<div class="tab-pane active"  id="gs-default">
-    <h5>Choose the type of developer you are</h5>
+<div class="tab-content" did="gs-nav-main">
+<div class="tab-pane active"  id="gs-step0">
+    <h4>Get Started Developing Mobile Apps</h4>
     <div class="guide-container">
         <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_hm_arrow-left.png" />
             <div class="guide-content">
-                <b>Android Developer</b>
-                <p>Start your app development with a sample app or add the Mobile SDK for Android to your own app.</p>
+                <b>Introduction</b>
+                <p>This Get Started guide will teach you how to set up your development environment, install and use
+                    the Mobile App Builder, and create your first mobile project. When you are ready to begin, click <b>Setup</b>
+                    from the menu to the left. </p>
             </div>
         </div>
         <div class="guide-divider-empty"></div>
         <div class="guide-row odd">
             <img src="../images/getstarted/gtstrtd_hm_arrow-left.png" />
             <div class="guide-content">
-                <b>iOS Developer</b>
-                <p>Start your app development with a sample app or add the Mobile SDK for iOS to your own app.</p>
+                <b>Install Mobile App Builder</b>
+                <p>This step will walk you through the process of installing the Mobile App Builder, a valuable tool designed
+                    to simplify your development experience.
+                </p>
             </div>
         </div>
         <div class="guide-divider-empty"></div>
         <div class="guide-row odd">
             <img src="../images/getstarted/gtstrtd_hm_arrow-left.png" />
             <div class="guide-content">
-                <b>JavaScript Developer</b>
-                <p>Start your app development with a sample app or add the Mobile SDK for JavaScript to your own app.</p>
+                <b>Build Your Mobile Backend</b>
+                <p>Learn how to build and manage your server using the Mobile App Builder's command-line interface.</p>
             </div>
         </div>
         <div class="guide-divider-empty"></div>
         <div class="guide-row odd">
             <img src="../images/getstarted/gtstrtd_hm_arrow-left.png" />
             <div class="guide-content">
-                <b>Server Developer</b>
-                <p>Start your project by defining the services around your mobile app project using the Magnet App Project Wizard.
-                Use the Magnet Mobile App Builder to generate, develop, and deploy your app.</p>
+                <b>Build Your Mobile Project</b>
+                <p>Learn how to embed the Magnet Mobile SDK into your mobile project and write controllers.</p>
             </div>
         </div>
     </div>
 </div>
-<div class="tab-pane"  id="gs-ios">
-    <h5>iOS Developer <span>The topics below will help the iOS Developer get started.</span></h5>
+<div class="tab-pane"  id="gs-step1">
+    <h4>Setup the Environment</h4>
+    <p>The Magnet Mobile App Builder is a command line utility that allows users to create their custom mobile app projects,
+        add API modules, generate Mobile APIs for use with Mobile Server Library on iOS and Android, build the Mobile Backend,
+        initialize local or remote databases, and manage the lifecycle of Mobile Backend instances (e.g. deploy, start, stop)
+        either locally or in the cloud.</p>
     <div class="guide-container">
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_ios.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div id="acc-ios-1" class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-ios-1" href="#acc-ios-1-inner">
-                                        <b>Start with Magnet Jumpstart App</b>
-                                        <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                                    </a>
-                                    <p>Get started quickly using the Jumpstart App as a template for your development
-                                        by downloading the Jumpstart App for iOS from GitHub. For more detailed information,
-                                        visit the <a target="_blank" href="https://github.com/magnetsystems/jumpstart-ios">
-                                        Jumpstart App for iOS GitHub Project</a>.</p>
-                                </div>
-                                <div id="acc-ios-1-inner" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        <h5>System Requirements</h5>
-                                        <ol>
-                                            <li>Xcode 5.0.1 and higher</li>
-                                        </ol>
-                                        <h5>Download the Jumpstart App for iOS from GitHub.</h5>
-                                        <ol>
-                                            <li>
-                                                Download and install Git from the <a href="http://git-scm.com/" target="_blank">Git website</a>.
-                                            </li>
-                                            <li>
-                                                <p>From <b>Terminal</b>, navigate to the directory where you would like to install the
-                                                    Jumpstart App and clone the Jumpstart App using the following command.</p>
-                                                <pre>$ git clone https://github.com/magnetsystems/jumpstart-ios.git --recursive</pre>
-                                            </li>
-                                            <li>
-                                                <p>To test round-trip connectivity between the server and client, run the Jumpstart
-                                                    App and login to app using your Magnet Developer Factory credentials. The Jumpstart app is preconfigured
-                                                    to connect with a Jumpstart server app hosted by Magnet on AWS.</p>
-                                            </li>
-                                        </ol>
-                                        <h5>Add custom Magnet API libraries</h5>
-                                        <ol>
-                                            <li>
-                                                Delete the contents of the <b>Factory/Generated</b> directory.
-                                            </li>
-                                            <li>To install custom Magnet API libraries into your project, drag and drop the API library
-                                                into the <b>Factory/Generated</b> directory.
-                                                <a href="/images/getstarted/screen_ios_api_add_jumpstart.png" data-lightbox="ios-1-img-1">
-                                                    <img src="/images/getstarted/screen_ios_api_add_jumpstart.png"  />
-                                                </a>
-                                            </li>
-                                        </ol>
-                                        <p>For more information, see the <a href="/docs/ios_developer_guide/ios_developer_guide.pdf">iOS Developer Guide</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="guide-content">
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guide-divider-empty"></div>
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_xcode.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div id="acc-ios-2" class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-ios-2" href="#acc-ios-2-inner">
-                                        <b>Start with your Own App</b>
-                                        <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                                    </a>
-                                    <p>The Mobile SDK for iOS provides various Magnet features. Import the Magnet iOS
-                                    SDK into your own iOS app to leverage these features.</p>
-                                </div>
-                                <div id="acc-ios-2-inner" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        <h5>System Requirements</h5>
-                                        <ol>
-                                            <li>Xcode 5.0.1 and higher</li>
-                                            <li>CocoaPods</li>
-                                        </ol>
-                                        <h5>Download the Mobile SDK for iOS</h5>
-                                        <p>Visit the <a href="https://github.com/magnetsystems/magnet-sdk-ios">Mobile SDK GitHub</a> for download instructions.</p>
+            <a href="/resources/files/mab.zip" class="btn btn-primary">Download Magnet Mobile App Builder</a>
+            <h5>Software required by the Mobile App Builder:</h5>
+            <ol>
+                <li>Java SE 7 Development Kit</li>
+                <li>Maven 3.0.5 </li>
+                <li>MySQL Community Server 5.5 GA</li>
+            </ol>
+            <h5>How to install the  Mobile App Builder:</h5>
+            <ol>
+                <li>Download the <a target="_blank" href="/resources/files/mab.zip">Magnet Mobile App Builder</a>.</li>
+                <li>Unzip the archive to a directory of your choice. We recommend <b>$HOME/magnet</b>.</li>
+                <li>
+                    For the Mobile App Builder to be accessible from any directory, consider adding
+                    <b>&lt;install-directory&gt;/mab/bin</b> to your PATH environment variable.
+                </li>
+            </ol>
+            <p>For detailed installation instructions, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
 
-                                        <h5>Import the Mobile SDK for iOS into your own iOS app</h5>
-                                        <p>Install CocoaPods if not yet installed.</p>
-                                        <pre>$ sudo gem install cocoapods</pre>
-                                        <pre>$ pod setup</pre>
-                                        <p>Change to the directory of your Xcode project, and Create and Edit your
-                                        Podfile and add Magnet Mobile Server:</p>
-                                        <pre>$ cd /path/to/MyProject</pre>
-                                        <pre>$ touch Podfile</pre>
-                                        <pre>$ open Podfile</pre>
-                                        <p>Copy and paste the following commands into the PodFile.</p>
-                                        <pre>platform :ios, '7.0'<br/>pod 'MagnetMobileServer', :git => 'https://github.com/magnetsystems/magnet-sdk-ios.git', :tag => 'v2.2.1'</pre>
-                                        <p>Install the SDK into your project by navigating to the project directory and executing the following command.</p>
-                                        <pre>$ pod install</pre>
-                                        <p>Open your project in Xcode from the .xcworkspace file (not the usual project file).</p>
-                                        <hr />
-                                        <p><b>Note:</b> Please note that if your installation fails, it may be because you are installing with a version of Git
-                                            lower than CocoaPods is expecting. Please ensure that you are running Git &gt;= 1.8.0 by executing git --version.
-                                            You can get a full picture of the installation  details by executing pod install --verbose.</p>
-                                        <p>Refer to README in downloaded SDK for more details.</p>
-                                        <h5>Add custom Magnet API libraries</h5>
-                                        <p>To install custom Magnet API libraries into your project, drag and drop the API library
-                                            anywhere inside the project.</p>
-                                        <a href="/images/getstarted/screen_ios_api_add_own.png" data-lightbox="ios-2-img-2">
-                                            <img src="/images/getstarted/screen_ios_api_add_own.png" />
-                                        </a>
-                                        <p>For more information, see the <a href="/docs/ios_developer_guide/ios_developer_guide.pdf">iOS Developer Guide</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h5>Basic commands to get you started with the Mobile App Builder.</h5>
+            <div class="code-snippet">
+                <p>Run the Tool in non-interactive mode by invoking <b>mab</b> with a command as an argument. The command (and any of its options and arguments) will be executed.</p>
+                <pre>$ mab project-use myfirstproject</pre>
+                <p>Run the Tool in interactive mode, allowing commands to be entered at the prompt until you exit the Tool. The commands below assume that the Tool was run in interactive mode.</p>
+                <pre>$ mab</pre>
+                <p>Use the <b>help</b> command to see the list of commands currently supported and get information about a particular command.</p>
+                <pre>mab> help</pre>
+                <p>Login using your Developer Factory username and password to enable all the features of the Tool.</p>
+                <pre>mab> login -u newuser -p userpass</pre>
             </div>
+            <p>For more information, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
+
         </div>
     </div>
 </div>
-<div class="tab-pane"  id="gs-javascript">
-<h5>JavaScript Developer <span>The topics below will help the JavaScript Developer get started.</span></h5>
+<div class="tab-pane"  id="gs-step2">
+    <h4>Build Your Mobile Backend</h4>
+    <div class="guide-container">
+        <div class="guide-content">
+
+            <h5>Create and build a project</h5>
+            <div class="code-snippet">
+                <p>Create a Mobile App Project using a Mobile App Project Profile into your desired directory.</p>
+                <pre>mab> project-create -o Documents/dev/projects -p Documents/Dev/projects/new-project1.zip</pre>
+                <p>Build the server and Java APIs associated with the current project.</p>
+                <pre>mab> project-build</pre>
+            </div>
+            <h5>Initialize the database and set up a user</h5>
+            <div class="code-snippet">
+                <p>Create the MySQL system database used by your mobile app. If you enabled the app database in the Project Wizard, the app database will also be created.</p>
+                <pre>mab> db-initialize</pre>
+                <p>Optionally create a user in the system database for user authentication by specifying the username and password of the user.</p>
+                <pre>mab> user-create newuser newpass</pre>
+            </div>
+            <p>For more information, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
+
+
+            <h5>Deploy the Magnet Mobile Backend</h5>
+            <p>The following commands assume that the project has already been built (using the <b>project-build</b> command).</p>
+            <div class="code-snippet">
+                <p>Start the Magnet Mobile Backend locally.</p>
+                <pre>mab> server-start</pre>
+                <p>To verify that the server is running and to view a list of controllers, open the following url in your browser.</p>
+                <pre>http://localhost:8080/</pre>
+                <p>View a list of running Magnet Mobile Backends.</p>
+                <pre>mab> server-list</pre>
+                <p>Stop the Magnet Mobile Backend.</p>
+                <pre>mab> server-stop</pre>
+            </div>
+            <p>For more information including how to deploy to an AWS cloud instance, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
+
+
+
+            <h5>Add a custom controller</h5>
+            <p>A single command is used to add different controllers to your current project. The following commands assume that you are logged in to the Mobile App Builder and that a project has been created (using <b>project-create</b> or <b>project-import</b>).</p>
+            <div class="code-snippet">
+                <p>Add a WSDL-based controller of type document/literal or rpc/literal. You will be asked to enter additional information about the WSDL.</p>
+                <pre>mab> api-add -t ws</pre>
+                <p>Add a WSDL-based controller of type rpc/encoded.</p>
+                <pre>mab> api-add -t rpc</pre>
+                <p>Add a WADL-based controller.</p>
+                <pre>mab> api-add -t rs</pre>
+                <p>Add the Magnet Hello World Controller sample to your project.</p>
+                <pre>mab> api-add -t simple</pre>
+                <p>Add a Magnet Third Party controller (currently <b>facebook</b>, <b>linkedin</b>, and <b>salesforce</b> are supported).</p>
+                <pre>mab> api-add -t facebook</pre>
+                <p>After adding the controllers, the project must be re-built and re-deployed for the changes to take effect.</p>
+                <pre>mab> server-stop</pre>
+                <pre>mab> project-build</pre>
+                <pre>mab> server-start</pre>
+            </div>
+            <p>For more information, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
+
+        </div>
+    </div>
+</div>
+<div class="tab-pane" id="gs-step3">
+<h4>Build Your Mobile Project</h4>
 <div class="guide-container">
-<div class="guide-row odd">
-    <img src="../images/getstarted/gtstrtd_act_js.png" />
-    <div class="guide-content">
-        <div class="row-fluid">
-            <div class="span9">
-                <div id="acc-javascript-1" class="accordion">
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-javascript-1" href="#acc-javascript-1-inner">
-                                <b>Start with Magnet Jumpstart App</b>
-                                <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                            </a>
-                            <p>Get started quickly using the Jumpstart App as a template for your development
-                                by downloading the Jumpstart App for JavaScript from GitHub. For more detailed information,
-                                visit the <a target="_blank" href="https://github.com/magnetsystems/jumpstart-javascript">
-                                    Jumpstart App for JavaScript GitHub Project</a>.</p>
-                        </div>
-                        <div id="acc-javascript-1-inner" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h5>Jumpstart App for JavaScript</h5>
-                                <p>The Mobile SDK for JavaScript is compatible with three different types of clients. To get up and
-                                    running quickly, a Jumpstart App is available for each of these clients. </p>
-                                <h5>Supported Clients</h5>
-                                <ul>
-                                    <li>Phonegap</li>
-                                    <li>Node.js</li>
-                                    <li>web browser</li>
-                                </ul>
-                                <h5>Download the Jumpstart App for JavaScript from GitHub.</h5>
-                                <ol>
-                                    <li>
-                                        Download and install Git from the <a href="http://git-scm.com/" target="_blank">Git website</a>.
-                                    </li>
-                                    <li>
-                                        <p>From <b>Terminal</b>, navigate to the directory where you would like to install the
-                                            Jumpstart App and clone the Jumpstart App using the following command.</p>
-                                        <pre>$ git clone https://github.com/magnetsystems/jumpstart-javascript.git --recursive</pre>
-                                    </li>
-                                </ol>
-                                <h5>Run Jumpstart App for Phonegap</h5>
-                                <strong>iOS PhoneGap app</strong>
-                                <ol>
-                                    <li>Install <a href="http://phonegap.com/">Phonegap</a>. </li>
-                                    <li>Navigate to the "phonegap/Jumpstart/platforms/ios" directory and open "Jumpstart.xcodeproj".</li>
-                                    <li>Build and run the app.</li>
-                                    <li>At the login screen, type in your Magnet Developer Factory credentials.</li>
-                                </ol>
-                                <strong>Android PhoneGap app</strong>
-                                <ol>
-                                    <li>Install <a href="http://phonegap.com/">Phonegap</a>. </li>
-                                    <li>Open Eclipse.</li>
-                                    <li>Select File > Import.</li>
-                                    <li>Select Android > Existing Android Code Into Workspace.</li>
-                                    <li>Click on Browse and select the "phonegap/Jumpstart/platforms/android" directory.</li>
-                                    <li>Build and run the app.</li>
-                                    <li>At the login screen, type in your Magnet Developer Factory credentials.</li>
-                                </ol>
-                                <h5>Run Jumpstart App for Node.js</h5>
-                                <ol>
-                                    <li>Install <a href="http://nodejs.org/">Node.js</a>. </li>
-                                    <li>Navigate to the "nodejs" directory and open app.js</li>
-                                    <li>Edit lines 8 (name="") and 9 (password="") to include your Magnet Developer Factory credentials.</li>
-                                    <li>
-                                        Run the app.
-                                        <pre>$ node app.js</pre>
-                                    </li>
-                                    <li>The application will login and make several controller calls, displaying response data.</li>
-                                </ol>
-                                <h5>Run Jumpstart App for web browser</h5>
-                                <p>Browser-based web applications suffer from the "same-origin policy", a security concept which prevents AJAX
-                                    requests across domain boundaries. As a result, the web application must reside on the same host and port
-                                    as the target server in order to make requests. A workaround using a CORS-enabled proxy is demonstrated
-                                    in the Jumpstart App for web browser.</p>
-                                <ol>
-                                    <li>Install <a href="http://nodejs.org/">Node.js</a>. Node.js will be used to create two servers on different ports
-                                        within your local machine; one server will contain the SDK and application logic, while the other server acts
-                                        as a proxy to reroute requests to the Jumpstart server.</li>
-                                    <li>Navigate to the "web/cors-proxy" directory from command line. </li>
-                                    <li>Start the two servers using the following command:
-                                        <pre>node app Jumpstart</pre>
-                                    </li>
-                                    <li>Open http://localhost:3000 in your web browser to view the Jumpstart web app.</li>
-                                    <li>At the login screen, type in your Magnet Developer Factory credentials.</li>
-                                </ol>
-                                <h5>Add custom Magnet API libraries into a Phonegap or web browser app</h5>
-                                <ol>
-                                    <li>
-                                        Place the generated API library (*.js) into any directory of your app.
-                                    </li>
-                                    <li>
-                                        Insert a javascript script tag referencing the API library into your HTML file.
-                                        The script tag must be below the script tag referencing the Mobile SDK for JavaScript.
-                                        This assures that the Mobile SDK for JavaScript is loaded before the API library has loaded.
-                                                <pre>
-&lt;!DOCTYPE html&gt;
+<div class="guide-content">
+
+<ul class="nav nav-tabs" did="gs-nav-sub">
+    <li class="active">
+        <a href="#gs-android-flow">
+            Android
+            <img src="/images/getstarted/getstarted_android.png" />
+        </a>
+    </li>
+    <li>
+        <a href="#gs-ios-flow">
+            iOS
+            <img src="/images/getstarted/getstarted_ios.png" />
+        </a>
+    </li>
+    <li>
+        <a href="#gs-js-flow">
+            JavaScript
+            <img src="/images/getstarted/getstarted_js.png" />
+        </a>
+    </li>
+</ul>
+
+<!-- start subtab -->
+<div class="tab-content" did="gs-nav-sub">
+<div class="tab-pane active" id="gs-android-flow">
+
+    <h5>Download the Mobile SDK for Android</h5>
+    <p>Visit the <a href="https://github.com/magnetsystems/magnet-sdk-android">Mobile SDK GitHub</a> for download instructions.</p>
+
+
+    <h5>Import the Mobile SDK for Android into your own Android app</h5>
+    <ol>
+        <li>
+            From directory of your Android application project, install the Mobile SDK for Android
+            to your application using relative path to the SDK directory. For example, assuming
+            the SDK directory is one level above the application project directory named <b>magnet-sdk-android</b>:
+            <pre>$ sh ../magnet-sdk-android/magnet-tools/install-libs.sh ../magnet-sdk-android/libproject/2.2.1 ./libs</pre>
+        </li>
+    </ol>
+
+    <p>Refer to README in downloaded SDK for more details.</p>
+
+    <h5>Add custom Magnet API libraries</h5>
+    <p>In order to use custom controller APIs, the library must be integrated to your application build
+        using <b>install-libs</b> script. The API library is typically generated from a local server build
+        provided by your server team.</p>
+    <ol>
+        <li>First, copy custom Magnet controller api library jar files to the directory where all dependent
+            libraries are stored, typically <b>libs</b>.</li>
+        <li>Then, regenerate Magnet platform service mapping library using the script, <b>install-libs.sh</b> as described above.
+            <pre>$ sh ../magnet-sdk-android/magnet-tools/install-libs.sh ../magnet-sdk-android/libproject/2.2.1 ./libs</pre>
+        </li>
+    </ol>
+    <p><b>IMPORTANT:</b> It's highly recommended that you make a backup copy of the original <b>./libs</b>
+        directory before introducing a new API library to <b>libs</b> directory.</p>
+    <p>For more information, see the <a href="/docs/android_developer_guide/android_developer_guide.pdf">Android Developer Guide</a></p>
+
+</div>
+<div class="tab-pane" id="gs-ios-flow">
+
+<p>
+    In this tutorial, you will learn how to build a "Jumpstart" iOS app that
+    interacts with a "Jumpstart" Mobile Backend running locally.
+</p>
+
+<h3 id="1-prerequisites">
+    1. Prerequisites
+</h3>
+
+<ol>
+    <li>
+        Mobile App Builder tool
+    </li>
+
+    <li>
+        Xcode 5
+    </li>
+
+    <li>
+        CocoaPods (Installation instructions can be found here:
+        <a href="http://cocoapods.org">CocoaPods</a>)
+    </li>
+</ol>
+
+<h3 id="2-build-the-mobile-backend">
+    2. Build the Mobile Backend
+</h3>
+
+<h4 id=
+    "use-the-mobile-app-builder-tool-to-first-build-a-mobile-backend-server">
+    Use the Mobile App Builder tool to first build a Mobile Backend
+    server.
+</h4>
+
+<p>
+    The following command will automatically build a sample Mobile Backend
+    server for the Jumpstart app that contains two controller APIs: HelloWorld
+    and basic operations like create, read, update and delete on a sample
+    Entity:
+</p>
+<pre>jumpstart@local:mab&gt; run jumpstart.mab</pre>
+
+<p>
+    You can also find detailed instructions for building the above Mobile
+    Backend server from scratch from Step 2: Build Mobile Backend.
+</p>
+
+<h3 id="3-create-xcode-project">
+    3. Create Xcode project
+</h3>
+
+<p>
+    Create a new Single View Application called "Jumpstart" using Xcode:
+    <img alt="Create Project" src=
+    "/images/getstarted/getstarted_ios_img1.png">
+</p>
+
+<h3 id="4-import-mobile-sdk-and-mobile-apis-using-cocopods">
+    4. Import
+    Mobile SDK and Mobile APIs using CocoPods
+</h3>
+
+<h4 id="generate-the-mobile-apis">
+    Generate the Mobile APIs
+</h4>
+
+<p>
+    You can generate the mobile API by running the following command on the
+    Mobile App Builder tool:
+</p>
+<pre>jumpstart@local:mab&gt; api-generate ios</pre>
+
+<p>
+    This command would generate the mobile API in the following directory:
+    <code>
+        ~/MABProjects/jumpstart/mobile/apis/assets/ios
+    </code>
+</p>
+
+<h4 id="copy-the-mobile-apis">
+    Copy the Mobile APIs
+</h4>
+
+<p>
+    You can copy the generated mobile API to your Xcode project directory by
+    running the following command on the Mobile App Builder tool:
+</p>
+<pre>jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/ios/Source /path/to/MyProject</pre>
+
+<h4 id="create-podfile-to-contain-mobile-apis-and-mobile-sdk">
+    Create
+    Podfile to contain Mobile APIs and Mobile SDK
+</h4>
+
+<p>
+    Create a Podfile in your Xcode project directory.
+    <br>
+</p>
+                    <pre>platform :ios, '7.0'
+pod 'MagnetMobileServer', :git =&gt; 'git@bitbucket.org:magneteng/magnet-sdk-ios-2.3.0.git'
+pod 'magnet-mobile-assets', :path =&gt; 'Source'</pre>
+
+<p>
+    This would install the Mobile SDK for iOS and your generated Mobile API
+    in your project in the next step. At this stage, your Xcode project
+    directory structure should look like this:
+    <img alt="Create Project" src=
+    "/images/getstarted/getstarted_ios_img2.png">
+</p>
+
+<p>
+    A sample Podfile is also available in the generated Mobile API here:
+    <code>
+        ~/MABProjects/jumpstart/mobile/apis/assets/ios/Podfile
+    </code>
+</p>
+
+<h4 id="install-dependencies-in-your-project">
+    Install dependencies in your
+    project
+</h4>
+
+<p>
+    If you haven't installed CocoaPods already, you can follow the
+    installation instructions on their website: http://cocoapods.org In your
+    Xcode project directory, install the dependencies by running the following
+    command on the terminal:
+</p>
+<pre>$ pod install</pre>
+
+<p>
+    <strong>
+        Note
+    </strong>
+    : Please note that if your installation fails, it
+    may be because you are installing with a version of Git lower than
+    CocoaPods is expecting. Please ensure that you are running Git &gt;= 1.8.0
+    by executing
+    <code>
+        git --version
+    </code>
+    . You can get a full picture of the
+    installation details by executing
+    <code>
+        pod install --verbose
+    </code>
+    .
+</p>
+
+<p>
+    Make sure to always open the Xcode workspace
+    <code>
+        Jumpstart.xcworkspace
+    </code>
+    instead of the project file when
+    building your project:
+</p>
+<pre>$ open Jumpstart.xcworkspace</pre>
+
+<h3 id="5-use-the-mobile-apis">
+    5. Use the Mobile APIs
+</h3>
+
+<h4 id="call-the-helloworld-controller-api">
+    Call the HelloWorld controller
+    API
+</h4>
+
+<p>
+    The HelloWorld controller API concatenates the string
+    <code>
+        Hello
+    </code>
+    with the input string argument and returns it. For example, given the input
+    string argument
+    <code>
+        Magnet
+    </code>
+    it returns the string
+    <code>
+        Hello
+        Magnet
+    </code>
+    .
+</p>
+
+<p>
+    To call the HelloWorld controller API, follow these steps:
+</p>
+
+<h6 id="import-the-helloworldcontroller-header">
+    Import the
+    HelloWorldController header
+</h6>
+<pre>#import "HelloWorldController.h"</pre>
+
+<h6 id="initialize-the-helloworldcontroller-controller">
+    Initialize the
+    HelloWorldController controller
+</h6>
+<pre>HelloWorldController *helloWorldController = [[HelloWorldController alloc] init];</pre>
+
+<h6 id="call-the-helloworldcontroller-controller">
+    Call the
+    HelloWorldController controller
+</h6>
+                    <pre>[helloWorldController getHello:@"Magnet" options:nil success:^(NSString *response) {
+    NSLog(@"response = %@", response); // executed if the Mobile Backend returns a valid response
+} failure:^(NSError *error) {
+    NSLog(@"error = %@", error); // executed if the Mobile Backend returns an error
+}];</pre>
+
+<h4 id="call-the-simpleentity-controller-api">
+    Call the SimpleEntity
+    controller API
+</h4>
+
+<p>
+    The SimpleEntity controller API provides basic operations like create,
+    read, update and delete on a sample Entity.
+</p>
+
+<p>
+    To call the SimpleEntity controller API, follow these steps:
+</p>
+
+<h6 id="import-the-simpleentitycontroller-header">
+    Import the
+    SimpleEntityController header
+</h6>
+<pre>#import "SimpleEntityController.h"</pre>
+
+<h6 id="initialize-the-simpleentitycontroller-controller">
+    Initialize the
+    SimpleEntityController controller
+</h6>
+<pre>SimpleEntityController *simpleEntityController = [[SimpleEntityController alloc] init];</pre>
+
+<h6 id="call-the-simpleentitycontroller-controller">
+    Call the
+    SimpleEntityController controller
+</h6>
+                    <pre>// Initialize a SimpleEntityBean
+SimpleEntityBean *simpleEntityBean = [[SimpleEntityBean alloc] init];
+simpleEntityBean.name = @"John Appleseed";
+simpleEntityBean.customerId = arc4random() % 100000; // Generate a random customerId
+
+// Initialize a SimpleValueBean
+SimpleValueBean *simpleValueBean = [[SimpleValueBean alloc] init];
+simpleValueBean.boolean = NO;
+simpleValueBean.character = @"c";
+simpleValueBean.bigDecimal = [NSDecimalNumber decimalNumberWithString:@"1.0"];
+simpleEntityBean.value = simpleValueBean;
+
+// Call the controller to create the SimpleEntityBean
+[simpleEntityController create:simpleEntityBean options:nil success:^(int response) {
+    NSLog(@"response = %d", response); // executed if the Mobile Backend returns a valid response
+} failure:^(NSError *error) {
+    NSLog(@"error = %@", error); // executed if the Mobile Backend returns an error
+}];</pre>
+
+<h4 id="putting-it-together">
+    Putting it together
+</h4>
+
+<p>
+    You can call the HelloWorld and SimpleEntity controller APIs by adding
+    the code below to
+    <code>
+        ViewController.m
+    </code>
+    :
+</p>
+                <pre>#import "ViewController.h"
+// Import controller API headers
+#import "HelloWorldController.h"
+#import "SimpleEntityController.h"
+#import "SimpleEntityBean.h"
+#import "SimpleValueBean.h"
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Call HelloWorldController
+    [self callHelloWorldController];
+    // Call SimpleEntityController
+    [self callSimpleEntityController];
+}
+
+- (void)callHelloWorldController {
+    // Initialize controller
+    HelloWorldController *helloWorldController = [[HelloWorldController alloc] init];
+
+    // Call controller
+    [helloWorldController getHello:@"Magnet" options:nil success:^(NSString *response) {
+        NSLog(@"response = %@", response); // executed if the Mobile Backend returns a valid response
+    } failure:^(NSError *error) {
+        NSLog(@"error = %@", error); // executed if the Mobile Backend returns an error
+    }];
+}
+
+- (void)callSimpleEntityController {
+    // Initialize controller
+    SimpleEntityController *simpleEntityController = [[SimpleEntityController alloc] init];
+
+    // Initialize a SimpleEntityBean
+    SimpleEntityBean *simpleEntityBean = [[SimpleEntityBean alloc] init];
+    simpleEntityBean.name = @"John Appleseed";
+    simpleEntityBean.customerId = arc4random() % 100000; // Generate a random customerId
+
+    // Initialize a SimpleValueBean
+    SimpleValueBean *simpleValueBean = [[SimpleValueBean alloc] init];
+    simpleValueBean.boolean = NO;
+    simpleValueBean.character = @"c";
+    simpleValueBean.bigDecimal = [NSDecimalNumber decimalNumberWithString:@"1.0"];
+    simpleEntityBean.value = simpleValueBean;
+
+    // Call the controller to create the SimpleEntityBean
+    [simpleEntityController create:simpleEntityBean options:nil success:^(int response) {
+        NSLog(@"response = %d", response); // executed if the Mobile Backend returns a valid response
+    } failure:^(NSError *error) {
+        NSLog(@"error = %@", error); // executed if the Mobile Backend returns an error
+    }];
+}
+
+@end</pre>
+
+<h3 id="6-deploy-the-mobile-backend">
+    6. Deploy the Mobile Backend
+</h3>
+
+<p>
+    You can deploy the Mobile Backend server for the Jumpstart app to your
+    local machine by running the following command on the Mobile App Builder
+    tool:
+</p>
+<pre>jumpstart@local:mab&gt; server-start</pre>
+
+<h3 id="7-run-the-app">
+    7. Run the app
+</h3>
+
+<p>
+    You are now ready to run the Jumpstart app on the iOS simulator using
+    Xcode!
+</p>
+
+<h3 id="8-where-to-go-from-here">
+    8. Where To Go From Here?
+</h3>
+
+<p>
+    You can download the completed project from
+    <a href=
+       "https://someurl.git">
+        here
+    </a>
+    or clone this project using git:
+</p>
+<pre>$ git clone https://someurl.git</pre>
+
+</div>
+<div class="tab-pane" id="gs-js-flow">
+
+<p>
+    In this tutorial, you will learn how to build a "Jumpstart" PhoneGap app that
+    interacts with a "Jumpstart" Mobile Backend running locally.
+</p>
+
+<h3>
+    1. Prerequisites
+</h3>
+
+<ol>
+    <li>
+        Mobile App Builder tool
+    </li>
+
+    <li>
+        PhoneGap (Installation instructions can be found here:
+        <a href="http://phonegap.com/install/">PhoneGap</a>)
+    </li>
+</ol>
+
+<h3>
+    2. Build the Mobile Backend
+</h3>
+
+<h4>
+    Use the Mobile App Builder tool to first build a Mobile Backend
+    server.
+</h4>
+
+<p>
+    The following command will automatically build a sample Mobile Backend
+    server for the Jumpstart app that contains two controller APIs: HelloWorld
+    and basic operations like create, read, update and delete on a sample
+    Entity:
+</p>
+<pre>jumpstart@local:mab&gt; run jumpstart.mab</pre>
+
+<p>
+    You can also find detailed instructions for building the above Mobile
+    Backend server from scratch from Step 2: Build Mobile Backend.
+</p>
+
+<h3>
+    3. Create PhoneGap Project
+</h3>
+
+<p>
+    Create a new PhoneGap app called &quot;Jumpstart&quot; using the <code>phonegap</code>
+    command-line tool. The command below will create a new directory containing the PhoneGap project.
+</p>
+                    <pre>phonegap create Jumpstart
+cd Jumpstart</pre>
+
+<h3>
+    4. Import
+    Mobile SDK and Mobile APIs
+</h3>
+
+<h4>
+    Generate the Mobile APIs
+</h4>
+
+<p>
+    You can generate the mobile API by running the following command on the
+    Mobile App Builder tool:
+</p>
+<pre>jumpstart@local:mab&gt; api-generate js</pre>
+
+<p>
+    This command would generate the mobile API in the following directory:
+    <code>
+        ~/MABProjects/jumpstart/mobile/apis/assets/js
+    </code>
+</p>
+
+<h4>
+    Import the Mobile APIs
+</h4>
+
+<p>
+    The generated mobile APIs should be placed in the <code>Jumpstart/www/js</code> directory.
+    You can copy the mobile APIs to your PhoneGap project directory by
+    running the following command on the Mobile App Builder tool:
+</p>
+<pre>jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/js /path/to/Jumpstart/www/js</pre>
+
+<p>Download and place magnet-sdk.js into the <code>Jumpstart/www/js</code> directory within your project.
+    In your HTML file, add a script tag reference to the mobile APIs.</p>
+<pre>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;My Phonegap App&lt;/title&gt;
+    &lt;title&gt;My JumpStart App&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script type="text/javascript" src="js/controllers.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/models.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<h4>
+    Import the Mobile SDK
+</h4>
+
+<p>Visit the <a href="https://github.com/magnetsystems/magnet-sdk-javascript">Mobile SDK for JavaScript GitHub Page</a> to download the SDK (<code>magnet-sdk.js</code>).</p>
+
+<p>Download and place magnet-sdk.js into the <code>Jumpstart/www/js</code> directory within your project.
+    In your HTML file, add a script tag reference to the file. Make sure the SDK is referenced before the mobile APIs
+    by placing the SDK script tag above the mobile API script tags.</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My JumpStart App&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;script type="text/javascript" src="js/magnet-sdk.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="js/magnet-controllers.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/controllers.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/models.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-                                    </li>
-                                </ol>
-                                <h5>Add custom Magnet API libraries into a Node.js app</h5>
-                                <ol>
-                                    <li>
-                                        Place the generated API library (*.js) into any directory of your app.
-                                    </li>
-                                    <li>
-                                        Load the API library at runtime by calling the "define" method of the Mobile SDK for JavaScript.
-                                        This method must be called before any of the APIs declared in the API library are used.
-                                                <pre>
-var MagnetJS = require('./lib/magnet-sdk');
-MagnetJS.define('../lib/magnet-controllers');</pre>
-                                    </li>
-                                </ol>
-                                <p>For more information, see the <a href="/docs/javascript_developer_guide/javascript_developer_guide.pdf">JavaScript Developer Guide</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </div>
-</div>
-<div class="guide-divider-empty"></div>
-<div class="guide-row odd">
-    <img src="../images/getstarted/gtstrtd_act_ws.png" />
-    <div class="guide-content">
-        <div class="row-fluid">
-            <div class="span9">
-                <div id="acc-javascript-2" class="accordion">
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-javascript-2" href="#acc-javascript-2-inner">
-                                <b>Start with your Own App</b>
-                                <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                            </a>
-                            <p>The Mobile SDK for JavaScript provides various Magnet features. Import the Magnet JavaScript
-                                SDK into your own Phonegap, Node.js, or web application to leverage these features.</p>
-                        </div>
-                        <div id="acc-javascript-2-inner" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h5>Download the Mobile SDK for JavaScript</h5>
-                                <p>Visit the <a href="https://github.com/magnetsystems/magnet-sdk-javascript">Mobile SDK GitHub</a> for download instructions.</p>
+<h3 id="5-use-the-mobile-apis">
+    5. Use the Mobile APIs
+</h3>
 
-                                <h5>Import the SDK into your own Phonegap app</h5>
-                                <p>Download and place magnet-sdk.js into a directory within your project.
-                                    In your HTML file, add a script tag reference to the file.</p>
-                                        <pre>
-&lt;!DOCTYPE html&gt;
+<h4 id="call-the-helloworld-controller-api">
+    Call the HelloWorld controller API
+</h4>
+
+<p>
+    The HelloWorld controller API concatenates the string
+    <code>Hello</code>
+    with the input string argument and returns it. For example, given the input
+    string argument
+    <code>Magnet</code>
+    it returns the string
+    <code>Hello Magnet</code>.
+</p>
+
+<p>
+    To call the HelloWorld controller API, follow these steps:
+</p>
+
+<h6>
+    Initialize the HelloWorldController controller
+</h6>
+<pre>var helloWorldController = new MagnetJS.Controllers.HelloWorldController();</pre>
+
+<h6>
+    Call the HelloWorldController controller
+</h6>
+                    <pre>helloWorldController.getHello({
+    param0 : 'Magnet'
+}, {
+    success : function(data, details){
+        // executed if the Mobile Backend returns a valid response
+    },
+    error : function(error, details){
+        // executed if the Mobile Backend returns an error
+    }
+});</pre>
+
+<h4>
+    Call the SimpleEntity controller API
+</h4>
+
+<p>
+    The SimpleEntity controller API provides basic operations like create, read, update and delete on a sample Entity.
+</p>
+
+<p>
+    To call the SimpleEntity controller API, follow these steps:
+</p>
+
+<h6>
+    Initialize the SimpleEntityController controller
+</h6>
+<pre>var simpleEntityController = new MagnetJS.Controllers.SimpleEntityController();</pre>
+
+<h6>
+    Call the SimpleEntityController controller
+</h6>
+                    <pre>// Initialize a SimpleEntityBean
+var simpleEntityBean = new MagnetJS.Models.SimpleEntityBean({
+    "name"       : "John Appleseed",
+    "customerId" : 100000
+});
+// Initialize a SimpleValueBean
+var simpleValueBean = new MagnetJS.Models.SimpleValueBean({
+    "boolean"    : false,
+    "character"  : "C",
+    "bigDecimal" : 1.0
+});
+
+simpleEntityBean.set({
+    "value" : simpleValueBean
+});
+
+// Call the controller to create the SimpleEntityBean
+controller.create({
+    data : simpleEntityBean
+}, {
+    success : function(data, details){
+        // executed if the Mobile Backend returns a valid response
+    },
+    error : function(error, details){
+        // executed if the Mobile Backend returns an error
+    }
+});</pre>
+
+<h4>
+    Putting it together
+</h4>
+
+<p>
+    You can call the HelloWorld and SimpleEntity controller APIs by adding the code below to
+    <code>index.html</code>
+    :
+</p>
+                <pre>&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;My Phonegap App&lt;/title&gt;
+    &lt;title&gt;My JumpStart App&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;script type="text/javascript" src="js/magnet-sdk.js"&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;cordova.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/magnet-sdk.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/controllers.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/models.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+
+MagnetJS.set({
+    endpointUrl : &#39;http://localhost:8080&#39;
+});
+
+var helloWorldController = new MagnetJS.Controllers.HelloWorldController();
+
+helloWorldController.getHello({
+    param0 : &#39;Magnet&#39;
+}, {
+    success : function(data, details){
+        // executed if the Mobile Backend returns a valid response
+    },
+    error : function(error, details){
+        // executed if the Mobile Backend returns an error
+    }
+});
+
+var simpleEntityController = new MagnetJS.Controllers.SimpleEntityController();
+
+// Initialize a SimpleEntityBean
+var simpleEntityBean = new MagnetJS.Models.SimpleEntityBean({
+    &quot;name&quot;       : &quot;John Appleseed&quot;,
+    &quot;customerId&quot; : 100000
+});
+// Initialize a SimpleValueBean
+var simpleValueBean = new MagnetJS.Models.SimpleValueBean({
+    &quot;boolean&quot;    : false,
+    &quot;character&quot;  : &quot;C&quot;,
+    &quot;bigDecimal&quot; : 1.0
+});
+
+simpleEntityBean.set({
+    &quot;value&quot; : simpleValueBean
+});
+
+// Call the controller to create the SimpleEntityBean
+simpleEntityController.create({
+    data : simpleEntityBean
+}, {
+    success : function(data, details){
+        // executed if the Mobile Backend returns a valid response
+    },
+    error : function(error, details){
+        // executed if the Mobile Backend returns an error
+    }
+});
+
+&lt;/script&gt;
+
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-                                <h5>Import the SDK into your own Node.js app</h5>
-                                <p>From command line, navigate to the root directory of a node.js project. Place the magnet-sdk.js into a directory
-                                    with your project. You will need to reference the SDK within your application logic as shown below. </p>
-                                <pre>var MagnetJS = require('./lib/magnet-sdk');</pre>
 
-                                <h5>Import the SDK into your own Web application</h5>
-                                <p>Download and place magnet-sdk.js into a directory within your project.
-                                    In your HTML file, add a script tag reference to the file.</p>
-                                        <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;My Web Application&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;script type="text/javascript" src="js/magnet-sdk.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+<h3 id="6-deploy-the-mobile-backend">
+    6. Deploy the Mobile Backend
+</h3>
 
-                                <p>Refer to README in downloaded SDK for more details.</p>
+<p>
+    You can deploy the Mobile Backend server for the Jumpstart app to your
+    local machine by running the following command on the Mobile App Builder
+    tool:
+</p>
+<pre>jumpstart@local:mab&gt; server-start</pre>
 
-                                <h5>Add custom Magnet API libraries into a Phonegap or web browser app</h5>
-                                <ol>
-                                    <li>
-                                        Place the generated API library (*.js) into any directory of your app.
-                                    </li>
-                                    <li>
-                                        Insert a javascript script tag referencing the API library into your HTML file.
-                                        The script tag must be below the script tag referencing the Mobile SDK for JavaScript.
-                                        This assures that the Mobile SDK for JavaScript is loaded before the API library has loaded.
-                                                <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;My Phonegap App&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;script type="text/javascript" src="js/magnet-sdk.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="js/magnet-controllers.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-                                    </li>
-                                </ol>
-                                <h5>Add custom Magnet API libraries into a Node.js app</h5>
-                                <ol>
-                                    <li>
-                                        Place the generated API library (*.js) into any directory of your app.
-                                    </li>
-                                    <li>
-                                        Load the API library at runtime by calling the "define" method of the Mobile SDK for JavaScript.
-                                        This method must be called before any of the APIs declared in the API library are used.
-                                                <pre>
-var MagnetJS = require('./lib/magnet-sdk');
-MagnetJS.define('../lib/magnet-controllers');</pre>
-                                    </li>
-                                </ol>
-                                <p>For more information, see the <a href="/docs/javascript_developer_guide/javascript_developer_guide.pdf">JavaScript Developer Guide</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<h3 id="7-run-the-app">
+    7. Run the app
+</h3>
+
+<p>
+    To run the Jumpstart app, use the <code>cordova</code> command-line tool
+    to add platforms and deploy to a simulator. The following commands will add an iOS platform,
+    build, and deploy your PhoneGap project.
+</p>
+                    <pre>cordova platform add ios
+cordova run ios</pre>
+
+<h3>
+    8. Where To Go From Here?
+</h3>
+
+</div>
+</div>
+<!-- end subtab -->
+
 </div>
 </div>
 </div>
-<div class="tab-pane" id="gs-server">
-    <h5>Server Developer <span>The topics below will help the Server Developer get started.</span></h5>
-    <div class="guide-container">
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_wizard.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div class="guide-step">1</div>
-                        <div>
-                            <b>Use the Project Wizard</b>
-                            <p>
-                                Configure your app, choose from a list of sample services, and include your
-                                own APIs to generate a Magnet Mobile App Project Profile (.mapp file).
-                            </p>
-                            <div style="margin-left:73px">
-                                <a href="/dev/" class="btn btn-primary protectedresource">Launch Project Wizard</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guide-divider">
-            <img src="../images/getstarted/gtsrtd_act_dots.png" />
-        </div>
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_tool.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div class="guide-step">2</div>
-                        <div id="acc-server-2" class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-server-2" href="#acc-server-2-inner">
-                                        <b>Install and Run the Magnet Mobile App Builder</b>
-                                        <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                                    </a>
-                                    <p>Using your Magnet Mobile App Project Profile (.mapp), the Magnet Mobile App Builder creates the mobile
-                                        and server project files to be used for development.</p>
-                                </div>
-                                <div id="acc-server-2-inner" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        <a href="/resources/files/mab.zip" class="btn btn-primary">Download Magnet Mobile App Builder</a>
-                                        <h5>Software required by the Mobile App Builder:</h5>
-                                        <ol>
-                                            <li>Java SE 7 Development Kit</li>
-                                            <li>Maven 3.0.5 </li>
-                                            <li>MySQL Community Server 5.5 GA</li>
-                                        </ol>
-                                        <h5>How to install the  Mobile App Builder:</h5>
-                                        <ol>
-                                            <li>Download the <a target="_blank" href="/resources/files/mab.zip">Magnet Mobile App Builder</a>.</li>
-                                            <li>Unzip the archive to a directory of your choice. We recommend <b>$HOME/magnet</b>.</li>
-                                            <li>
-                                                For the Mobile App Builder to be accessible from any directory, consider adding
-                                                <b>&lt;install-directory&gt;/mab/bin</b> to your PATH environment variable.
-                                            </li>
-                                        </ol>
-                                        <p>For detailed installation instructions, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
 
-                                        <h5>Basic commands to get you started with the Mobile App Builder.</h5>
-                                        <div class="code-snippet">
-                                            <p>Run the Tool in non-interactive mode by invoking <b>mab</b> with a command as an argument. The command (and any of its options and arguments) will be executed.</p>
-                                            <pre>$ mab project-use myfirstproject</pre>
-                                            <p>Run the Tool in interactive mode, allowing commands to be entered at the prompt until you exit the Tool. The commands below assume that the Tool was run in interactive mode.</p>
-                                            <pre>$ mab</pre>
-                                            <p>Use the <b>help</b> command to see the list of commands currently supported and get information about a particular command.</p>
-                                            <pre>mab> help</pre>
-                                            <p>Login using your Developer Factory username and password to enable all the features of the Tool.</p>
-                                            <pre>mab> login -u newuser -p userpass</pre>
-                                        </div>
-                                        <p>For more information, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guide-divider">
-            <img src="../images/getstarted/gtsrtd_act_dots.png" />
-        </div>
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_java.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div class="guide-step">3</div>
-                        <div id="acc-server-3" class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-server-3" href="#acc-server-3-inner">
-                                        <b>Create and Build Your Mobile App Project</b>
-                                        <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                                    </a>
-                                    <p>Create and build your Mobile App Project using the Mobile App Project Profile you generated using the Project Wizard.</p>
-                                </div>
-                                <div id="acc-server-3-inner" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        <h5>Create and build a project</h5>
-                                        <div class="code-snippet">
-                                            <p>Create a Mobile App Project using a Mobile App Project Profile into your desired directory.</p>
-                                            <pre>mab> project-create -o Documents/dev/projects -p Documents/Dev/projects/new-project1.zip</pre>
-                                            <p>Build the server and Java APIs associated with the current project.</p>
-                                            <pre>mab> project-build</pre>
-                                        </div>
-                                        <h5>Initialize the database and set up a user</h5>
-                                        <div class="code-snippet">
-                                            <p>Create the MySQL system database used by your mobile app. If you enabled the app database in the Project Wizard, the app database will also be created.</p>
-                                            <pre>mab> db-initialize</pre>
-                                            <p>Optionally create a user in the system database for user authentication by specifying the username and password of the user.</p>
-                                            <pre>mab> user-create newuser newpass</pre>
-                                        </div>
-                                        <p>For more information, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guide-divider">
-            <img src="../images/getstarted/gtsrtd_act_dots.png" />
-        </div>
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_mmas.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div class="guide-step">4</div>
-                        <div id="acc-server-4" class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-server-4" href="#acc-server-4-inner">
-                                        <b>Run your Magnet Mobile Backend</b>
-                                        <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                                    </a>
-                                    <p>Deploy your Magnet Mobile Backend to your local environment.</p>
-                                </div>
-                                <div id="acc-server-4-inner" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        <h5>Deploy the Magnet Mobile Backend</h5>
-                                        <p>The following commands assume that the project has already been built (using the <b>project-build</b> command).</p>
-                                        <div class="code-snippet">
-                                            <p>Start the Magnet Mobile Backend locally.</p>
-                                            <pre>mab> server-start</pre>
-                                            <p>To verify that the server is running and to view a list of controllers, open the following url in your browser.</p>
-                                            <pre>http://localhost:8080/</pre>
-                                            <p>View a list of running Magnet Mobile Backends.</p>
-                                            <pre>mab> server-list</pre>
-                                            <p>Stop the Magnet Mobile Backend.</p>
-                                            <pre>mab> server-stop</pre>
-                                        </div>
-                                        <p>For more information including how to deploy to an AWS cloud instance, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guide-divider">
-            <img src="../images/getstarted/gtsrtd_act_dots.png" />
-        </div>
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_extend.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div class="guide-step">5</div>
-                        <div id="acc-server-5" class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-server-5" href="#acc-server-5-inner">
-                                        <b>Extend your Magnet Mobile Backend</b>
-                                        <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                                    </a>
-                                    <p>Check the existing controllers and learn how to add your own custom controllers.</p>
-                                </div>
-                                <div id="acc-server-5-inner" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        <h5>Add a custom controller</h5>
-                                        <p>A single command is used to add different controllers to your current project. The following commands assume that you are logged in to the Mobile App Builder and that a project has been created (using <b>project-create</b> or <b>project-import</b>).</p>
-                                        <div class="code-snippet">
-                                            <p>Add a WSDL-based controller of type document/literal or rpc/literal. You will be asked to enter additional information about the WSDL.</p>
-                                            <pre>mab> api-add -t ws</pre>
-                                            <p>Add a WSDL-based controller of type rpc/encoded.</p>
-                                            <pre>mab> api-add -t rpc</pre>
-                                            <p>Add a WADL-based controller.</p>
-                                            <pre>mab> api-add -t rs</pre>
-                                            <p>Add the Magnet Hello World Controller sample to your project.</p>
-                                            <pre>mab> api-add -t simple</pre>
-                                            <p>Add a Magnet Third Party controller (currently <b>facebook</b>, <b>linkedin</b>, and <b>salesforce</b> are supported).</p>
-                                            <pre>mab> api-add -t facebook</pre>
-                                            <p>After adding the controllers, the project must be re-built and re-deployed for the changes to take effect.</p>
-                                            <pre>mab> server-stop</pre>
-                                            <pre>mab> project-build</pre>
-                                            <pre>mab> server-start</pre>
-                                        </div>
-                                        <p>For more information, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="tab-pane" id="gs-android">
-    <h5>Android Developer <span>The topics below will help the Android Developer get started.</span></h5>
-    <div class="guide-container">
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_android.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div id="acc-android-1" class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-android-1" href="#acc-android-1-inner">
-                                        <b>Start with Magnet Jumpstart App</b>
-                                        <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                                    </a>
-                                    <p>Get started quickly using the Jumpstart App as a template for your development
-                                    by downloading the Jumpstart App for Android from GitHub. For more detailed information,
-                                        visit the <a target="_blank" href="https://github.com/magnetsystems/jumpstart-android">
-                                        Jumpstart App for Android GitHub Project</a>.</p>
-                                </div>
-                                <div id="acc-android-1-inner" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-                                        <h5>Download the Jumpstart App for Android from GitHub.</h5>
-                                        <ol>
-                                            <li>
-                                                Download and install Git from the <a href="http://git-scm.com/" target="_blank">Git website</a>.
-                                            </li>
-                                            <li>
-                                                <p>From <b>Terminal</b>, navigate to the directory where you would like to install the
-                                                Jumpstart App and clone the Jumpstart App using the following command.</p>
-                                                <pre>$ git clone https://github.com/magnetsystems/jumpstart-android.git --recursive</pre>
-                                            </li>
-                                            <li>
-                                                Open Eclipse and and select File->New Project->Android->Android Project from Existing Code.
-                                            </li>
-                                            <li>
-                                                Browse to &quot;jumpstart-android&quot; project directory and select it as the &quot;Root Directory&quot;.
-                                            </li>
-                                            <li> Regenerate Magnet platform service mapping library using shell script, <b>install-lib.sh</b>:<br />
-                                                <pre>$ sh ./sdk-submodule/magnet-tools/install-libs.sh ./sdk-submodule/libproject/2.2.1 ./libs</pre>
-                                            </li>
-                                            <li>
-                                                Clean and build JumpstartActivity and OAuthActivityFlow projects using Eclipse.
-                                            </li>
-                                            <li>
-                                                <p>To test round-trip connectivity between the server and client, run the Jumpstart
-                                                    App and login to app using your Magnet Developer Factory credentials. The Jumpstart app is preconfigured
-                                                    to connect with a Jumpstart server app hosted by Magnet on AWS.</p>
-                                            </li>
-                                        </ol>
-                                        <h5>Add custom Magnet API libraries</h5>
-                                        <ol>
-                                            <li>Copy custom Magnet API libraries to <b>./libs</b> directory. This is
-                                                typically generated from a local server build provided by your server team.
-                                            </li>
-                                            <li> Regenerate Magnet platform service mapping library using shell script, <b>install-lib.sh</b>:<br />
-                                                <pre>$ sh ./sdk-submodule/magnet-tools/install-libs.sh ./sdk-submodule/libproject/2.2.1 ./libs</pre>
-                                            </li>
-                                        </ol>
-                                        <p><b>IMPORTANT:</b> It's highly recommended that you make a backup copy of the original <b>./libs</b>
-                                            directory before introducing a new API library to <b>libs</b> directory.</p>
-                                        <p>For more information, see the <a href="/docs/android_developer_guide/android_developer_guide.pdf">Android Developer Guide</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="guide-divider-empty"></div>
-        <div class="guide-row odd">
-            <img src="../images/getstarted/gtstrtd_act_eclps.png" />
-            <div class="guide-content">
-                <div class="row-fluid">
-                    <div class="span9">
-                        <div id="acc-android-2" class="accordion">
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#acc-android-2" href="#acc-android-2-inner">
-                                        <b>Start with your Own App</b>
-                                        <button class="btn"><i class="icon icon-chevron-down"></i></button>
-                                    </a>
-                                    <p>The Mobile SDK for Android provides various Magnet features. Import the 
-                                    SDK into your own Android app to leverage these features.</p>
-                                </div>
-                                <div id="acc-android-2-inner" class="accordion-body collapse">
-                                    <div class="accordion-inner">
-
-                                        <h5>Download the Mobile SDK for Android</h5>
-                                        <p>Visit the <a href="https://github.com/magnetsystems/magnet-sdk-android">Mobile SDK GitHub</a> for download instructions.</p>
-
-
-                                        <h5>Import the Mobile SDK for Android into your own Android app</h5>
-                                        <ol>
-                                            <li>
-                                                From directory of your Android application project, install the Mobile SDK for Android
-                                                to your application using relative path to the SDK directory. For example, assuming
-                                                the SDK directory is one level above the application project directory named <b>magnet-sdk-android</b>:
-                                                <pre>$ sh ../magnet-sdk-android/magnet-tools/install-libs.sh ../magnet-sdk-android/libproject/2.2.1 ./libs</pre>
-                                            </li>
-                                        </ol>
-
-                                        <p>Refer to README in downloaded SDK for more details.</p>
-
-                                        <h5>Add custom Magnet API libraries</h5>
-                                        <p>In order to use custom controller APIs, the library must be integrated to your application build
-                                            using <b>install-libs</b> script. The API library is typically generated from a local server build
-                                            provided by your server team.</p>
-                                        <ol>
-                                            <li>First, copy custom Magnet controller api library jar files to the directory where all dependent
-                                                libraries are stored, typically <b>libs</b>.</li>
-                                            <li>Then, regenerate Magnet platform service mapping library using the script, <b>install-libs.sh</b> as described above.
-                                                <pre>$ sh ../magnet-sdk-android/magnet-tools/install-libs.sh ../magnet-sdk-android/libproject/2.2.1 ./libs</pre>
-                                            </li>
-                                        </ol>
-                                        <p><b>IMPORTANT:</b> It's highly recommended that you make a backup copy of the original <b>./libs</b>
-                                            directory before introducing a new API library to <b>libs</b> directory.</p>
-                                        <p>For more information, see the <a href="/docs/android_developer_guide/android_developer_guide.pdf">Android Developer Guide</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
 </div>
