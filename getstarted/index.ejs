@@ -66,28 +66,39 @@
 </div>
 <div class="tab-pane"  id="gs-step1">
     <h4>Install Mobile App Builder</h4>
-    <p>The Magnet Mobile App Builder is a command line utility that allows users to create their custom mobile app projects,
-        add API modules, generate Mobile APIs for use with Mobile Server Library on iOS and Android, build the Mobile Backend,
-        initialize local or remote databases, and manage the lifecycle of Mobile Backend instances (e.g. deploy, start, stop)
-        either locally or in the cloud.</p>
 
-        <a href="/resources/files/mab.zip" class="btn btn-primary">Download Magnet Mobile App Builder</a>
-        <h5>Software required by the Mobile App Builder:</h5>
-        <ol>
-            <li>Java SE 7 Development Kit</li>
-            <li>Maven 3.0.5 </li>
-            <li>MySQL Community Server 5.5 GA</li>
-        </ol>
-        <h5>How to install the  Mobile App Builder:</h5>
-        <ol>
-            <li>Download the <a target="_blank" href="/resources/files/mab.zip">Magnet Mobile App Builder</a>.</li>
-            <li>Unzip the archive to a directory of your choice. We recommend <b>$HOME/magnet</b>.</li>
-            <li>
-                For the Mobile App Builder to be accessible from any directory, consider adding
-                <b>&lt;install-directory&gt;/mab/bin</b> to your PATH environment variable.
-            </li>
-        </ol>
-        <p>For detailed installation instructions, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
+    <div class="guide-container">
+        <div class="guide-content">
+
+        <p>The Magnet Mobile App Builder is a command line utility that allows users to create their custom mobile app projects,
+            add API modules, generate Mobile APIs for use with Mobile Server Library on iOS and Android, build the Mobile Backend,
+            initialize local or remote databases, and manage the lifecycle of Mobile Backend instances (e.g. deploy, start, stop)
+            either locally or in the cloud.</p>
+
+            <a href="/resources/files/mab.zip" class="btn btn-primary">Download Magnet Mobile App Builder</a>
+
+            <h5>Software required by the Mobile App Builder:</h5>
+            <ol>
+                <li>Java SE 7 Development Kit Update 51 and higher</li>
+                <li>Maven 3.1.x and higher </li>
+                <li>MySQL Community Server 5.5 GA and higher (optional)</li>
+            </ol>
+            <h5>Install Mobile App Builder Automatically with Brew (OSX Only):</h5>
+            <pre>brew remove mab && brew install https://raw.githubusercontent.com/magnetsystems/installer/master/mab.rb</pre>
+
+            <h5>Install Mobile App Builder Manually on Windows, OSX, and Linux:</h5>
+            <ol>
+                <li>Download the <a target="_blank" href="/resources/files/mab.zip">Magnet Mobile App Builder</a>.</li>
+                <li>Unzip the archive to a directory of your choice. We recommend <b>$HOME/magnet</b>.</li>
+                <li>
+                    For the Mobile App Builder to be accessible from any directory, consider adding
+                    <b>&lt;install-directory&gt;/mab/bin</b> to your PATH environment variable.
+                </li>
+            </ol>
+
+            <p>For detailed installation instructions, see the <a href="/docs/mab_developer_guide/">Mobile App Builder Developer Guide</a></p>
+        </div>
+    </div>
 
 </div>
 <div class="tab-pane"  id="gs-step2">
@@ -95,58 +106,40 @@
     <div class="guide-container">
         <div class="guide-content">
 
+            <p>In this tutorial, you will learn how to use the Mobile App Builder to build, deploy, and test your first Mobile Backend on your local machine. </p>
+
             <h5>Create and build a project</h5>
             <div class="code-snippet">
-                <p>Create a Mobile App Project using a Mobile App Project Profile into your desired directory.</p>
-                <pre>mab> project-create -o Documents/dev/projects -p Documents/Dev/projects/new-project1.zip</pre>
-                <p>Build the server and Java APIs associated with the current project.</p>
+                <p>Create a Mobile App Project using quiet mode with the default settings (<code>-qf</code>).</p>
+                <pre>mab> project-create -qf</pre>
+                <p>Login using your Developer Factory credentials.</p>
+                <pre>mab> login -u my_user -p my_pass</pre>
+            </div>
+
+            <h5>Add custom controllers</h5>
+            <div class="code-snippet">
+                <p>Add the Magnet Hello World Controller sample to your project.</p>
+                <pre>mab> api-add simple -q</pre>
+                <p>Add a simple entity to your project. At this point, the entity can be used on the Mobile Backend, but is not yet available as a controller from the mobile client.</p>
+                <pre>mab> entity-add simple -q</pre>
+                <p>Build the server and Java APIs. This is required before the entity created using <code>entity-add</code> can be referenced from the Mobile App Builder.</p>
+                <pre>mab> project-build</pre>
+                <p>Add a controller for the entity created earlier.</p>
+                <pre>mab> api-add fromEntity -DentityArtifactId=simple -q</pre>
+                <p>Since another controller was added, build the server and Java APIs again.</p>
                 <pre>mab> project-build</pre>
             </div>
-            <h5>Initialize the database and set up a user</h5>
-            <div class="code-snippet">
-                <p>Create the MySQL system database used by your mobile app. If you enabled the app database in the Project Wizard, the app database will also be created.</p>
-                <pre>mab> db-initialize</pre>
-                <p>Optionally create a user in the system database for user authentication by specifying the username and password of the user.</p>
-                <pre>mab> user-create newuser newpass</pre>
-            </div>
-            <p>For more information, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
 
-
-            <h5>Deploy the Magnet Mobile Backend</h5>
-            <p>The following commands assume that the project has already been built (using the <b>project-build</b> command).</p>
+            <h5>Initialize the database and start the server</h5>
             <div class="code-snippet">
+                <p>Create the database used by your Mobile Backend.</p>
+                <pre>mab> db-initialize -q</pre>
                 <p>Start the Magnet Mobile Backend locally.</p>
                 <pre>mab> server-start</pre>
                 <p>To verify that the server is running and to view a list of controllers, open the following url in your browser.</p>
                 <pre>http://localhost:8080/</pre>
-                <p>View a list of running Magnet Mobile Backends.</p>
-                <pre>mab> server-list</pre>
-                <p>Stop the Magnet Mobile Backend.</p>
-                <pre>mab> server-stop</pre>
             </div>
-            <p>For more information including how to deploy to an AWS cloud instance, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
-
-
-
-            <h5>Add a custom controller</h5>
-            <p>A single command is used to add different controllers to your current project. The following commands assume that you are logged in to the Mobile App Builder and that a project has been created (using <b>project-create</b> or <b>project-import</b>).</p>
-            <div class="code-snippet">
-                <p>Add a WSDL-based controller of type document/literal or rpc/literal. You will be asked to enter additional information about the WSDL.</p>
-                <pre>mab> api-add -t ws</pre>
-                <p>Add a WSDL-based controller of type rpc/encoded.</p>
-                <pre>mab> api-add -t rpc</pre>
-                <p>Add a WADL-based controller.</p>
-                <pre>mab> api-add -t rs</pre>
-                <p>Add the Magnet Hello World Controller sample to your project.</p>
-                <pre>mab> api-add -t simple</pre>
-                <p>Add a Magnet Third Party controller (currently <b>facebook</b>, <b>linkedin</b>, and <b>salesforce</b> are supported).</p>
-                <pre>mab> api-add -t facebook</pre>
-                <p>After adding the controllers, the project must be re-built and re-deployed for the changes to take effect.</p>
-                <pre>mab> server-stop</pre>
-                <pre>mab> project-build</pre>
-                <pre>mab> server-start</pre>
-            </div>
-            <p>For more information, see the <a href="/docs/mobile_app_builder/mobile_app_builder.pdf">Mobile App Builder Developer Guide</a></p>
+            <p>For more information, see the <a href="/docs/mab_developer_guide/">Mobile App Builder Developer Guide</a></p>
 
         </div>
     </div>
