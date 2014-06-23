@@ -1,0 +1,104 @@
+[ {
+  "shortDescription" : "Magnet EULA",
+  "url" : "https://factory.magnet.com/resources/tos.html"
+}, {
+  "url" : "http://www.opensource.org/licenses/bsd-license.php",
+  "shortDescription" : "The BSD 2-Clause License",
+  "modules" : [ {
+    "moduleName" : "MWEBSTART :: JNLP Servlet",
+    "extraDescription" : "JNLP Sample servlet that supports pack200 protocol. Taken from Sun's JDK sample/jnlp directory thanks to\n    its permissive license. - http:///jdk6.dev.java.net/"
+  }, {
+    "moduleName" : "Freemarker",
+    "extraDescription" : "This product includes software developed by the Visigoth Software Society (http://www.visigoths.org/) - http://freemarker.org"
+  } ]
+}, {
+  "url" : "http://www.apache.org/licenses/LICENSE-1.1",
+  "shortDescription" : "The Apache Software License, Version 1.1",
+  "modules" : [ {
+    "moduleName" : "JDOM",
+    "extraDescription" : "http://www.jdom.org/"
+  } ]
+}, {
+  "shortDescription" : "The MIT License",
+  "modules" : [ {
+    "moduleName" : "SLF4J",
+    "extraDescription" : "http://www.slf4j.org"
+  } ]
+}, {
+  "url" : "http://www.apache.org/licenses/LICENSE-2.0.txt",
+  "shortDescription" : "The Apache Software License, Version 2.0",
+  "modules" : [ {
+    "moduleName" : "Jetty",
+    "extraDescription" : "http://www.eclipse.org/jetty/licenses.php"
+  }, {
+    "moduleName" : "RestLet",
+    "extraDescription" : "http://restlet.org/download/legal"
+  }, {
+    "moduleName" : "Commons FileUpload",
+    "extraDescription" : "The FileUpload component provides a simple yet flexible means of adding support for multipart\n    file upload functionality to servlets and web applications. - http://commons.apache.org/fileupload/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/fileupload/trunk"
+  }, {
+    "moduleName" : "Guava: Google Core Libraries for Java",
+    "extraDescription" : "Guava is a suite of core and expanded libraries that include\n    utility classes, google's collections, io classes, and much\n    much more.\n\n    Guava has only one code dependency - javax.annotation,\n    per the JSR-305 spec."
+  }, {
+    "moduleName" : "FindBugs-jsr305",
+    "extraDescription" : "JSR305 Annotations for Findbugs - http://findbugs.sourceforge.net/ - scm:svn:http://findbugs.googlecode.com/svn/trunk/"
+  }, {
+    "moduleName" : "Hazelcast",
+    "extraDescription" : "http://www.hazelcast.com/"
+  }, {
+    "moduleName" : "Apache Amber",
+    "extraDescription" : "http://oltu.apache.org/"
+  }, {
+    "moduleName" : "Jettison",
+    "extraDescription" : "A StAX implementation for JSON. - scm:svn:https://svn.codehaus.org/jettison/tags/jettison-1.2"
+  }, {
+    "moduleName" : "Apache HttpClient",
+    "extraDescription" : "HttpComponents Client - http://hc.apache.org/httpcomponents-client"
+  }, {
+    "moduleName" : "Apache HttpCore",
+    "extraDescription" : "HttpComponents Core (blocking I/O) - http://hc.apache.org/httpcomponents-core-ga"
+  }, {
+    "moduleName" : "Commons Logging",
+    "extraDescription" : "Commons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems. - http://commons.apache.org/logging - scm:svn:http://svn.apache.org/repos/asf/commons/proper/logging/tags/commons-logging-1.1.1"
+  }, {
+    "moduleName" : "Apache Mina SSHD :: Core",
+    "extraDescription" : ""
+  }, {
+    "moduleName" : "Apache Mina",
+    "extraDescription" : "http://http://mina.apache.org/"
+  }, {
+    "moduleName" : "Apache Commons Lang",
+    "extraDescription" : "Apache Commons Lang, a package of Java utility classes for the\n  classes that are in java.lang's hierarchy, or are considered to be so\n  standard as to justify existence in java.lang. - http://commons.apache.org/proper/commons-lang/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/lang/trunk"
+  }, {
+    "moduleName" : "AWS SDK for Java",
+    "extraDescription" : "The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc). - https://aws.amazon.com/sdkforjava"
+  }, {
+    "moduleName" : "Data Mapper for Jackson",
+    "extraDescription" : "Data Mapper package is a high-performance data binding package\nbuilt on Jackson JSON processor - http://jackson.codehaus.org"
+  }, {
+    "moduleName" : "Commons Codec",
+    "extraDescription" : "The codec package contains simple encoder and decoders for\n     various formats such as Base64 and Hexadecimal.  In addition to these\n     widely used encoders and decoders, the codec package also maintains a\n     collection of phonetic encoding utilities. - http://commons.apache.org/codec/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/codec/trunk"
+  }, {
+    "moduleName" : "Jackson",
+    "extraDescription" : "Jackson is a high-performance JSON processor (parser, generator) - http://jackson.codehaus.org"
+  }, {
+    "moduleName" : "javax.inject",
+    "extraDescription" : "The javax.inject API - http://code.google.com/p/atinject/"
+  }, {
+    "moduleName" : "Commons IO",
+    "extraDescription" : "Commons-IO contains utility classes, stream implementations, file filters, file comparators and endian classes. - http://commons.apache.org/io/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/io/trunk"
+  } ]
+}, {
+  "url" : "http://source.icu-project.org/repos/icu/icu/trunk/license.html",
+  "shortDescription" : "ICU License - ICU 1.8.1 and later - Copyright (c) 1995-2013 International Business Machines Corporation and others",
+  "modules" : [ {
+    "moduleName" : "ICU4J",
+    "extraDescription" : "International Component for Unicode for Java (ICU4J) is a mature, widely used Java library\n    providing Unicode and Globalization support - http://icu-project.org/ - scm:svn:http://source.icu-project.org/repos/icu/icu4j/trunk/"
+  } ]
+}, {
+  "url" : "http://www.opensource.org/licenses/cddl1.php",
+  "modules" : [ {
+    "moduleName" : "jsr311-api",
+    "extraDescription" : "https://jsr311.dev.java.net"
+  } ]
+} ]

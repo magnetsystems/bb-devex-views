@@ -1,0 +1,42 @@
+
+
+<div id="meta-docs" class="row-fluid">
+<div class="clearfix page-view">
+<h4>{{-title}}</h4>
+
+<p class="subhead">A list of {{-title}} Modules.<p>
+
+{{ for(var i=0;i<metadata.length;++i){ }}
+
+    {{ if(metadata[i].modules){ }}
+
+    <div class="docs-container clearfix">
+        <div>
+            <div class="section">
+                <div class="section-title">
+                    <h5>
+                    {{ if(metadata[i].url){ }}<a href="{{-metadata[i].url}}">{{ } }}
+                        {{ if(metadata[i].shortDescription){ }}
+                            {{-metadata[i].shortDescription}}
+                        {{ }else{ }}
+                            {{-metadata[i].url}}<br />
+                        {{ } }}
+                    {{ if(metadata[i].url){ }}</a>{{ } }}
+                    </h5>
+                </div>
+                <div class="docs-content">
+                    {{ for(var j=0;j<metadata[i].modules.length;++j){ }}
+                    <b>{{-metadata[i].modules[j].moduleName}}</b><br />
+                    <p>{{-metadata[i].modules[j].extraDescription}}</p>
+                    {{ } }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ } }}
+
+{{ } }}
+
+</div>
+</div>
