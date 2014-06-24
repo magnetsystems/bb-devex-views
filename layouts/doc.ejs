@@ -11,23 +11,16 @@
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
     <link rel="stylesheet" href="/stylesheets/dev.css" />
-    <link href="http://fonts.googleapis.com/css?family=Titillium+Web:200,300,400" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Titillium+Web:200,300,400" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="site-header">
     <div class="logo_container">
-        <a href="/">
-            <img src="/images/heading.png" alt="Developer Factory" /><h4>Developer Factory</h4>
-        </a>
+        <a href="http://www.magnet.com"><img src="/images/heading.png" alt="Developer Factory" /></a><a href="/"><h4>Developer Factory</h4></a>
     </div>
     <ul class="title_container">
-        <li class="dropdown">
-            <a class="dropdown-toggle" href="/get-started/">Get Started</a>
-            <ul id="gs-site-menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="/get-started/#gs-android">Android Developer</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="/get-started/#gs-ios">iOS Developer</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="/get-started/#gs-server">Server Developer</a></li>
-            </ul>
+        <li>
+            <a href="/get-started/">Get Started</a>
         </li>
         <li>
             <a href="/resources/">Resources</a>
@@ -86,29 +79,6 @@
         &copy; 2014 Magnet Systems, Inc. All rights reserved.
     </div>
 
-</div>
-<div id="leave-feedback-container">
-    <a id="feedback-btn" href="">Leave Feedback</a>
-    <div id="feedback-content">
-        <p>We welcome any comments or questions. Responses to questions will be sent to your registered email address.</p>
-        <select id="feedback-type-field">
-            <option value="Comment">Comment</option>
-            <option value="Question">Question</option>
-        </select>
-        <input id="feedback-subject" type="text" placeholder="Subject" name="email">
-        <textarea id="feedback-message" placeholder="Message"></textarea>
-        <button id="submit-feedback-btn" class="btn">Submit Feedback</button>
-        <img src="/images/ajax-loader-sm.gif" style="display:none" />
-    </div>
-    <div id="feedback-complete" style="display:none">
-        <h4>Feedback Has Been<br />Submitted</h4>
-        <p>Thank you for submitting your feedback or question. If you asked a question, a response
-            to your question will be sent to the email address you used to register.</p>
-    </div>
-    <div id="error-complete" style="display:none">
-        <h4>Error Submitting<br />Feedback</h4>
-        <p>There was an error submitting your feedback. Please try again later.</p>
-    </div>
 </div>
 
 
