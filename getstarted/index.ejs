@@ -126,11 +126,9 @@
             <h5>Add custom controllers</h5>
             <div class="code-snippet">
                 <p>Add the Magnet Hello World Controller sample to your project.</p>
-                <pre>mab> api-add simple -q</pre>
+                <pre>mab> api-add helloworld -q</pre>
                 <p>Add a simple entity to your project. At this point, the entity can be used on the Mobile Backend, but is not yet available as a controller from the mobile client.</p>
-                <pre>mab> entity-add simple -q</pre>
-                <p>Build the server and Java APIs. This is required before the entity created using <code>entity-add</code> can be referenced from the Mobile App Builder.</p>
-                <pre>mab> project-build</pre>
+                <pre>mab> entity-add simpleEntity -q -Dinstall=true</pre>
                 <p>Add a controller for the entity created earlier.</p>
                 <pre>mab> api-add fromEntity -DentityArtifactId=simple -q</pre>
                 <p>Since another controller was added, build the server and Java APIs again.</p>
