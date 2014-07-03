@@ -469,10 +469,11 @@ public class JumpstartActivity extends Activity {
 
 <h3>6. Deploy the Mobile Backend</h3>
 
-<p>You can deploy the Mobile Backend server for the Jumpstart app to
-    your local machine by running the following command on the Mobile App
-    Builder tool:</p>
-        <pre>jumpstart@local:mab&gt; server-start</pre>
+<p>
+    If your Mobile Backend is not already running, you can run the Mobile Backend server for the Jumpstart app on
+    your local machine by running the following command on the Mobile App Builder tool:
+</p>
+<pre>jumpstart@local:mab&gt; server-start</pre>
 
 <h3>7. Run the app</h3>
 
@@ -776,9 +777,8 @@ simpleEntityBean.value = simpleValueBean;
 </h3>
 
 <p>
-    You can deploy the Mobile Backend server for the Jumpstart app to your
-    local machine by running the following command on the Mobile App Builder
-    tool:
+    If your Mobile Backend is not already running, you can run the Mobile Backend server for the Jumpstart app on
+    your local machine by running the following command on the Mobile App Builder tool:
 </p>
 <pre>jumpstart@local:mab&gt; server-start</pre>
 
@@ -888,7 +888,7 @@ cd Jumpstart</pre>
     You can copy the mobile APIs to your PhoneGap project directory by
     running the following command on the Mobile App Builder tool:
 </p>
-<pre>jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/js /path/to/Jumpstart/www/js</pre>
+<pre>jumpstart@local:mab&gt; exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/js/ /path/to/Jumpstart/www/js</pre>
 
 <p>Download and place magnet-sdk.js into the <code>Jumpstart/www/js</code> directory within your project.
     In your HTML file, add a script tag reference to the mobile APIs.</p>
@@ -990,8 +990,8 @@ var simpleEntityBean = new MagnetJS.Models.SimpleEntityBean({
     "name"       : "John Appleseed",
     "customerId" : 100000
 });
-// Initialize a SimpleValueBean
-var simpleValueBean = new MagnetJS.Models.SimpleValueBean({
+// Initialize a SimpleEntityValueBean
+var simpleValueBean = new MagnetJS.Models.SimpleEntityValueBean({
     "boolean"    : false,
     "character"  : "C",
     "bigDecimal" : 1.0
@@ -1061,8 +1061,8 @@ var simpleEntityBean = new MagnetJS.Models.SimpleEntityBean({
     &quot;name&quot;       : &quot;John Appleseed&quot;,
     &quot;customerId&quot; : 100000
 });
-// Initialize a SimpleValueBean
-var simpleValueBean = new MagnetJS.Models.SimpleValueBean({
+// Initialize a SimpleEntityValueBean
+var simpleValueBean = new MagnetJS.Models.SimpleEntityValueBean({
     &quot;boolean&quot;    : false,
     &quot;character&quot;  : &quot;C&quot;,
     &quot;bigDecimal&quot; : 1.0
@@ -1096,9 +1096,8 @@ simpleEntityController.create({
 </h3>
 
 <p>
-    You can deploy the Mobile Backend server for the Jumpstart app to your
-    local machine by running the following command on the Mobile App Builder
-    tool:
+    If your Mobile Backend is not already running, you can run the Mobile Backend server for the Jumpstart app on
+    your local machine by running the following command on the Mobile App Builder tool:
 </p>
 <pre>jumpstart@local:mab&gt; server-start</pre>
 
@@ -1117,6 +1116,12 @@ simpleEntityController.create({
 </p>
                     <pre>cordova platform add ios
 cordova run ios</pre>
+
+<p>
+    If you come across a PhoneGap Whitelist error due to the cross-domain request, open <code>www/config.xml</code>
+    and change <code>&lt;access origin="http://127.0.0.1*"/&quot;</code> to <code>&lt;access origin="*"/&quot;</code>
+    to allow all domains.
+</p>
 
 <h3>
     8. Where To Go From Here?
