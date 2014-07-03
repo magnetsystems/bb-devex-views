@@ -573,7 +573,7 @@ public class JumpstartActivity extends Activity {
     You can copy the generated mobile API to your Xcode project directory by
     running the following command on the Mobile App Builder tool:
 </p>
-<pre>jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/ios/Source /path/to/MyProject</pre>
+<pre>jumpstart@local:mab&gt; exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/ios/Source /path/to/MyProject</pre>
 
 <h4>
     Create Podfile to contain Mobile APIs and Mobile SDK
@@ -691,12 +691,10 @@ SimpleEntityBean *simpleEntityBean = [[SimpleEntityBean alloc] init];
 simpleEntityBean.name = @"John Appleseed";
 simpleEntityBean.customerId = arc4random() % 100000; // Generate a random customerId
 
-// Initialize a SimpleValueBean
-SimpleValueBean *simpleValueBean = [[SimpleValueBean alloc] init];
-simpleValueBean.boolean = NO;
-simpleValueBean.character = @"c";
-simpleValueBean.bigDecimal = [NSDecimalNumber decimalNumberWithString:@"1.0"];
-simpleEntityBean.value = simpleValueBean;
+// Initialize a SimpleEntityValueBean
+SimpleEntityValueBean *simpleEntityValueBean = [[SimpleEntityValueBean alloc] init];
+simpleEntityValueBean.string = @"simple value string";
+simpleEntityBean.value = simpleEntityValueBean;
 
 // Call the controller to create the SimpleEntityBean
 [simpleEntityController create:simpleEntityBean options:nil success:^(int response) {
@@ -717,7 +715,7 @@ simpleEntityBean.value = simpleValueBean;
 #import "HelloWorldController.h"
 #import "SimpleEntityController.h"
 #import "SimpleEntityBean.h"
-#import "SimpleValueBean.h"
+#import "SimpleEntityValueBean.h"
 
 @interface ViewController ()
 
@@ -755,12 +753,10 @@ simpleEntityBean.value = simpleValueBean;
     simpleEntityBean.name = @"John Appleseed";
     simpleEntityBean.customerId = arc4random() % 100000; // Generate a random customerId
 
-    // Initialize a SimpleValueBean
-    SimpleValueBean *simpleValueBean = [[SimpleValueBean alloc] init];
-    simpleValueBean.boolean = NO;
-    simpleValueBean.character = @"c";
-    simpleValueBean.bigDecimal = [NSDecimalNumber decimalNumberWithString:@"1.0"];
-    simpleEntityBean.value = simpleValueBean;
+    // Initialize a SimpleEntityValueBean
+    SimpleEntityValueBean *simpleEntityValueBean = [[SimpleEntityValueBean alloc] init];
+    simpleEntityValueBean.string = @"simple value string";
+    simpleEntityBean.value = simpleEntityValueBean;
 
     // Call the controller to create the SimpleEntityBean
     [simpleEntityController create:simpleEntityBean options:nil success:^(int response) {
