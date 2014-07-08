@@ -2,21 +2,42 @@
   "shortDescription" : "Magnet EULA",
   "url" : "https://factory.magnet.com/resources/tos.html"
 }, {
+  "url" : "http://aopalliance.sourceforge.net/",
+  "modules" : [ {
+    "moduleName" : "AOP alliance",
+    "extraDescription" : "AOP Alliance - http://aopalliance.sourceforge.net"
+  } ]
+}, {
+  "url" : "http://www.eclipse.org/legal/epl-v10.html",
+  "modules" : [ {
+    "moduleName" : "Sonatype Aether",
+    "extraDescription" : "http://www.eclipse.org/legal/epl-v10.html"
+  } ]
+}, {
   "url" : "http://www.opensource.org/licenses/bsd-license.php",
   "shortDescription" : "The BSD 2-Clause License",
   "modules" : [ {
-    "moduleName" : "MWEBSTART :: JNLP Servlet",
-    "extraDescription" : "JNLP Sample servlet that supports pack200 protocol. Taken from Sun's JDK sample/jnlp directory thanks to\n    its permissive license. - http:///jdk6.dev.java.net/"
+    "moduleName" : "JLine",
+    "extraDescription" : "JLine is a java library for reading and editing user input in console applications. It features\n        tab-completion, command history, password masking, customizable keybindings, and pass-through handlers to use to\n        chain to other console applications. - http://jline.sourceforge.net - scm:git:git://github.com/jline/jline.git"
   }, {
     "moduleName" : "Freemarker",
     "extraDescription" : "This product includes software developed by the Visigoth Software Society (http://www.visigoths.org/) - http://freemarker.org"
+  }, {
+    "moduleName" : "Stax2 API",
+    "extraDescription" : "Stax2 API is an extension to basic Stax 1.0 API that adds significant new functionality, such as full-featured bi-direction validation interface and high-performance Typed Access API. - http://woodstox.codehaus.org/StAX2"
   } ]
 }, {
-  "url" : "http://www.apache.org/licenses/LICENSE-1.1",
-  "shortDescription" : "The Apache Software License, Version 1.1",
+  "url" : "http://www.eclipse.org/legal/cpl-v10.html",
   "modules" : [ {
-    "moduleName" : "JDOM",
-    "extraDescription" : "http://www.jdom.org/"
+    "moduleName" : "WSDL4J",
+    "extraDescription" : "Java stub generator for WSDL - http://sf.net/projects/wsdl4j - scm:cvs:pserver:anonymous@wsdl4j.cvs.sourceforge.net:/cvsroot/wsdl4j"
+  } ]
+}, {
+  "url" : "http://woodstox.codehaus.org/FAQ",
+  "shortDescription" : "Apache Foundation's ASL 2.0",
+  "modules" : [ {
+    "moduleName" : "javax.xml.stream:stax-api:1.0-2",
+    "extraDescription" : ""
   } ]
 }, {
   "shortDescription" : "The MIT License",
@@ -25,32 +46,81 @@
     "extraDescription" : "http://www.slf4j.org"
   } ]
 }, {
+  "url" : "http://www.jcraft.com/jsch/LICENSE.txt",
+  "shortDescription" : "BSD License",
+  "modules" : [ {
+    "moduleName" : "JSch",
+    "extraDescription" : "JSch is a pure Java implementation of SSH2 - http://www.jcraft.com/jsch/ - scm:git:http://git.jcraft.com/jsch.git"
+  } ]
+}, {
   "url" : "http://www.apache.org/licenses/LICENSE-2.0.txt",
   "shortDescription" : "The Apache Software License, Version 2.0",
   "modules" : [ {
-    "moduleName" : "Jetty",
-    "extraDescription" : "http://www.eclipse.org/jetty/licenses.php"
+    "moduleName" : "Commons CLI",
+    "extraDescription" : "Commons CLI provides a simple API for presenting, processing and validating a command line interface. - http://commons.apache.org/cli/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/cli/branches/cli-1.x/"
   }, {
-    "moduleName" : "RestLet",
-    "extraDescription" : "http://restlet.org/download/legal"
+    "moduleName" : "Commons IO",
+    "extraDescription" : "The Commons IO library contains utility classes, stream implementations, file filters, \nfile comparators, endian transformation classes, and much more. - http://commons.apache.org/io/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/io/trunk"
   }, {
-    "moduleName" : "Commons FileUpload",
-    "extraDescription" : "The FileUpload component provides a simple yet flexible means of adding support for multipart\n    file upload functionality to servlets and web applications. - http://commons.apache.org/fileupload/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/fileupload/trunk"
+    "moduleName" : "Commons Exec",
+    "extraDescription" : "A library to reliably execute external processes from within the JVM - http://commons.apache.org/exec/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/exec/tags/COMMONS_EXEC_1_1_RC1"
+  }, {
+    "moduleName" : "Apache Ant Core",
+    "extraDescription" : "http://ant.apache.org/"
+  }, {
+    "moduleName" : "Apache Ant Launcher",
+    "extraDescription" : "http://ant.apache.org/"
+  }, {
+    "moduleName" : "Apache CXF",
+    "extraDescription" : "http://cxf.apache.org"
+  }, {
+    "moduleName" : "XmlSchema Core",
+    "extraDescription" : "Commons XMLSchema is a light weight schema object model that can be used to manipulate or\n        generate XML schema."
+  }, {
+    "moduleName" : "AWS SDK for Java",
+    "extraDescription" : "The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc). - https://aws.amazon.com/sdkforjava"
+  }, {
+    "moduleName" : "jclouds Components Core",
+    "extraDescription" : "Core components to access jclouds services - scm:svn:http://jclouds.googlecode.com/svn/trunk"
+  }, {
+    "moduleName" : "Google Guice - Extensions - AssistedInject",
+    "extraDescription" : ""
+  }, {
+    "moduleName" : "Google Guice - Core Library",
+    "extraDescription" : ""
+  }, {
+    "moduleName" : "99soft :: Rocoto",
+    "extraDescription" : "Add some spice to Google Guice through configuration files! - http://99soft.github.com/rocoto/ - scm:git:ssh://github.com/99soft/rocoto.git"
+  }, {
+    "moduleName" : "Gson",
+    "extraDescription" : "Google Gson library - http://code.google.com/p/google-gson/ - scm:svn:http://google-gson.googlecode.com/svn/trunk/gson"
   }, {
     "moduleName" : "Guava: Google Core Libraries for Java",
-    "extraDescription" : "Guava is a suite of core and expanded libraries that include\n    utility classes, google's collections, io classes, and much\n    much more.\n\n    Guava has only one code dependency - javax.annotation,\n    per the JSR-305 spec."
+    "extraDescription" : "Guava is a suite of core and expanded libraries that include\n    utility classes, google's collections, io classes, and much\n    much more.\n\n    Guava has two code dependencies - javax.annotation\n    per the JSR-305 spec and javax.inject per the JSR-330 spec."
   }, {
-    "moduleName" : "FindBugs-jsr305",
-    "extraDescription" : "JSR305 Annotations for Findbugs - http://findbugs.sourceforge.net/ - scm:svn:http://findbugs.googlecode.com/svn/trunk/"
+    "moduleName" : "jclouds compute core",
+    "extraDescription" : "jclouds components to access compute providers"
   }, {
-    "moduleName" : "Hazelcast",
-    "extraDescription" : "http://www.hazelcast.com/"
+    "moduleName" : "jclouds script builder",
+    "extraDescription" : "creates scripts that can be used to manage services"
   }, {
-    "moduleName" : "Apache Amber",
-    "extraDescription" : "http://oltu.apache.org/"
+    "moduleName" : "jclouds Amazon EC2 provider",
+    "extraDescription" : "EC2 implementation targeted to Amazon Web Services"
   }, {
-    "moduleName" : "Jettison",
-    "extraDescription" : "A StAX implementation for JSON. - scm:svn:https://svn.codehaus.org/jettison/tags/jettison-1.2"
+    "moduleName" : "jclouds ec2 api",
+    "extraDescription" : "jclouds components to access an implementation of EC2"
+  }, {
+    "moduleName" : "jclouds sts api",
+    "extraDescription" : "jclouds components to access an implementation of Security Token Service (STS)"
+  }, {
+    "moduleName" : "jclouds openstack-nova api",
+    "extraDescription" : "jclouds components to access an implementation of OpenStack Nova"
+  }, {
+    "moduleName" : "jclouds openstack-keystone api",
+    "extraDescription" : "jclouds components to access an implementation of OpenStack Keystone"
+  }, {
+    "moduleName" : "jclouds openstack-neutron api",
+    "extraDescription" : "jclouds components to access an implementation of OpenStack Neutron"
   }, {
     "moduleName" : "Apache HttpClient",
     "extraDescription" : "HttpComponents Client - http://hc.apache.org/httpcomponents-client"
@@ -58,47 +128,125 @@
     "moduleName" : "Apache HttpCore",
     "extraDescription" : "HttpComponents Core (blocking I/O) - http://hc.apache.org/httpcomponents-core-ga"
   }, {
-    "moduleName" : "Commons Logging",
-    "extraDescription" : "Commons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems. - http://commons.apache.org/logging - scm:svn:http://svn.apache.org/repos/asf/commons/proper/logging/tags/commons-logging-1.1.1"
+    "moduleName" : "HTTP client framework for Groovy",
+    "extraDescription" : "A builder-style HTTP client API, including authentication, and extensible\n        handling of common content-types such as JSON and XML. It is built on top of\n        Apache's HttpClient. - http://groovy.codehaus.org/modules/http-builder/"
   }, {
-    "moduleName" : "Apache Mina SSHD :: Core",
+    "moduleName" : "json-lib-2.3-jdk15.jar",
     "extraDescription" : ""
   }, {
-    "moduleName" : "Apache Mina",
-    "extraDescription" : "http://http://mina.apache.org/"
+    "moduleName" : "Commons BeanUtils",
+    "extraDescription" : "BeanUtils provides an easy-to-use but flexible wrapper around reflection and introspection. - http://commons.apache.org/beanutils/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/beanutils/trunk/"
   }, {
-    "moduleName" : "Apache Commons Lang",
-    "extraDescription" : "Apache Commons Lang, a package of Java utility classes for the\n  classes that are in java.lang's hierarchy, or are considered to be so\n  standard as to justify existence in java.lang. - http://commons.apache.org/proper/commons-lang/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/lang/trunk"
+    "moduleName" : "Collections",
+    "extraDescription" : "Types that extend and augment the Java Collections Framework."
   }, {
-    "moduleName" : "AWS SDK for Java",
-    "extraDescription" : "The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc). - https://aws.amazon.com/sdkforjava"
+    "moduleName" : "Commons Lang",
+    "extraDescription" : "Commons Lang, a package of Java utility classes for the\n        classes that are in java.lang's hierarchy, or are considered to be so\n        standard as to justify existence in java.lang. - http://commons.apache.org/lang/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/lang/trunk"
   }, {
-    "moduleName" : "Data Mapper for Jackson",
-    "extraDescription" : "Data Mapper package is a high-performance data binding package\nbuilt on Jackson JSON processor - http://jackson.codehaus.org"
+    "moduleName" : "ezmorph",
+    "extraDescription" : "Simple java library for transforming an Object to another Object. - http://ezmorph.sourceforge.net - scm:cvs:pserver:anonymous@ezmorph.cvs.sourceforge.net:/cvsroot/ezmorph:ezmorph"
+  }, {
+    "moduleName" : "Neko HTML",
+    "extraDescription" : "An HTML parser and tag balancer. - http://nekohtml.sourceforge.net/"
+  }, {
+    "moduleName" : "xerces:xercesImpl:2.9.1",
+    "extraDescription" : "Auto generated POM"
+  }, {
+    "moduleName" : "XML Commons Resolver Component",
+    "extraDescription" : "xml-commons provides an Apache-hosted set of DOM, SAX, and \n    JAXP interfaces for use in other xml-based projects. Our hope is that we \n    can standardize on both a common version and packaging scheme for these \n    critical XML standards interfaces to make the lives of both our developers \n    and users easier. - http://xml.apache.org/commons/components/resolver/ - scm:svn:http://svn.apache.org/repos/asf/xml/commons/tags/xml-commons-resolver-1_2/"
+  }, {
+    "moduleName" : "${project.artifactId}",
+    "extraDescription" : "Jansi is a java library for generating and interpreting ANSI escape sequences."
+  }, {
+    "moduleName" : "Apache Maven",
+    "extraDescription" : "http://maven.apache.org/"
+  }, {
+    "moduleName" : "Plexus",
+    "extraDescription" : "http://plexus.codehaus.org/plexus-components/plexus-archiver/license.html"
+  }, {
+    "moduleName" : "CDI APIs",
+    "extraDescription" : "APIs for JSR-299: Contexts and Dependency Injection for Java EE"
+  }, {
+    "moduleName" : "sisu-guice-3.1.0-no_aop.jar",
+    "extraDescription" : ""
+  }, {
+    "moduleName" : "org.eclipse.sisu:org.eclipse.sisu.inject:0.0.0.M5",
+    "extraDescription" : ""
   }, {
     "moduleName" : "Commons Codec",
-    "extraDescription" : "The codec package contains simple encoder and decoders for\n     various formats such as Base64 and Hexadecimal.  In addition to these\n     widely used encoders and decoders, the codec package also maintains a\n     collection of phonetic encoding utilities. - http://commons.apache.org/codec/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/codec/trunk"
-  }, {
-    "moduleName" : "Jackson",
-    "extraDescription" : "Jackson is a high-performance JSON processor (parser, generator) - http://jackson.codehaus.org"
+    "extraDescription" : "The codec package contains simple encoder and decoders for\n     various formats such as Base64 and Hexadecimal.  In addition to these\n     widely used encoders and decoders, the codec package also maintains a\n     collection of phonetic encoding utilities. - http://commons.apache.org/proper/commons-codec/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/codec/trunk"
   }, {
     "moduleName" : "javax.inject",
     "extraDescription" : "The javax.inject API - http://code.google.com/p/atinject/"
   }, {
-    "moduleName" : "Commons IO",
-    "extraDescription" : "Commons-IO contains utility classes, stream implementations, file filters, file comparators and endian classes. - http://commons.apache.org/io/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/io/trunk"
+    "moduleName" : "Apache Commons Lang",
+    "extraDescription" : "Apache Commons Lang, a package of Java utility classes for the\n  classes that are in java.lang's hierarchy, or are considered to be so\n  standard as to justify existence in java.lang. - http://commons.apache.org/proper/commons-lang/ - scm:svn:http://svn.apache.org/repos/asf/commons/proper/lang/trunk"
+  }, {
+    "moduleName" : "Data Mapper for Jackson",
+    "extraDescription" : "Data Mapper package is a high-performance data binding package\nbuilt on Jackson JSON processor - http://jackson.codehaus.org"
+  }, {
+    "moduleName" : "Jackson",
+    "extraDescription" : "Jackson is a high-performance JSON processor (parser, generator) - http://jackson.codehaus.org"
+  }, {
+    "moduleName" : "Apache Neethi",
+    "extraDescription" : "Apache Neethi provides general framework for the programmers to use WS Policy. It is compliant with latest WS Policy specification which was published in March 2006. This framework is specifically written to enable the Apache Web services stack to use WS Policy as a way of expressing it's requirements and capabilities. - http://ws.apache.org/neethi/ - scm:svn:http://svn.apache.org/repos/asf/webservices/commons/tags/neethi/neethi-3.0.2"
+  }, {
+    "moduleName" : "Woodstox",
+    "extraDescription" : "Woodstox is a high-performance XML processor that\nimplements Stax (JSR-173) and SAX2 APIs - http://woodstox.codehaus.org"
+  }, {
+    "moduleName" : "Axiom DOM",
+    "extraDescription" : "The Axiom DOM implementation. - http://ws.apache.org/axiom/ - scm:svn:http://svn.apache.org/repos/asf/webservices/commons/tags/axiom/1.2.14/modules/axiom-dom"
+  }, {
+    "moduleName" : "Axiom API",
+    "extraDescription" : "The Axiom API - http://ws.apache.org/axiom/ - scm:svn:http://svn.apache.org/repos/asf/webservices/commons/tags/axiom/1.2.14/modules/axiom-api"
+  }, {
+    "moduleName" : "Streaming API for XML (STAX API 1.0)",
+    "extraDescription" : "scm:svn:https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-stax-api_1.0_spec-1.0.1"
+  }, {
+    "moduleName" : "Apache JAMES Mime4j (Core)",
+    "extraDescription" : ""
+  }, {
+    "moduleName" : "Activation 1.1",
+    "extraDescription" : "Java Activation Spec API 1.1 - http://geronimo.apache.org/maven/${siteId}/${version} - scm:svn:http://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-activation_1.1_spec-1.1"
+  }, {
+    "moduleName" : "JavaMail 1.4",
+    "extraDescription" : "Javamail 1.4 Specification - http://geronimo.apache.org/maven/${siteId}/${version} - scm:svn:https://svn.apache.org/repos/asf/geronimo/specs/tags/geronimo-javamail_1.4_spec-1.7.1"
+  }, {
+    "moduleName" : "Commons Logging",
+    "extraDescription" : "Commons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems. - http://commons.apache.org/logging - scm:svn:http://svn.apache.org/repos/asf/commons/proper/logging/tags/commons-logging-1.1.1"
+  }, {
+    "moduleName" : "Groovy",
+    "extraDescription" : "Groovy: A powerful, dynamic language for the JVM - http://groovy.codehaus.org/ - scm:git:git@github.com:groovy/groovy-core.git"
   } ]
 }, {
-  "url" : "http://source.icu-project.org/repos/icu/icu/trunk/license.html",
-  "shortDescription" : "ICU License - ICU 1.8.1 and later - Copyright (c) 1995-2013 International Business Machines Corporation and others",
+  "url" : "https://glassfish.java.net/public/CDDL+GPL_1_1.html",
   "modules" : [ {
-    "moduleName" : "ICU4J",
-    "extraDescription" : "International Component for Unicode for Java (ICU4J) is a mature, widely used Java library\n    providing Unicode and Globalization support - http://icu-project.org/ - scm:svn:http://source.icu-project.org/repos/icu/icu4j/trunk/"
+    "moduleName" : "JAXB Reference Implementation",
+    "extraDescription" : "JAXB (JSR 222) Reference Implementation - http://jaxb.java.net/ - scm:svn:http://svn.java.net/svn/jaxb~version2/branches/jaxb-2_2-branch/jaxb-ri"
+  }, {
+    "moduleName" : "javax.ws.rs-api",
+    "extraDescription" : "http://jax-rs-spec.java.net - scm:git:git://java.net/jax-rs-spec~git"
+  }, {
+    "moduleName" : "JSR-250 Common Annotations for the JavaTM Platform",
+    "extraDescription" : "JSR-250 Reference Implementation by Glassfish - http://jcp.org/aboutJava/communityprocess/final/jsr250/index.html"
+  } ]
+}, {
+  "url" : "https://downloads.mariadb.org/client-ja va/1.1.3/",
+  "shortDescription" : "LGPL",
+  "modules" : [ {
+    "moduleName" : "org.mariadb:mariadb-java-client:1.1.5",
+    "extraDescription" : "POM was created by Sonatype Nexus"
   } ]
 }, {
   "url" : "http://www.opensource.org/licenses/cddl1.php",
   "modules" : [ {
     "moduleName" : "jsr311-api",
     "extraDescription" : "https://jsr311.dev.java.net"
+  } ]
+}, {
+  "url" : "http://jaxen.codehaus.org/",
+  "modules" : [ {
+    "moduleName" : "jaxen",
+    "extraDescription" : "Jaxen is a universal Java XPath engine. - http://jaxen.codehaus.org/ - scm:git:https://github.com/doncorley/jaxen.git"
   } ]
 } ]
