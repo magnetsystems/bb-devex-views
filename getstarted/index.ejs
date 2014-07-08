@@ -210,28 +210,34 @@
 
 <h3>4. Import Mobile SDK and copy generated mobile API assets:</h3>
 
-<h4>Generate the Mobile APIs</h4>
+<p>In order to use additional custom controller APIs, the generated assets from the Mobile App Builder
+   tool must be copied to your Android project. The assets are created using "api-generate -wfc android"
+   mab command. Using "jumpstart" as the example backend project:</p>
 
-<p>You can generate the mobile API by running the following command on
-    the Mobile App Builder tool:</p>
-        <pre>jumpstart@local:mab&gt; api-generate -wf android</pre>
-
-<p>This command would generate the mobile API in the following
-    directory: <code>~/MABProjects/jumpstart/mobile/apis/assets/android</code></p>
-
-<h4>Copy the Mobile APIs and Configuration files</h4>
-
-<p>You can copy the generated mobile assets to your Android project
-    directory by running the following command on the Mobile App Builder
-    tool:</p>
-        <pre>jumpstart@local:mab&gt; exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/android/com/magnetapi/apps &lt;/path/to/MyProject/src/com/magnetapi&gt;
-jumpstart@local:mab&gt; exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/android/com/magnet/login &lt;/path/to/MyProject/src/com/magnet&gt;
-jumpstart@local:mab> exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/android/com/magnet/login &lt;/path/to/MyProject/src/com/magnet&gt;
-jumpstart@local:mab> exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/android/com/magnet/notification &lt;/path/to/MyProject/src/com/magnet&gt;
-jumpstart@local:mab> exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/android/com/magnet/user &lt;/path/to/MyProject/src/com/magnet&gt;
-jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/android/*beans*.jar &lt;/path/to/MyProject/libs&gt;
-jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/android/magnet_type_mapper.xml &lt;/path/to/MyProject/res/xml&gt;
-</pre>
+<ol>
+    <li>
+        You can generate the mobile API by running the command below on
+        the Mobile App Builder tool. This command will generate the mobile API in the following
+        directory: <code>~/MABProjects/jumpstart/mobile/apis/assets/android</code>.
+        <pre>jumpstart@local:mab&gt; api-generate -wfc android</pre>
+    </li>
+    <li>
+        Copy the generated source for controllers to the project source directory:
+        <pre>jumpstart@local:mab&gt; exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/android/com/magnetapi/ &lt;/path/to/MyAndroidProject/src/com/magnetapi&gt;
+jumpstart@local:mab&gt; exec cp -R ~/MABProjects/jumpstart/mobile/apis/assets/android/com/magnet/ &lt;/path/to/MyAndroidProject/src/com/magnet&gt;</pre>
+    </li>
+    <li>
+        Copy the generated Java library jar to the "libs" directory:
+        <pre>jumpstart@local:mab&gt; exec mkdir -p &lt;/path/to/MyAndroidProject/libs&gt;
+jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/android/beans.jar &lt;/path/to/MyAndroidProject/libs/&gt;</pre>
+    </li>
+    <li>
+        Copy the generated config files to the "res/xml" directory:
+        <pre>jumpstart@local:mab&gt; exec mkdir -p &lt;/path/to/MyAndroidProject/res/xml&gt;
+jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/android/magnet_type_mapper.xml &lt;/path/to/MyAndroidProject/res/xml/&gt;
+jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/android/magnet_app_default.xml &lt;/path/to/MyAndroidProject/res/xml/&gt;</pre>
+    </li>
+</ol>
 
 <h4>Import Mobile SDK as library project to Eclipse</h4>
 
@@ -243,7 +249,7 @@ jumpstart@local:mab&gt; exec cp ~/MABProjects/jumpstart/mobile/apis/assets/andro
         Existing Code</li>
 
     <li>Browse to the unzipped Magnet library project directory and
-        select "libproject/2.3.0" as the "Root Directory". A new Android
+        select "magnetlib-2.3.0" as the "Root Directory". A new Android
         project will be created with the name "magnetlib-2.3.0"</li>
 
     <li>Select the newly created library project and right click
@@ -323,7 +329,7 @@ String response = call.get();</pre>
 import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.SimpleEntityControllerFactory;
 import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.SimpleEntityBean;
 import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.SimpleEntityBeanBuilder;
-import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.SimpleValueBeanBuilder;</pre>
+import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.SimpleEntityValueBeanBuilder;</pre>
 
 <h6>Initialize the SimpleEntityController controller</h6>
     <pre> try {
@@ -339,17 +345,17 @@ import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.Simple
 <h6>Call the SimpleEntityController controller</h6>
     <pre>// Initialize a SimpleEntityBean using the generated SimpleEntityBeanBuilder class
 SimpleEntityBeanBuilder builder = new SimpleEntityBeanBuilder();
-builder.name(&quot;John Smith&quot;).customerId(100);
+builder.name("John Smith")
+       .customerId(100);
 
 // create a SimpleValueBean, set its string value
-SimpleValueBeanBuilder svb = new SimpleValueBeanBuilder();
+SimpleEntityValueBeanBuilder svb = new SimpleEntityValueBeanBuilder();
 svb.string("simple value string");
 
-// set SimpleValueBean instance to SimpleEntityBean "value" field
+// set SimpleEntityValueBean instance to SimpleEntityBean "value" field
 builder.value(svb.build());
 
 // Call the controller to create the SimpleEntity using null as async options
-
 Call&lt;Integer&gt; call = entityController.create(builder.build(), null);
 Integer id = call.get();</pre>
 
@@ -384,7 +390,7 @@ import com.magnetapi.apps.jumpstart.controllers.helloworld.api.HelloWorldControl
 import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.SimpleEntityController;
 import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.SimpleEntityControllerFactory;
 import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.SimpleEntityBeanBuilder;
-import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.SimpleValueBeanBuilder;
+import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.SimpleEntityValueBeanBuilder;
 
 public class JumpstartActivity extends Activity {
     private static final String LOG_TAG = HelloWorldActivity.class.getSimpleName();
@@ -438,22 +444,20 @@ public class JumpstartActivity extends Activity {
             // get an instance of the controller
             SimpleEntityController entityController = ef.obtainInstance("jumpstart");
 
-            // Initialize a SimpleEntityBean using the generated
-            // SimpleEntityBeanBuilder class
+            // Initialize a SimpleEntityBean using the generated SimpleEntityBeanBuilder class
             SimpleEntityBeanBuilder builder = new SimpleEntityBeanBuilder();
-            builder.name("John Smith").customerId(100);
+            builder.name("John Smith")
+                   .customerId(100);
 
             // create a SimpleValueBean, set its string value
-            SimpleValueBeanBuilder svb = new SimpleValueBeanBuilder();
+            SimpleEntityValueBeanBuilder svb = new SimpleEntityValueBeanBuilder();
             svb.string("simple value string");
 
-            // set SimpleValueBean instance to SimpleEntityBean "value" field
+            // set SimpleEntityValueBean instance to SimpleEntityBean "value" field
             builder.value(svb.build());
 
-            // Call the controller to create the SimpleEntity using null as async
-            // options
+            // Call the controller to create the SimpleEntity using null as async options
             Call&lt;Integer&gt; call = entityController.create(builder.build(), null);
-            // blocks until response is returned
             Integer id = call.get();
 
         } catch (SchemaException e) {
