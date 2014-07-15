@@ -991,7 +991,7 @@ cd Jumpstart</pre>
                     <pre>// Initialize a SimpleEntityBean
 var simpleEntityBean = new MagnetJS.Models.SimpleEntityBean({
     "name"       : "John Appleseed",
-    "customerId" : 100000
+    "customerId" : Math.round(new Date().getTime() / 1000)
 });
 // Initialize a SimpleEntityValueBean
 var simpleValueBean = new MagnetJS.Models.SimpleEntityValueBean({
@@ -1060,7 +1060,7 @@ var simpleEntityController = new MagnetJS.Controllers.SimpleEntityController();
 // Initialize a SimpleEntityBean
 var simpleEntityBean = new MagnetJS.Models.SimpleEntityBean({
     &quot;name&quot;       : &quot;John Appleseed&quot;,
-    &quot;customerId&quot; : 100000
+    &quot;customerId&quot; : Math.round(new Date().getTime() / 1000)
 });
 // Initialize a SimpleEntityValueBean
 var simpleValueBean = new MagnetJS.Models.SimpleEntityValueBean({
