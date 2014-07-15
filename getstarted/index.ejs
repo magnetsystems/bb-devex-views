@@ -394,7 +394,7 @@ import com.magnetapi.apps.jumpstart.controllers.simplecontroller.api.bean.Simple
 
 public class JumpstartActivity extends Activity {
     private static final String LOG_TAG = JumpstartActivity.class.getSimpleName();
-    final MagnetMobileClient magnetClient;
+    private MagnetMobileClient magnetClient;
 
     protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -427,6 +427,7 @@ public class JumpstartActivity extends Activity {
           // method because 'get' is a blocking call, waiting for network request to
           // complete
           String response = call.get();
+          Log.i(LOG_TAG, "postHello response:" + response);
         } catch (SchemaException e) {
             Log.e(LOG_TAG, "can't get HelloWorldController", e);
         } catch (ExecutionException e) {
@@ -460,6 +461,8 @@ public class JumpstartActivity extends Activity {
             Call&lt;Integer&gt; call = entityController.create(builder.build(), null);
             Integer id = call.get();
 
+            Log.i(LOG_TAG, "create id:" + id);
+
         } catch (SchemaException e) {
             Log.e(LOG_TAG, "failed to get instance of the controller");
         } catch (ExecutionException e) {
@@ -472,6 +475,10 @@ public class JumpstartActivity extends Activity {
 
 <p>Add minimum SDK version number 16 or greater to AndroidManifest.xml:</p>
 <pre>&lt;uses-sdk android:minSdkVersion="16" /&gt;</pre>
+
+<p>Add permissions to AndroidManifest.xml:</p>
+<pre>&lt;uses-permission android:name="android.permission.INTERNET"&gt;&lt;/uses-permission&gt;
+&lt;uses-permission android:name="android.permission.READ_PHONE_STATE"&gt;&lt;/uses-permission&gt;</pre>
 
 <h3>6. Deploy the Mobile Backend</h3>
 
