@@ -175,12 +175,12 @@
         </div>
         <div class="section">
             <div class="docs-content">
-                <strong>Deployment Guide</strong>
+                {{ if(typeof sessionUser != 'undefined'){ }}<a href="backend_deploy/" target="_blank">{{ } }}
+                    <strong>Deployment Guide</strong>
+                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
             </div>
             <div class="docs-download">
-                {{ if(typeof sessionUser != 'undefined'){ }}
-                Coming Soon
-                {{ }else{ }}
+                {{ if(typeof sessionUser == 'undefined'){ }}
                 <a href="#" class="protectedresource"></a>
                 {{ } }}
             </div>
