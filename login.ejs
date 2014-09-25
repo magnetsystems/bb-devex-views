@@ -316,17 +316,20 @@
         <a href="#" data-dismiss="modal" class="btn btn-primary">Ok</a>
     </div>
 </div>
-<div id="confirm-tos-dialog" class="modal-confirm modal hide fade">
-    <div class="modal-header">
-        <button data-dismiss="modal" class="close">x</button>
-        <h3>Terms of Service</h3>
-        <p class="subheading">You must agree to the Terms of Service to continue.</p>
-    </div>
-    <div class="modal-body">
-        <iframe src="/docs/tos.html"></iframe>
-    </div>
-    <div class="modal-footer">
-        <button id="agree-to-tos" class="submit btn-primary btn">I Agree</button>
-        <button data-dismiss="modal" class="cancel btn">Cancel</button>
+<div id="confirm-tos-dialog" class="modal-confirm modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Terms of Service</h4>
+            </div>
+            <div class="modal-body">
+                <iframe src="/docs/tos.html"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button id="agree-to-tos" class="submit btn-primary btn">I Agree</button>
+                <button data-dismiss="modal" class="cancel btn btn-default">Cancel</button>
+            </div>
+        </div>
     </div>
 </div>
