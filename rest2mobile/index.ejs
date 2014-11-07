@@ -1,0 +1,251 @@
+<div id="subhead">
+    <div class="row-fluid">
+        <div class="col-sm-8 col-xs-12">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="/img/logo_r2m_main.png"  />
+                </a>
+                <div id="subhead-title" class="media-body">
+                    <h4 class="media-heading">rest2mobile</h4>
+                    <p>Generate mobile native code for REST services.</p>
+                    <p class="minor-heading">Licensed under Apache License v2.0</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <ul class="list-group">
+                <li class="list-group-item first">FREE & Open Source</li>
+                <li class="list-group-item"><img src="/img/icon_ios.png" /> iOS</li>
+                <li class="list-group-item"><img src="/img/icon_android.png" /> Android</li>
+                <li class="list-group-item"><img src="/img/icon_js.png" /> Command Line</li>
+            </ul>
+            <a class="home-forkmeongithub-link" target="_blank" href="https://github.com/magnetsystems/rest2mobile"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+        </div>
+    </div>
+    <div class="row-fluid clearfix">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <ul class="home-features-list clearfix">
+                <li>type safe</li>
+                <li>no marshalling</li>
+                <li>Android, iOS, and JS</li>
+            </ul>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+<div class="home-video-container">
+    <div class="row-fluid clearfix">
+        <div class="col-sm-7 text-center">
+            <img src="/img/r2m_video1.png" />
+            <p>Step-by-Step tutorial</p>
+        </div>
+        <div class="col-sm-5 text-center">
+            <img src="/img/r2m_video2.png" />
+            <p>Reference App</p>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <img src="/img/r2m_diagram.png" />
+</div>
+
+<div id="footer1">
+    <a href="https://github.com/magnetsystems/rest2mobile" target="_blank" id="github-btn">
+        <div>
+            Find us<br />on GitHub
+        </div>
+    </a>
+    <div class="row-fluid clearfix">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <h3>FREE and open source:</h3>
+            <div class="row-fluid clearfix">
+                <div class="col-sm-4">
+                    <div class="sdk-section">
+                        <a href="/rest2mobile/ios"><img src="/img/xcode_lg.png" /></a>
+                        <div class="caption">
+                            <a href="/rest2mobile/ios" class="btn">iOS</a>
+                        </div>
+                        <div style="text-align:center;color:#ccc;margin:10px 35px 0 35px;font-size:15px;font-weight:300">
+                            Plugin to generate Objective-C code with Xcode 5 and 6.
+                        </div>
+                        <!--<ul>-->
+                            <!--<li>Android Studio & IntelliJ IDEA</li>-->
+                            <!--<li><a href="android/">Learn More</a></li>-->
+                        <!--</ul>-->
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="sdk-section">
+                        <a href="/rest2mobile/cli"><img src="/img/cli_lg.png" /></a>
+                        <div class="caption">
+                            <a href="/rest2mobile/cli" class="btn">iOS, JS, Android</a>
+                        </div>
+                        <div style="text-align:center;color:#ccc;margin:10px 35px 0 35px;font-size:15px;font-weight:300">
+                            Command-line tool to generate cross platform code. 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="sdk-section">
+                        <a href="/rest2mobile/android"><img src="/img/andstudio_lg.png" /></a>
+                        <div class="caption">
+                            <a href="/rest2mobile/android" class="btn">Android</a>
+                        </div>
+                        <div style="text-align:center;color:#ccc;margin:10px 35px 0 35px;font-size:15px;font-weight:300">
+                            Plugin to generate Android code with Android Studio & IntelliJ IDEA.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+<pre id="sample-distance-android" class="hidden">MagnetMobileClient magnetMobileClient = MagnetMobileClient.getInstance(this.getApplicationContext());
+// Create the controller instance
+RestControllerFactory restControllerFactory = new RestControllerFactory(magnetMobileClient);
+RestController restController = restControllerFactory.obtainInstance();
+
+// Call the controller
+Call&lt;GoogleDistanceResult&gt; callResponse = restController.getDistance(
+    "435 Tasso Street Palo Alto CA",
+    "Embarcadero Street San Francisco CA",
+    "false",
+    "driving",
+    "en",
+    "imperial",
+    null);
+GoogleDistanceResult googleDistanceResult = callResponse.get();</pre>
+<pre id="sample-distance-ios" class="hidden">// Create an instance
+RestController *controller = [[RestController alloc] init];
+
+// Call the controller
+[controller getDistance:@"435 Tasso Street Palo Alto CA"
+   destinations:@"Embarcadero Street San Francisco CA"
+         sensor:@"false"
+           mode:@"driving"
+       language:@"en"
+         sensor:@"true"
+          units:@"imperial"
+        success:^(TimeZoneResult *response) {
+            // NSLog(@"response is %@", response);
+        }
+        failure:^(NSError *error) {
+            // NSLog(@"error is %@", error);
+        }];</pre>
+<pre id="sample-distance-js" class="hidden">var controller = new MagnetJS.Controllers.RestController();
+
+var requestData = {
+    origins : "435 Tasso Street Palo Alto CA",
+    destinations : "Embarcadero Street San Francisco CA",
+    sensor : "false",
+    mode : "driving",
+    language : "en",
+    units : "imperial"
+}
+
+controller.googleDistance(requestData, {
+    success : function(responseData, details){
+        // do something with response data
+    },
+    error : function(error, details){
+        // handle errors
+    }
+});</pre>
+<pre id="sample-distance-curl" class="hidden">curl -X GET --header "Content-Type: application/json"  "http://maps.googleapis.com/maps/api/distancematrix/json?origins=435+Tasso+Street+Palo+Alto+CA&destinations=Embarcadero+Street+San+Francisco+CA&sensor=false&mode=driving&language=en&units=imperial"</pre>
+
+<pre id="sample-timezone-android" class="hidden">MagnetMobileClient magnetMobileClient = MagnetMobileClient.getInstance(this.getApplicationContext());
+// Create the controller instance
+RestControllerFactory restControllerFactory = new RestControllerFactory(magnetMobileClient);
+RestController restController = restControllerFactory.obtainInstance();
+
+// Call the controller
+Call&lt;TimeZoneResult&gt; callResponse = restController.getTimeZone("39.6034810,-119.6822510", "1331161200","true", null);
+TimeZoneResult timeZoneResult = callResponse.get();</pre>
+<pre id="sample-timezone-ios" class="hidden">// Create an instance
+RestController *controller = [[RestController alloc] init];
+
+// Call the controller
+[controller getTimeZone:@"39.6034810,-119.6822510"
+  timestamp:@"1331161200"
+     sensor:@"true"
+    success:^(TimeZoneResult *response) {
+        // NSLog(@"response is %@", response);
+    }
+    failure:^(NSError *error) {
+        // NSLog(@"error is %@", error);
+    }];</pre>
+<pre id="sample-timezone-js" class="hidden">var controller = new MagnetJS.Controllers.RestController();
+
+var requestData = {
+    location : "39.6034810,-119.6822510",
+    timestamp : "1331161200",
+    sensor : "true",
+    mode : "driving",
+    language : "en",
+    units : "imperial"
+}
+
+controller.getMapsApiTimezoneJson(requestData, {
+    success : function(responseData, details){
+        // do something with response data
+    },
+    error : function(error, details){
+        // handle errors
+    }
+});</pre>
+<pre id="sample-timezone-curl" class="hidden">curl -X GET --header "Content-Type: application/json"  "https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&amp;timestamp=1331161200&sensor=false&mode=driving&language=en&units=imperial"</pre>
+
+<pre id="sample-espn-android" class="hidden">MagnetMobileClient magnetMobileClient = MagnetMobileClient.getInstance(this.getApplicationContext());
+// Create the controller instance
+RestControllerFactory restControllerFactory = new RestControllerFactory(magnetMobileClient);
+RestController restController = restControllerFactory.obtainInstance();
+
+// Call the controller
+Call&lt;SportsNewsResult&gt; callResponse = restController.getSportsNews(
+    "fnbkkygduuavvvmg2y846vmh",
+    "1234456789",
+    null);
+SportsNewsResult sportsNewsResult = callResponse.get();</pre>
+<pre id="sample-espn-ios" class="hidden">// Create an instance
+RestController *controller = [[RestController alloc] init];
+
+// Call the controller
+[controller getSportNews:@"fnbkkygduuavvvmg2y846vmh"
+     authorizationHeader:@"1234456789"
+         success:^(SportNewsResult *response) {
+             // NSLog(@"response is %s", response);
+         }
+         failure:^(NSError *error) {
+             // NSLog(@"error is %@", error);
+         }];</pre>
+<pre id="sample-espn-js" class="hidden">var controller = new MagnetJS.Controllers.RestController();
+
+var requestData = {
+    apikey : "fnbkkygduuavvvmg2y846vmh",
+    authorizationHeader : "1234456789"
+}
+
+controller.getSportsNews(requestData, {
+    success : function(responseData, details){
+        // do something with response data
+    },
+    error : function(error, details){
+        // handle errors
+    }
+});</pre>
+<pre id="sample-espn-curl" class="hidden">curl -X GET --header "Content-Type: application/json" --header "X-Mashape-Authorization: 1234456789" "https://wmerydith-espn.p.mashape.com/sports/news?apikey=fnbkkygduuavvvmg2y846vmh"</pre>
+
+<script src="js/dev/jquery.js"></script>
+<script src="js/dev/bootstrap.min.js"></script>
+<script src="js/dev/ace.js"></script>
+<script src="js/dev/mode-java.js"></script>
+<script src="js/dev/mode-javascript.js"></script>
+<script src="js/dev/mode-objectivec.js"></script>
+<script src="js/dev/mode-json.js"></script>
+<script src="js/dev/scripts.js"></script>

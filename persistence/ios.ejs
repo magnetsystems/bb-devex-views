@@ -1,0 +1,102 @@
+
+<div id="subtitle">
+    <div class="row-fluid">
+        <div class="col-sm-8">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="/img/subtitle_right.png"  />
+                </a>
+                <div id="subhead-title" class="media-body">
+                    <h4 class="media-heading">rest2mobile for iOS</h4>
+                    <p>For Xcode 5+</p>
+                    <p class="license-heading">(Apache License, Version 2.0)</p>
+		</div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="sdk-section">
+                <img src="/img/xcode_lg.png" />
+                <div class="caption">
+                    <a href="/assets/r2m/ios_plugin" onclick="ga('send', 'event', 'r2m-ios-plugin', 'Yes'); Trackalyzer(18080, 'https://developer.magnet.com/assets/r2m/ios_plugin');" class="btn"><img src="/img/icon_download.png" /> Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="step-section clearfix">
+    <div class="row-fluid">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4 class="step-title">Step 1</h4>
+            <h4>Install the rest2mobile plug-in</h4>
+            <ul>
+                <li>Download the rest2mobile plug-in from the GitHub repository:<br />
+                <pre>curl https://github.com/magnetsystems/r2m-plugin-ios/releases/download/v1.1.0/r2m-Xcode-plugin.zip -O -L</pre></li>
+                <li>Create the <b>Plug-ins</b> directory if it doesn't already exist:<br />
+                    <pre>mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins</pre></li>
+                <li>Unzip the Magnet Xcode Plugin (Magnet.xcplugin) from <b>r2m-Xcode-plugin.zip</b> into the following directory:<br />
+                    <pre>unzip -o r2m-Xcode-plugin.zip -d ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins</pre></li>
+                <li>Start Xcode.</li>
+            </ul>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<div class="step-section clearfix">
+    <div class="row-fluid">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4 class="step-title">Step 2</h4>
+            <h4>Generate Objective-C code for your REST service</h4>
+            <ul>
+                <li>To generate Objective-C code for your REST/JSON service, open the Magnet menu, and choose <b>Add REST API</b>.</li>
+                <li>Enter the REST request, parameters, headers, and response if you have one, otherwise click <b>Test API</b> to generate one from the API.</li>
+                <li>Click <b>Generate</b>.</li>
+                <li>Close your project.</li>
+            </ul>
+            <img src="/img/step2_ios.png" />
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<div class="step-section clearfix">
+    <div class="row-fluid">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4 class="step-title">Step 3</h4>
+            <h4>Add dependencies and call the code from your app.</h4>
+            <ul>
+                <li>Go to your Xcode project folder and create the following Podfile:
+<pre>platform :ios, '7.0'
+pod 'Rest2Mobile', '~&gt; 1.1'
+
+# Add Kiwi as an exclusive dependency for the AmazingAppTests target
+target :AmazingAppTests, :exclusive =&gt; true do
+  pod 'Kiwi'
+end</pre>
+                </li>
+                <li>Run the following command from your project directory:
+<pre> &gt; pod install</pre>
+                </li>
+                <li>Open your project using the <b>.xcworkspace</b> file.</li>
+                <li>You are now ready to use the controller in your classes.</li>
+            </ul>
+            <img src="/img/step3_ios.png" />
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<div id="help-container">
+    <a class="help-link clearfix" href="https://github.com/magnetsystems/rest2mobile" target="_blank">
+        <img src="/img/github_logo.png" class="pull-left">
+        <h5>Find us on GitHub</h5>
+    </a>
+</div>
+
+<script src="/js/dev/jquery.js"></script>
+<script src="/js/dev/bootstrap.min.js"></script>
+<script src="/js/dev/scripts.js"></script>
