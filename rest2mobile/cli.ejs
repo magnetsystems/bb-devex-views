@@ -1,0 +1,118 @@
+
+<div id="subtitle">
+    <div class="row-fluid">
+        <div class="col-sm-8">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="/img/subtitle_right.png"  />
+                </a>
+                <div id="subhead-title" class="media-body">
+                    <h4 class="media-heading">rest2mobile Command Line Tool</h4>
+                    <p>For iOS, JS, and Android</p>
+		    <p class="license-heading">(Apache License, Version 2.0)</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="sdk-section">
+                <img src="/img/cli_lg.png" />
+                <div class="caption">
+                    <a href="/assets/r2m/cli"  onclick="ga('send', 'event', 'r2m-js-cli', 'Yes'); Trackalyzer(18080, 'https://developer.magnet.com/assets/r2m/cli');" class="btn"><img src="/img/icon_download.png" /> Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="step-section clearfix">
+    <div class="row-fluid">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4 class="step-title">Step 1</h4>
+            <h4>Install r2m</h4>
+            <ul>
+                <li><b>DOWNLOAD ZIP</b> <br />Alternatively, download and unzip the <a href="/javascript/download/" onclick="ga('send', 'event', 'r2m-js-cli', 'Yes');">installer</a>.</li>
+		<li><b>BREW (for OS X)</b>
+                <pre>&gt; brew install https://raw.githubusercontent.com/magnetsystems/r2m-cli/master/brew/r2m.rb</pre>
+		</li>
+            </ul>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<div class="step-section clearfix">
+    <div class="row-fluid">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4 class="step-title">Step 2</h4>
+            <h4>Create Rest By Example File</h4>
+            <ul>
+                <li>To generate rest2mobile code using the r2m tool, you need to provide a "REST by example" file that contains
+                    a specification of actual REST request URLs and their expected JSON response.
+                    Learn more about the syntax of Rest By Example files at the
+                    <a href="https://github.com/magnetsystems/rest2mobile/wiki/Rest-By-Example-Specifications">rest2mobile Wiki</a>
+		    and the <a href="https://github.com/magnetsystems/r2m-cli/blob/master/README.md">rest2mobile CLI GitHub</a> page.
+                </li>
+                <li>An example file is provided below. Copy and paste the following Rest By Example below into a file called <b>example.txt</b> in a directory of your choice.
+<pre>+Name getTimeZone
++Request
+https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&amp;timestamp=1331161200&amp;sensor=true
+
++Response
++Body
+{
+   "dstOffset" : 0,
+   "rawOffset" : -28800,
+   "status" : "OK",
+   "timeZoneId" : "America/Los_Angeles",
+   "timeZoneName" : "Pacific Standard Time"
+}</pre>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<div class="step-section clearfix">
+    <div class="row-fluid">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4 class="step-title">Step 3</h4>
+            <h4>Generate native code for your REST service</h4>
+            <ul>
+                <li>Navigate to the directory containing the Rest By Example file and use the <b>r2m</b> tool to generate Mobile APIs
+                    into the <b>Mobile</b> directory.
+                <pre>&gt; r2m gen -e example.txt</pre>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<div class="step-section clearfix">
+    <div class="row-fluid">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h4 class="step-title">Step 4</h4>
+            <h4>Invoke the API</h4>
+            <ul>
+                <li>The instructions to import the SDK and invoke the API for each platform are available on GitHub at <a href="https://github.com/magnetsystems/r2m-cli#invoking-the-mobile-api">Invoking the Mobile API</a>.</li>
+            </ul>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+<div id="help-container">
+    <a class="help-link clearfix" href="https://github.com/magnetsystems/rest2mobile" target="_blank">
+        <img src="/img/github_logo.png" class="pull-left">
+        <h5>Find us on GitHub</h5>
+    </a>
+</div>
+
+<script src="/js/dev/jquery.js"></script>
+<script src="/js/dev/bootstrap.min.js"></script>
+<script src="/js/dev/scripts.js"></script>

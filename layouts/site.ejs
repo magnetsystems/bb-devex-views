@@ -4,7 +4,7 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <title>Developer Factory : {{=title}}</title>
+    <title>My Account : {{=title}}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -16,25 +16,19 @@
 <body class="{{ if(typeof bodyType != 'undefined'){ }} {{=bodyType}} {{ } }}">
 <div id="site-header">
     <div class="logo_container">
-        <a href="http://www.magnet.com"><img src="/images/heading.png" alt="Developer Factory" /></a><a href="/"><h4>Developer Factory</h4></a>
+        <a href="http://www.magnet.com"><img src="/images/heading.png" alt="Developer Factory" /></a><a href="/"><h4>Unknown Thing</h4></a>
     </div>
+    {{ if(typeof sessionUser != 'undefined'){ }}
     <ul class="title_container">
-        <li class="dropdown {{- activePage == 'get-started' ? 'active' : ''}}">
-            <a href="/get-started/">Get Started</a>
+        <li class="dropdown {{- activePage == 'account' ? 'active' : ''}}">
+            <a href="/account/">Account</a>
         </li>
-        <li class=" {{- activePage == 'resources' ? 'active' : ''}}">
-            <a href="/resources/">Resources</a>
-        </li>
-        <li class="{{- activePage == 'docs' ? 'active' : ''}}">
-            <a href="/docs/">Documentation</a>
-        </li>
-        <li class="{{- activePage == 'support' ? 'active' : ''}}">
-            <a href="/support/">Support</a>
+        <li class=" {{- activePage == 'profile' ? 'active' : ''}}">
+            <a href="/profile/">My Profile</a>
         </li>
     </ul>
-    {{ if(typeof sessionUser != 'undefined'){ }}
     <div class="control-buttons">
-        <a href="#" id="invite-others"><i class="icon-plus icon-white"></i><i class="icon-user icon-white"></i></a>
+        <a href="#" id="invite-others"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i></a>
         <a href="#" id="user-panel-toggle"><i class="icon-chevron-down icon-white"></i><span id="username-placeholder">{{= sessionUser.email }}</span></a>
     </div>
     {{ }else{ }}
@@ -106,22 +100,21 @@
 </div>
 {{ if(typeof sessionUser != 'undefined'){ }}
 <div id="leave-feedback-container">
-    <a id="feedback-btn" href="">Leave Feedback</a>
+    <a id="feedback-btn" href="">Get Support</a>
     <div id="feedback-content">
-        <p>We welcome any comments or questions. Responses to questions will be sent to your registered email address.</p>
-        <select id="feedback-type-field">
+        <p>We welcome any comments or questions.</p>
+        <select id="feedback-type-field" class="form-control">
             <option value="Comment">Comment</option>
             <option value="Question">Question</option>
         </select>
-        <input id="feedback-subject" type="text" placeholder="Subject" name="email">
-        <textarea id="feedback-message" placeholder="Message"></textarea>
-        <button id="submit-feedback-btn" class="btn">Submit Feedback</button>
+        <input id="feedback-subject" class="form-control" type="text" placeholder="Subject" name="email">
+        <textarea id="feedback-message" class="form-control" placeholder="Message"></textarea>
+        <button id="submit-feedback-btn" class="btn btn-primary">Submit Feedback</button>
         <img src="/images/ajax-loader-sm.gif" style="display:none" />
     </div>
     <div id="feedback-complete" style="display:none">
         <h4>Feedback Has Been<br />Submitted</h4>
-        <p>Thank you for submitting your feedback or question. If you asked a question, a response
-        to your question will be sent to the email address you used to register.</p>
+        <p>Thank you for submitting your feedback or question. We will respond shortly.</p>
     </div>
     <div id="feedback-error" style="display:none">
         <h4>Error Submitting<br />Feedback</h4>
@@ -131,118 +124,162 @@
 {{ } }}
 
 <!-- dialogs start -->
-<div id="error-alert" class="modal-form-errors modal hide fade">
-	<div class="modal-header">
-		<button data-dismiss="modal" class="close">x</button>
-		<h3></h3>
-	</div>
-	<div class="modal-body">
-		<p class="subheading">
-		</p>
-		<ul>
-		</ul>
-	</div>
-	<div class="modal-footer">
-		<button data-dismiss="modal" class="btn btn-primary">OK</button>
-	</div>
-</div>
-<div id="general-alert" class="modal-alert modal hide fade">
-	<div class="modal-header">
-		<button data-dismiss="modal" class="close">x</button>
-		<h3></h3>
-	</div>
-	<div class="modal-body">
-		<p>
-		</p>
-	</div>
-	<div class="modal-footer">
-		<button data-dismiss="modal" id="ok" class="btn btn-primary">OK</button>
-	</div>
-</div>
-<div id="confirm-alert" class="modal-confirm modal hide fade">
-	<div class="modal-header">
-		<button data-dismiss="modal" class="close">x</button>
-		<h3></h3>
-	</div>
-	<div class="modal-body">
-		<p>
-		</p>
-	</div>
-	<div class="modal-footer">
-        <button class="submit btn-primary btn">Continue</button>
-		<button data-dismiss="modal" class="cancel btn">Cancel</button>
-	</div>
+<div id="general-alert" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" type="button" class="btn btn-primary">Ok</button>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="invite-other-modal" class="modal-alert modal hide fade">
-    <div class="modal-header">
-        <button data-dismiss="modal" class="close">x</button>
-        <h3>Invite Others</h3>
-        <p class="subheading">
-            Enter the email address of the individual you would like to invite to the Developer Factory.
-        </p>
-    </div>
-    <div class="modal-body">
-        <div class="modal_errors" style="display:none">
-            <div class="alert alert-error">
-                <strong></strong> <span></span>
+<div id="confirm-alert" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="submit btn btn-primary">Yes</button>
+                <button data-dismiss="modal" type="button" class="btn btn-default">No</button>
             </div>
         </div>
-        <div class="modal_success" style="display:none">
-            <div class="alert alert-success">
-                <span>Your invitation has been sent successfully.</span>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <input class="span12" type="text" name="email" placeholder="Enter Email Address"><br />
-            <b>Message to include</b><br />
-            <textarea class="span12" name="inviteMessage" placeholder="Message to include">I found this great new tool to quickly create mobile apps for me.</textarea>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button data-dismiss="modal" class="cancel btn">Close</button>
-        <button class="btn-primary btn">Send Invitation</button>
-    </div>
-    <div class="loading modal-footer" style="display:none">
-        Loading.. Please Wait.. <img src="/images/ajax-loader-sm.gif" />
     </div>
 </div>
+
+<div id="error-alert" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" type="button" class="btn btn-primary">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="invite-other-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Invite Others</h4>
+                <p class="subheading">
+                    Enter the email address of the individual you would like to invite to the Developer Factory.
+                </p>
+            </div>
+            <div class="modal-body">
+                <div class="modal_errors" style="display:none">
+                    <div class="alert alert-error">
+                        <strong></strong> <span></span>
+                    </div>
+                </div>
+                <div class="modal_success" style="display:none">
+                    <div class="alert alert-success">
+                        <span>Your invitation has been sent successfully.</span>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <input type="text" name="email" class="form-control" placeholder="Enter Email Address"><br />
+                    <b>Message to include</b><br />
+                    <textarea class="form-control" name="inviteMessage" placeholder="Message to include">I found this great new tool to quickly create mobile apps for me.</textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="cancel btn btn-default">Close</button>
+                <button class="btn-primary btn">Send Invitation</button>
+            </div>
+            <div class="loading modal-footer" style="display:none">
+                Loading.. Please Wait.. <img src="/images/ajax-loader-sm.gif" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div id="invite-other-modal" class="modal-alert modal hide fade">-->
+    <!--<div class="modal-header">-->
+        <!--<button data-dismiss="modal" class="close">x</button>-->
+        <!--<h3>Invite Others</h3>-->
+        <!--<p class="subheading">-->
+            <!--Enter the email address of the individual you would like to invite to the Developer Factory.-->
+        <!--</p>-->
+    <!--</div>-->
+    <!--<div class="modal-body">-->
+        <!--<div class="modal_errors" style="display:none">-->
+            <!--<div class="alert alert-error">-->
+                <!--<strong></strong> <span></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="modal_success" style="display:none">-->
+            <!--<div class="alert alert-success">-->
+                <!--<span>Your invitation has been sent successfully.</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row-fluid">-->
+            <!--<input class="span12" type="text" name="email" placeholder="Enter Email Address"><br />-->
+            <!--<b>Message to include</b><br />-->
+            <!--<textarea class="span12" name="inviteMessage" placeholder="Message to include">I found this great new tool to quickly create mobile apps for me.</textarea>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="modal-footer">-->
+        <!--<button data-dismiss="modal" class="cancel btn">Close</button>-->
+        <!--<button class="btn-primary btn">Send Invitation</button>-->
+    <!--</div>-->
+    <!--<div class="loading modal-footer" style="display:none">-->
+        <!--Loading.. Please Wait.. <img src="/images/ajax-loader-sm.gif" />-->
+    <!--</div>-->
+<!--</div>-->
 
 <!-- Modal -->
-<div id="login-popup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="LoginPopup" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="LoginPopup">Sign In</h3>
-        <strong>This resource requires registration to access.</strong>
-        <p>Please Sign In below, or click on <a href="/login?a=invitation">Register</a> to register for a new account.<br />
-            Click on <a href="/login?a=start-reset-password">Reset Your Password</a> if you don't remember your password.</p>
-    </div>
-    <div class="modal-body">
-        <div class="modal_errors" style="display:none">
-            <div class="alert alert-error">
-                <strong></strong><br /><span></span>
+<div id="login-popup" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Sign In</h4>
+                <strong>This resource requires registration to access.</strong>
+                <p>Please Sign In below, or click on <a href="/login?a=invitation">Register</a> to register for a new account.<br />
+                    Click on <a href="/login?a=start-reset-password">Reset Your Password</a> if you don't remember your password.</p>
             </div>
-        </div>
-        <div class="form-horizontal">
-            <div class="control-group">
-                <div class="controls">
-                    <label class="control-label" for="username">Email Address</label>
-                    <input type="text" name="name" id="username" placeholder="Email Address">
+            <div class="modal-body">
+                <div class="modal_errors" style="display:none">
+                    <div class="alert alert-error">
+                        <strong></strong><br /><span></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="control-label" for="username">Email Address</label>
+                        <input class="form-control" type="text" name="name" id="username" placeholder="Email Address">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="control-label" for="password">Password</label>
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+                    </div>
                 </div>
             </div>
-            <div class="control-group">
-                <div class="controls">
-                    <label class="control-label" for="password">Password</label>
-                    <input type="password" name="password" id="password" placeholder="Password">
-                </div>
+            <div class="modal-footer">
+                <button id="login-popup-btn" class="btn btn-primary">Sign in<span class="glyphicon glyphicon-lock"></span></button>
+                <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
             </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button id="login-popup-btn" class="btn btn-primary">Sign in<i class="icon-lock icon-white"></i></button>
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
 </div>
+
 <!-- dialogs end -->
 
 <script type="text/javascript" src="/js/libs/jquery.js"></script>
