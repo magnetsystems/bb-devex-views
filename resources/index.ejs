@@ -1,79 +1,93 @@
-    <div class="row-fluid">
-        <div class="clearfix page-view">
-            <h4>Resources</h4>
 
-            <p class="subhead">Download sample apps and source code here to help you get started and accelerate your development efforts.  You may modify (but not redistribute) this sample code.  Sample code is provided as is, and is not certified or supported by Magnet.  It is intended for educational purposes only.</p>
-
-            <ul id="resources-tabmenu" class="nav nav-tabs">
-                <li class="active"><a href="#tab-mab" data-toggle="tab">
-                    <img src="/images/resources/rsrc_icon_mab.png" />
-                    <b>Mobile App Builder</b>
-                    <span>App Development Tool</span>
-                </a></li>
-                <li><a href="#tab-ms-sdk" data-toggle="tab">
-                    <img src="/images/resources/rsrc_icon_sdk.png" />
-                    <b>Mobile SDK</b>
-                    <span>Software Development Kit</span>
-                </a></li>
-            </ul>
-
-            <div id="resources-tabcontent" class="tab-content">
-
-                <div class="tab-pane active" id="tab-mab">
-                    <div class="row-fluid">
-                        <div class="resources-samples-contents span12">
-                            <p class="sectionhead">
-                                The Magnet Mobile App Builder is a command line utility that allows users
-                                to create their custom mobile app projects, add API modules, generate Mobile APIs
-                                for use with Mobile Server Library on iOS and Android, build the Mobile
-                                Backend, initialize local or remote databases, and manage the lifecycle
-                                of Mobile Backend instances (e.g. deploy, start, stop) either locally or
-                                in the cloud.
-                            </p>
-                            <div class="select-tool">
-                                <div class="o-mac">
-                                    <a href="/resources/files/mab.zip" class="btn btn-primary">Download Magnet Mobile App Builder</a>
-                                    <p><br /><b>Note:</b> The Magnet Mobile App Builder is compatible with Windows, OSX, and Linux.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="tab-ms-sdk">
-                    <div class="row-fluid">
-                        <div class="resources-samples-contents span12">
-                            <p class="sectionhead">
-                                The Magnet Mobile SDK provides a set of libraries and APIs for synchronous, asynchronous, or reliable call options,
-                                applying network and geo-fencing constraints, response caching, and user authentication when interacting with the Magnet
-                                Mobile Backend.
-                            </p>
-                            <div class="selector clearfix">
-                                <div class="caption"><b>Platform Version</b></div>
-                                <div did="select-sdk" class="select-sdk selector-options">
-                                    <a did="a-phone" class="a-phone-btn active" href="#"></a>
-                                    <a did="i-phone" class="i-phone-btn" href="#"></a>
-                                    <a did="javascript" class="javascript-btn" href="#"></a>
-                                </div>
-                            </div>
-                            <div class="select-sdk">
-                                <div class="a-phone">
-                                    <a href="https://github.com/magnetsystems/magnet-sdk-android" target="_blank" class="btn btn-primary">Go to Mobile SDK for Android GitHub Project</a>
-                                </div>
-                                <div class="i-phone" style="display:none">
-                                    <a href="https://github.com/magnetsystems/magnet-sdk-ios" target="_blank" class="btn btn-primary">Go to Mobile SDK for iOS GitHub Project</a>
-                                </div>
-                                <div class="javascript" style="display:none">
-                                    <a href="https://github.com/magnetsystems/magnet-sdk-javascript" target="_blank" class="btn btn-primary">Go to Mobile SDK for JavaScript SDK GitHub Project</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <div id="hero" class="clearfix">
+        <div class="media">
+            <div class="image-wrapper">
+                <img src="/img/site/logo_xl_server.png"  />
             </div>
-
-
+            <div id="hero-title">
+                <h3 id="hero-heading">Introducing the Magnet Server.</h3>
+                <p>Now available with the version 2.4 release.</p>
+            </div>
         </div>
     </div>
 
-
+    <div id="resources" class="content clearfix">
+        <div class="row-fluid clearfix">
+            <div class="col-xs-6">
+                <h3 class="page-title">Resources</h3>
+            </div>
+            <div class="col-xs-6 text-right">
+                <a href="/archives">Archives for version 2.3</a>
+            </div>
+        </div>
+        <hr />
+        <div class="img-section-h-lg clearfix">
+            <div class="row-fluid">
+                <div class="col-sm-8">
+                    <div class="logo">
+                        <img class="img-responsive" src="/img/site/logo_xl_server.png"  />
+                    </div>
+                    <div class="text">
+                        <h2>Magnet Server</h2>
+                        <p>Easily set up your own server</p>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-right">
+                    <button class="btn btn-primary">Download .zip for VM</button><br />
+                    <button class="btn btn-primary">Download Windows (.msi?)</button><br />
+                    <button class="btn btn-primary">Download AMI (AWS cloud)</button><br />
+                    <button class="btn btn-primary">Download for OpenStack</button>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="img-section-h-lg clearfix">
+            <div class="row-fluid">
+                <div class="col-sm-8">
+                    <div class="logo">
+                        <img class="img-responsive" src="/img/site/logo_xl_data.png"  />
+                    </div>
+                    <div class="text">
+                        <h2>Data Model</h2>
+                        <p>Create the database backend creating mobile persistence.</p>
+                    </div>
+                    <ul>
+                        <li>- Create your Data Model</li>
+                        <li>- Choose your database type</li>
+                        <li>- Manage users and roles</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 text-right">
+                    <button class="btn btn-primary">Download Android Plugin</button><br />
+                    <button class="btn btn-primary">Download iOS Plugin</button>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="img-section-h-lg clearfix">
+            <div class="row-fluid">
+                <div class="col-sm-8">
+                    <div class="logo">
+                        <img class="img-responsive" src="/img/site/logo_xl_sdk.png"  />
+                    </div>
+                    <div class="text">
+                        <h2>Mobile SDK</h2>
+                        <p>A set of libraries and APIs for:</p>
+                    </div>
+                    <ul>
+                        <li>- Synchronous, asynchronous, or reliable call options,</li>
+                        <li>- Applying network and geo-fencing constraints,</li>
+                        <li>- Response caching,</li>
+                        <li>- User authentication</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 text-right">
+                    <button class="btn btn-primary">Download for Android</button><br />
+                    <button class="btn btn-primary">Download for iOS</button><br />
+                    <button class="btn btn-primary">Download for JavaScript</button>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <a href="/archives">Need the last version? See our Archive.</a>
+    </div>

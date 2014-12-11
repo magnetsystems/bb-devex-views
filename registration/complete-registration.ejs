@@ -1,0 +1,100 @@
+
+<div id="complete-registration" class="content clearfix">
+    <div class="row-fluid clearfix">
+        <div class="col-xs-12">
+            <h3 class="page-title">Complete Registration</h3>
+        </div>
+    </div>
+    <hr />
+    <p>Fill out the form below to complete your registration.</p>
+    <div class="modal_errors" style="display:none">
+        <div class="alert alert-danger" role="alert">
+            <strong></strong> <span></span>
+        </div>
+    </div>
+    <div class="form-horizontal well well-default">
+        <div class="optional form-group">
+            <label class="col-sm-4 control-label">First Name<span class="req">*</span></label>
+            <div class="col-sm-8">
+                <input class="form-control" type="text" name="firstName" placeholder="First Name">
+            </div>
+        </div>
+        <div class="optional form-group">
+            <label class="col-sm-4 control-label">Last Name<span class="req">*</span></label>
+            <div class="col-sm-8">
+                <input class="form-control" type="text" name="lastName" placeholder="Last Name">
+            </div>
+        </div>
+        <span id="confirm-registration-email"></span>
+        <div class="optional form-group">
+            <label class="col-sm-4 control-label">Company Name<span class="req">*</span></label>
+            <div class="col-sm-8">
+                <input class="form-control" type="text" name="companyName" placeholder="Company Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Role at your company<span class="req">*</span></label>
+            <div class="col-sm-8">
+                <select class="form-control" name="roleWithinCompany" placeholder="Role at your company">
+                    <option value="">Role at your company</option>
+                    <option value="server-developer">Server Developer</option>
+                    <option value="client-developer">Client Developer</option>
+                    <option value="it-admin">IT Admin</option>
+                    <option value="management">Management</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Country<span class="req">*</span></label>
+            <div class="col-sm-8">
+                <select class="form-control" name="country" placeholder="Country">
+                    {{ for(var i=0;i<countries.length;++i){ }}
+                    <option value="{{=countries[i].short}}">{{=countries[i].name}}</option>
+                    {{ } }}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Password<span class="req">*</span></label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label">Re-type Password<span class="req">*</span></label>
+            <div class="col-sm-8">
+                <input type="password" class="form-control" name="password2" placeholder="Re-type Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4 control-label"></label>
+            <div class="col-sm-8">
+                <div class="modal-footer">
+                    <button type="button" id="btn-complete-registration" class="btn btn-primary">Complete Registration</button>
+                </div>
+                <div class="loading modal-footer" style="display:none">
+                    Loading.. Please Wait.. <img src="/img/site/ajax-loader-sm.gif" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="confirm-tos-dialog" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h3>Terms of Service</h3>
+                <p>You must agree to the Terms of Service to continue.</p>
+            </div>
+            <div class="modal-body">
+                <iframe src="/docs/tos.html"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="cancel btn btn-default">I Don't Agree</button>
+                <button id="agree-to-tos" class="submit btn-primary btn">I Agree</button>
+            </div>
+        </div>
+    </div>
+</div>

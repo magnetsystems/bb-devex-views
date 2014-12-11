@@ -7,8 +7,8 @@
     <title>Developer Factory : {{=title}}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/img/site/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/img/site/apple-touch-icon.png">
     {{ if(typeof header != 'undefined'){ }}
     {{-header}}
     {{ }else{ }}
@@ -140,47 +140,50 @@
 {{ } }}
 
 <!-- dialogs start -->
-<div id="error-alert" class="modal-form-errors modal hide fade">
-	<div class="modal-header">
-		<button data-dismiss="modal" class="close">x</button>
-		<h3></h3>
-	</div>
-	<div class="modal-body">
-		<p class="subheading">
-		</p>
-		<ul>
-		</ul>
-	</div>
-	<div class="modal-footer">
-		<button data-dismiss="modal" class="btn btn-primary">OK</button>
-	</div>
+<div id="general-alert" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" type="button" class="btn btn-primary">Ok</button>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="general-alert" class="modal-alert modal hide fade">
-	<div class="modal-header">
-		<button data-dismiss="modal" class="close">x</button>
-		<h3></h3>
-	</div>
-	<div class="modal-body">
-		<p>
-		</p>
-	</div>
-	<div class="modal-footer">
-		<button data-dismiss="modal" id="ok" class="btn btn-primary">OK</button>
-	</div>
+
+<div id="confirm-alert" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="submit btn btn-primary">Yes</button>
+                <button data-dismiss="modal" type="button" class="btn btn-default">No</button>
+            </div>
+        </div>
+    </div>
 </div>
-<div id="confirm-alert" class="modal-confirm modal hide fade">
-	<div class="modal-header">
-		<button data-dismiss="modal" class="close">x</button>
-		<h3></h3>
-	</div>
-	<div class="modal-body">
-		<p>
-		</p>
-	</div>
-	<div class="modal-footer">
-        <button class="submit btn-primary btn">Continue</button>
-		<button data-dismiss="modal" class="cancel btn">Cancel</button>
-	</div>
+
+<div id="error-alert" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" type="button" class="btn btn-primary">Ok</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="invite-other-modal" class="modal-alert modal hide fade">

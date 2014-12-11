@@ -1,0 +1,51 @@
+
+<div id="archives" class="content clearfix">
+    <div class="row-fluid clearfix">
+        <div class="col-xs-12">
+            <h3 class="page-title">Archive for version 2.3</h3>
+        </div>
+    </div>
+    <hr />
+
+    <h4 class="page-subtitle">Get Started</h4>
+    <h5 class="page-section-title">Build Your Mobile Backend</h5>
+
+    <p>In this tutorial, you will learn how to use the Mobile App Builder to build, deploy, and test your first Mobile Backend on your local machine. </p>
+
+    <h5 class="section-title">Create and build a project</h5>
+    <div class="code-snippet">
+        <p>Create a Mobile App Project using quiet mode with the default settings (<code>-qf</code>).</p>
+        <pre>mab> project-create -qf</pre>
+        <p>Login using your Developer Factory credentials. <a href="/login?a=invitation">Register now</a> if you have not already registered.</p>
+        <pre>mab> login -u my_user -p my_pass</pre>
+    </div>
+
+    <h5 class="section-title">Add custom controllers</h5>
+    <div class="code-snippet">
+        <p>Add the Magnet Hello World Controller sample to your project.</p>
+        <pre>mab> api-add helloworld -q</pre>
+        <p>Add a simple entity to your project.</p>
+        <pre>mab> entity-add simpleEntity -q -Dinstall=true</pre>
+        <p>Add a controller for the entity created earlier.</p>
+        <pre>mab> api-add fromEntity -DentityArtifactId=simple -q</pre>
+        <p>Since another controller was added, build the server and Java APIs again.</p>
+        <pre>mab> project-build</pre>
+    </div>
+
+    <h5 class="section-title">Initialize the database and start the server</h5>
+    <div class="code-snippet">
+        <p>Create the database used by your Mobile Backend.</p>
+        <pre>mab> db-initialize -q</pre>
+        <p>Start the Magnet Mobile Backend locally.</p>
+        <pre>mab> server-start</pre>
+        <p>To verify that the server is running and to view a list of controllers, open the following url in your browser.</p>
+        <pre>http://localhost:8080/</pre>
+    </div>
+    <p>For more information, see the <a href="/docs/backend_howto/">Mobile Backend Developer Guide</a></p>
+
+    <div class="next">
+        <a href="/archives/2.3/get-started">Previous: Install Mobile App Builder</a><br />
+        <a href="/archives/2.3/build-mobile">Next: Build Your Mobile Project</a>
+    </div>
+
+</div>

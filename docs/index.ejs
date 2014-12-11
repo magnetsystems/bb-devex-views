@@ -1,216 +1,95 @@
-<div id="documentation" class="row-fluid">
-<div class="clearfix page-view">
-<h4>Documentation</h4>
 
-<p class="subhead">Learn about the nitty-gritty details of developing and enhancing your own mobile apps with these developer guides.<p>
-
-    {{ if(typeof sessionUser != 'undefined'){ }}
-<div class="search-input-container">
-    <input type="text" id="docs-search-input" name="docs-search-input" placeholder="Enter Search Terms" />
-    <button class="btn" id="docs-search-btn">Search</button>
-</div>
-{{ } }}
-
-<!--<div class="docs-container clearfix">-->
-    <!--<div class="docs-img">-->
-        <!--<img src="../images/docs/docs_icon_mab.png" />-->
-    <!--</div>-->
-    <!--<div>-->
-        <!--<div class="section">-->
-            <!--<div class="section-title"><h5>Mobile App Builder&trade;</h5></div>-->
-            <!--<div class="docs-content">-->
-                <!--{{ if(typeof sessionUser != 'undefined'){ }}<a href="backend_howto/" target="_blank">{{ } }}-->
-                    <!--<strong>Developer Guide</strong>-->
-                    <!--{{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}-->
-            <!--</div>-->
-            <!--<div class="docs-download">-->
-                <!--{{ if(typeof sessionUser == 'undefined'){ }}-->
-                <!--<a href="#" class="protectedresource"></a>-->
-                <!--{{ } }}-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="section">-->
-            <!--<div class="docs-content">-->
-                <!--{{ if(typeof sessionUser != 'undefined'){ }}<a href="mab_release_notes/" target="_blank">{{ } }}-->
-                    <!--<strong>Release Notes</strong>-->
-                    <!--{{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}-->
-            <!--</div>-->
-            <!--<div class="docs-download">-->
-                <!--{{ if(typeof sessionUser == 'undefined'){ }}-->
-                <!--<a href="#" class="protectedresource"></a>-->
-                <!--{{ } }}-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-
-<div class="docs-container clearfix">
-    <div class="docs-img">
-        <img src="../images/docs/docs_icon_and.png" />
-    </div>
-    <div>
-        <div class="section">
-            <div class="section-title"><h5>Mobile SDK for Android&trade;</h5></div>
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="android_howto/" target="_blank">{{ } }}
-                    <strong>Developer Guide</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
+    <div id="documentation" class="content clearfix">
+        <div class="row-fluid clearfix">
+            <div class="col-xs-6">
+                <h3 class="page-title">Documentation</h3>
             </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
+            <div class="col-xs-6 text-right">
+                <a href="/archives">Archives for version 2.3</a>
             </div>
         </div>
-        <div class="section">
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="android_javadoc/" target="_blank">{{ } }}
-                    <strong>API Documentation</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
+        <hr />
+        <div class="row-fluid clearfix">
+            <div class="col-sm-4">
+                <div class="img-section-v">
+                    <div class="img-section-v-img">
+                        <img class="img-responsive" src="/img/site/logo_lg_android.png"  />
+                    </div>
+                    <h5>Mobile SDK for Android&trade;</h5>
+                    <hr />
+                    <div class="img-section-v-text">
+                        <a href="#">Developer Guide</a><br />
+                        <a href="#">API Documentation</a><br />
+                        <a href="#">Release Notes</a>
+                    </div>
+                </div>
             </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
+            <div class="col-sm-4">
+                <div class="img-section-v">
+                    <div class="img-section-v-img">
+                        <img class="img-responsive" src="/img/site/logo_lg_ios.png"  />
+                    </div>
+                    <h5>Mobile SDK for iOS&trade;</h5>
+                    <hr />
+                    <div class="img-section-v-text">
+                        <a href="#">Developer Guide</a><br />
+                        <a href="#">API Documentation</a><br />
+                        <a href="#">Release Notes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="img-section-v">
+                    <div class="img-section-v-img">
+                        <img class="img-responsive" src="/img/site/logo_lg_js.png"  />
+                    </div>
+                    <h5>Mobile SDK for JavaScript&trade;</h5>
+                    <hr />
+                    <div class="img-section-v-text">
+                        <a href="#">Developer Guide</a><br />
+                        <a href="#">API Documentation</a><br />
+                        <a href="#">Release Notes</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="section">
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="android_relnotes/" target="_blank">{{ } }}
-                    <strong>Release Notes</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
+        <div class="row-fluid clearfix">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row-fluid clearfix">
+                    <div class="col-sm-5">
+                        <div class="img-section-v">
+                            <div class="img-section-v-img">
+                                <img class="img-responsive" src="/img/site/logo_xl_data.png"  />
+                            </div>
+                            <h5>Data Modeler</h5>
+                            <hr />
+                            <div class="img-section-v-text">
+                                <a href="#">Developer Guide</a><br />
+                                <a href="#">Deployment Guide</a><br />
+                                <a href="#">API Documentation</a><br />
+                                <a href="#">Release Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-5">
+                        <div class="img-section-v">
+                            <div class="img-section-v-img">
+                                <img class="img-responsive" src="/img/site/logo_xl_server.png"  />
+                            </div>
+                            <h5>Magnet Server</h5>
+                            <hr />
+                            <div class="img-section-v-text">
+                                <a href="#">Developer Guide</a><br />
+                                <a href="#">Deployment Guide</a><br />
+                                <a href="#">API Documentation</a><br />
+                                <a href="#">Release Notes</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="docs-container clearfix">
-    <div class="docs-img">
-        <img src="../images/docs/docs_icon_ios.png" />
-    </div>
-    <div>
-        <div class="section">
-            <div class="section-title"><h5>Mobile SDK for iOS&trade;</h5></div>
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="ios_howto/" target="_blank">{{ } }}
-                    <strong>Developer Guide</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
-            </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
-        </div>
-        <div class="section">
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="ios_appledoc/" target="_blank">{{ } }}
-                    <strong>API Documentation</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
-            </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
+            <div class="col-sm-1"></div>
         </div>
     </div>
-</div>
-
-<div class="docs-container clearfix">
-    <div class="docs-img">
-        <img src="../images/docs/docs_icon_js.png" />
-    </div>
-    <div>
-        <div class="section">
-            <div class="section-title"><h5>Mobile SDK for JavaScript&trade;</h5></div>
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="javascript_howto/" target="_blank">{{ } }}
-                    <strong>Developer Guide</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
-            </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
-        </div>
-        <div class="section">
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="javascript_jsdoc/" target="_blank">{{ } }}
-                    <strong>API Documentation</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
-            </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="docs-container clearfix">
-    <div class="docs-img">
-        <img src="../images/docs/docs_icon_mas.png" />
-    </div>
-    <div>
-        <div class="section">
-            <div class="section-title"><h5>Mobile Backend</h5></div>
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="backend_howto/" target="_blank">{{ } }}
-                    <strong>Developer Guide</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
-            </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
-        </div>
-        <div class="section">
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="backend_deploy/" target="_blank">{{ } }}
-                    <strong>Deployment Guide</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
-            </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
-        </div>
-        <div class="section">
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="backend_javadoc/" target="_blank">{{ } }}
-                    <strong>API Documentation</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
-            </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
-        </div>
-        <div class="section">
-            <div class="docs-content">
-                {{ if(typeof sessionUser != 'undefined'){ }}<a href="backend_releasenotes/" target="_blank">{{ } }}
-                    <strong>Release Notes</strong>
-                    {{ if(typeof sessionUser != 'undefined'){ }}</a>{{ } }}
-            </div>
-            <div class="docs-download">
-                {{ if(typeof sessionUser == 'undefined'){ }}
-                <a href="#" class="protectedresource"></a>
-                {{ } }}
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
-</div>

@@ -1,124 +1,104 @@
-    <div class="row-fluid">
-        <div class="clearfix support-page page-view">
-            <h4>Support</h4>
 
-            <p class="subhead">Have a question? Need advice? Want to file a bug? Maybe you have an idea for a way we can collaborate.
-                We welcome your inquiries and suggestions.</p>
+    <div id="support" class="content">
+        <div class="row-fluid clearfix">
+            <div class="col-xs-6">
+                <h3 class="page-title">Support</h3>
+            </div>
+        </div>
+        <hr />
+        <div class="row-fluid clearfix">
+            <div class="col-sm-8">
+                <h4>Frequently Asked Questions</h4>
+                <ul>
+                    <li><a href="#faq-invitations">Account and Invitations</a></li>
+                    <li><a href="#faq-mabt">Using the Magnet Mobile App Builder</a></li>
+                    <li><a href="#faq-ide">IDE support</a></li>
+                </ul>
 
-            <div class="row-fluid">
+                <h5 id="faq-invitations">Account and Invitations</h5>
 
-                <div class="span6">
+                <b>Q. Can I change the email address that I use as my login id?</b>
+                <p class="ans">A. Not yet.  If you want to use another email account, you may send yourself an invitation request to that other address.</p>
 
-                    <h4>Frequently Asked Questions</h4>
+                <b>Q. What happens after I invite a friend?</b>
+                <p class="ans">A. After you enter their email address, they will receive an email to confirm the invitation request.  After they provide their information, their request will be submitted to the Developer Factory administrator to approve access.</p>
 
-                    <ul>
-                        <li><a href="#faq-invitations">Account and Invitations</a></li>
-                        <li><a href="#faq-mabt">Using the Magnet Mobile App Builder</a></li>
-                        <li><a href="#faq-ide">IDE support</a></li>
-                    </ul>
+                <h5 id="faq-mabt">Using the Mobile App Builder</h5>
 
-                    <h5 id="faq-invitations">Account and Invitations</h5>
+                <b>Q. What is the Magnet Mobile App Builder?</b>
+                <p class="ans">A. The Mobile App Builder is a command line utility that allows a Magnet app developer to create a Project, add API modules, generate mobile assets, build the server, initialize a local or remote database, and manage the server app lifecycle (e.g. deploy, start, stop) either locally or in the cloud.</p>
 
-                    <b>Q. Can I change the email address that I use as my login id?</b>
-                    <p class="ans">A. Not yet.  If you want to use another email account, you may send yourself an invitation request to that other address.</p>
+                <b>Q. How do I install the Mobile App Builder?</b>
+                <p class="ans">A. Instructions can be found in the <b>Step 2. Build Mobile Backend</b> section of the <a href="/get-started/#gs-step2">Get Started</a> page.</p>
 
-                    <b>Q. What happens after I invite a friend?</b>
-                    <p class="ans">A. After you enter their email address, they will receive an email to confirm the invitation request.  After they provide their information, their request will be submitted to the Developer Factory administrator to approve access.</p>
+                <b>Q. How do I find out more information about a specific command?</b>
+                <p class="ans">A. The <b>help</b> command can be used as a prefix to find out additional information about a particular command. For example,
+                <pre>mab> help login</pre>
+                </p>
 
-                    <h5 id="faq-mabt">Using the Mobile App Builder</h5>
+                <b>Q. Do I need a login to use the Mobile App Builder?</b>
+                <p class="ans">A. Yes. You can register by <a href="/login?a=invitation">clicking here</a>.
+                </p>
 
-                    <b>Q. What is the Magnet Mobile App Builder?</b>
-                    <p class="ans">A. The Mobile App Builder is a command line utility that allows a Magnet app developer to create a Project, add API modules, generate mobile assets, build the server, initialize a local or remote database, and manage the server app lifecycle (e.g. deploy, start, stop) either locally or in the cloud.</p>
+                <h5 id="faq-ide">IDE Support</h5>
 
-                    <b>Q. How do I install the Mobile App Builder?</b>
-                    <p class="ans">A. Instructions can be found in the <b>Step 2. Build Mobile Backend</b> section of the <a href="/get-started/#gs-step2">Get Started</a> page.</p>
+                <b>Q. Does the generated sample project support Eclipse, IntelliJ, Xcode or other?</b>
+                <p class="ans">A. In the Android environment there is no built-in support for any particular Integrated Development Environment. However, the code is structured such that it can be used with any of them. On iOS, the project files are specifically designed to work with Xcode.</p>
 
-                    <b>Q. How do I find out more information about a specific command?</b>
-                    <p class="ans">A. The <b>help</b> command can be used as a prefix to find out additional information about a particular command. For example,
-                        <pre>mab> help login</pre>
-                    </p>
-
-                    <b>Q. Do I need a login to use the Mobile App Builder?</b>
-                    <p class="ans">A. Yes. You can register by <a href="/login?a=invitation">clicking here</a>.
-                    </p>
-
-                    <h5 id="faq-ide">IDE Support</h5>
-
-                    <b>Q. Does the generated sample project support Eclipse, IntelliJ, Xcode or other?</b>
-                    <p class="ans">A. In the Android environment there is no built-in support for any particular Integrated Development Environment. However, the code is structured such that it can be used with any of them. On iOS, the project files are specifically designed to work with Xcode.</p>
-
-                </div>
-
-                <div id="contact-form" class="span6">
-                    <div class="well form-horizontal">
+            </div>
+            <div class="col-sm-4">
+                <div id="contact-form">
+                    <div class="well well-default">
                         <h4>Contact Us</h4>
                         <p>
                             For feedback and questions, please complete the form below, and a Magnet representative will follow up with you shortly.
                             For general inquires, please use the contact form at the <a href="http://www.magnet.com/contact/">Magnet website</a>.
                         </p>
                         <div class="modal_errors" style="display:none">
-                            <div class="alert alert-error">
+                            <div class="alert alert-danger">
                                 <strong></strong> <span></span>
                             </div>
                         </div>
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <label>Type of Inquiry</label>
-                                <select class="span12" name="type">
-                                    <option value="Comment">Comment</option>
-                                    <option value="Question">Question</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label>Type of Inquiry</label>
+                            <select class="form-control" name="type">
+                                <option value="Comment">Comment</option>
+                                <option value="Question">Question</option>
+                            </select>
                         </div>
                         {{ if(typeof sessionUser == 'undefined'){ }}
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <label>Name</label>
-                                <input type="text" name="fullname" class="span12" placeholder="Name">
-                            </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="fullname" class="form-control" placeholder="Name">
                         </div>
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <label>Email Address</label>
-                                <input type="text" name="emailaddress" class="span12" placeholder="Email Address">
-                            </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="text" name="emailaddress" class="form-control" placeholder="Email Address">
                         </div>
                         {{ } }}
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <label>Subject</label>
-                                <input type="text" name="sub" class="span12" placeholder="Subject">
-                            </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" name="sub" class="form-control" placeholder="Subject">
                         </div>
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <label>Message</label>
-                                <textarea name="msg" class="span12" placeholder="Message"></textarea>
-                            </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="msg" class="form-control" placeholder="Message"></textarea>
                         </div>
                         {{ if(typeof sessionUser == 'undefined' && typeof captcha != 'undefined' && captcha === true){ }}
                         <div class="row-fluid">
-                            <div class="span12">
-                                <label>Spam Protection</label>
-                                <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcVfO8SAAAAAD1haiOFt2ZXQHDW-OpS5WiCT64Q"></script>
-                                <noscript>
-                                    <iframe src="https://www.google.com/recaptcha/api/noscript?k=6LcVfO8SAAAAAD1haiOFt2ZXQHDW-OpS5WiCT64Q" height="300" width="500" frameborder="0"></iframe><br>
-                                    <textarea name="recaptcha_challenge_field" rows="3" cols="40"> </textarea>
-                                    <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
-                                </noscript>
-                            </div>
+                            <label>Spam Protection</label>
+                            <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LcVfO8SAAAAAD1haiOFt2ZXQHDW-OpS5WiCT64Q"></script>
+                            <noscript>
+                                <iframe src="https://www.google.com/recaptcha/api/noscript?k=6LcVfO8SAAAAAD1haiOFt2ZXQHDW-OpS5WiCT64Q" height="300" width="500" frameborder="0"></iframe><br>
+                                <textarea name="recaptcha_challenge_field" rows="3" cols="40"> </textarea>
+                                <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                            </noscript>
                         </div>
                         {{ } }}
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <button id="send-contact" type="button" class="btn btn-primary">Send Contact Request</button>
-                            </div>
-                        </div>
+                        <button id="send-contact" type="button" class="btn btn-primary">Send</button>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 

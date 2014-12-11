@@ -1,12 +1,14 @@
 
+<div id="meta-docs" class="content clearfix">
+    <div class="row-fluid clearfix">
+        <div class="col-xs-12">
+            <h3 class="page-title">{{-title}}</h3>
+        </div>
+    </div>
+    <hr />
+    <p>A list of {{-title}} Modules.<p>
 
-<div id="meta-docs" class="row-fluid">
-<div class="clearfix page-view">
-<h4>{{-title}}</h4>
-
-<p class="subhead">A list of {{-title}} Modules.<p>
-
-{{ for(var i=0;i<metadata.length;++i){ }}
+    {{ for(var i=0;i<metadata.length;++i){ }}
 
     {{ if(metadata[i].modules){ }}
 
@@ -15,13 +17,13 @@
             <div class="section">
                 <div class="section-title">
                     <h5>
-                    {{ if(metadata[i].url){ }}<a href="{{-metadata[i].url}}">{{ } }}
-                        {{ if(metadata[i].shortDescription){ }}
+                        {{ if(metadata[i].url){ }}<a href="{{-metadata[i].url}}">{{ } }}
+                            {{ if(metadata[i].shortDescription){ }}
                             {{-metadata[i].shortDescription}}
-                        {{ }else{ }}
+                            {{ }else{ }}
                             {{-metadata[i].url}}<br />
-                        {{ } }}
-                    {{ if(metadata[i].url){ }}</a>{{ } }}
+                            {{ } }}
+                            {{ if(metadata[i].url){ }}</a>{{ } }}
                     </h5>
                 </div>
                 <div class="docs-content">
@@ -36,7 +38,6 @@
 
     {{ } }}
 
-{{ } }}
+    {{ } }}
 
-</div>
 </div>
