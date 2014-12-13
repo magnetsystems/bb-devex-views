@@ -1,40 +1,79 @@
-    <div class="row-fluid">
-        <div id="home-main" class="clearfix page-view">
+<div class="hero hero-lg general-bgk clearfix">
+    <div class="hero-content">
+        <div class="media">
+            <div class="hero-title">
+                <h3>We solve Developer Problems.</h3>
+                <div id="home-video-container">
+                    <iframe id="ytplayer" type="text/html" src="http://www.youtube.com/embed/8mLWQGIaJ40?autoplay=0&origin=http://www.magnet.com" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+</div>
 
-            {{ if(typeof homePageVideoID != 'undefined' && homePageVideoID.length > 1){ }}
-            <div id="home-tutorial-video-container">
-                <button id="watchVideo" class="btn btn-primary" did="{{-homePageVideoID}}">Watch First</button>
-            </div>
-            <div id="WatchVideoModal" class="modal hide fade">
-                <div class="modal-header">
-                    <button data-dismiss="modal" class="close">x</button>
-                    <h3>Developer Tutorial</h3>
-                </div>
-                <div class="modal-body" id="tutorialVideoContainer"></div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" id="hideVideoModal" class="btn btn-primary">Close</button>
-                </div>
-            </div>
-            {{ } }}
-            <div id="home-banner">
-                <img src="/images/home/story_graphic.png" class="{{ if(typeof homePageVideoID != 'undefined' && homePageVideoID.length > 1){ }}withVideo{{ } }}" />
-            </div>
-            <div id="home-panels" class="row-fluid">
-                <div class="span12">
-                    <div class="panel-margins">
-                        <div class="clearfix">
-                            <h4>Get Started</h4>
+<div class="clearfix">
+
+    <div class="row-fluid clearfix">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row-fluid clearfix">
+                <div class="col-sm-5">
+                    <div class="img-section-v">
+                        <div class="img-section-v-img">
+                            <img class="img-responsive" src="/img/site/logo_xl_r2m.png"  />
                         </div>
-                        <p>Get up and running quickly with our quick start guide.</p>
-                        <div class="centered">
-                            <a href="/get-started/" class="btn btn-primary">Get Started</a>
+                        <h5>rest2mobile</h5>
+                        <hr />
+                        <p>Use your favorite IDE and our plugin to connect REST API to your mobile app.</p>
+                        <p>Generate native code on Android, iOS, and JS all at once to easily access REST services.</p>
+                        <a href="/rest2mobile" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <div class="img-section-v">
+                        <div class="img-section-v-img">
+                            <img class="img-responsive" src="/img/site/logo_xl_mmx.png"  />
                         </div>
+                        <h5>Mobile Messaging</h5>
+                        <hr />
+                        <p>Mobile Messaging gives guaranteed delivery.</p>
+                        <p>When a device is offine the message will queue util there is a connection.</p>
+                        <a href="/messaging" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="col-sm-1"></div>
     </div>
+</div>
 
+<div class="newsletter-signup clearfix text-center general-bgk">
+    <h3>Join our developer community</h3>
+    <p>and receive news, tips, tutorials, and updates about Magnet's offerings</p>
+    <div class="form-group">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Email Address" name="email">
+            <div class="newsletter-signup-btn btn btn-primary invert input-group-addon" did="rest2mobile">Sign me up</div>
+        </div>
+    </div>
+</div>
 
-
+<div id="home-quote" class="clearfix">
+    <div class="row-fluid">
+        <div class="col-sm-2">
+            <span class="glyphicon glyphicon-user"></span>
+        </div>
+        <div class="col-sm-8">
+            <i class="fa fa-quote-left fa-2x"></i>
+            <blockquote>
+                <p>Magnet's plugins saved hours of work. It was easy to start developing and integrating into my app.</p>
+                <footer>John Doe at <cite title="Source Title">Land of Magnets</cite></footer>
+            </blockquote>
+        </div>
+        <div class="col-sm-2">
+            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </div>
+    </div>
+</div>

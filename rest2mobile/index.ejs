@@ -1,108 +1,139 @@
-<div id="subhead">
+<div class="hero hero-lg general-bgk clearfix">
+    <div class="hero-content">
+        <div class="media">
+            <div class="hero-image">
+                <img src="/img/site/logo_xl_r2m_white.png"  />
+            </div>
+            <div class="hero-title">
+                <h3>rest2mobile</h3>
+                <p>A FREE tool that generates native code for REST services</p>
+                <hr />
+                <ul class="hero-list clearfix">
+                    <li>type safe</li>
+                    <li>codegen</li>
+                    <li>no marshalling</li>
+                    <li>Android, iOS, and JS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a class="home-forkmeongithub-link" target="_blank" href="https://github.com/magnetsystems/rest2mobile"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <div class="hero-overlay"></div>
+</div>
+
+<div class="download-advertisement clearfix">
+    <h3 class="text-center">Download Now. It's Free and Open Source</h3>
     <div class="row-fluid">
-        <div class="col-sm-8 col-xs-12">
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" src="/img/logo_r2m_main.png"  />
-                </a>
-                <div id="subhead-title" class="media-body">
-                    <h4 class="media-heading">rest2mobile</h4>
-                    <p>Generate mobile native code for REST services.</p>
-                    <p class="minor-heading">Licensed under Apache License v2.0</p>
+        <div class="col-sm-4 text-center">
+            <a href="#" class="btn btn-primary"><img src="/img/site/logo_xs_download.png" /> Android Plugin</a>
+        </div>
+        <div class="col-sm-4 text-center">
+            <a href="#" class="btn btn-primary"><img src="/img/site/logo_xs_download.png" /> iOS Plugin</a>
+        </div>
+        <div class="col-sm-4 text-center">
+            <a href="#" class="btn btn-primary"><img src="/img/site/logo_xs_download.png" /> Command Line Tool</a>
+        </div>
+    </div>
+</div>
+
+<div class="image-advertisement clearfix text-center general-bgk">
+    <h3>Watch a quick introduction to rest2mobile</h3>
+    <a href="#" class="watch-video-btn" did="EKyirtVHsK0" video-title="Introduction to rest2mobile"><img src="/img/developer/icon_video.png" alt="play r2m video" /></a><br />
+    <img class="img-responsive" src="/img/developer/r2m_diagram.png" alt="generate native mobile code from REST apis" />
+</div>
+
+<div class="clearfix text-center">
+    <h3>See how it works</h3>
+    <div id="r2m-demo">
+        <h5>1. Import any REST API into rest2mobile.</h5>
+        <div class="form-group select">
+            <select class="form-control" name="url-select" id="url-select" data-placement="auto top" title="Try our interactive demo">
+                <option value="disable" selected="selected">Select an API to continue</option>
+                <option value="espn">ESPN</option>
+                <option value="distance">Google Distance</option>
+                <option value="timezone">Google Time Zone</option>
+            </select>
+        </div>
+        <h5 id="r2m-step2" style="display:none">2. rest2mobile generates mobile APIs for your desired platform!</h5>
+        <ul class="nav nav-tabs" style="display:none">
+            <li did="android" class="android"><a href="#r2m-demo-android" data-toggle="tab"></a></li>
+            <li did="ios" class="ios"><a href="#r2m-demo-ios" data-toggle="tab"></a></li>
+            <li did="js" class="js"><a href="#r2m-demo-js" data-toggle="tab"></a></li>
+            <li did="curl" class="curl"><a href="#r2m-demo-curl" data-toggle="tab"></a></li>
+        </ul>
+        <div class="tab-content" style="display:none">
+            <div class="tab-pane" id="r2m-demo-android">
+                <!--<h5>SAMPLE ANDROID CODE</h5>-->
+                <div id="r2m-demo-android-code" class="code-container"></div>
+            </div>
+            <div class="tab-pane" id="r2m-demo-ios">
+                <!--<h5>SAMPLE IOS CODE</h5>-->
+                <div id="r2m-demo-ios-code" class="code-container"></div>
+            </div>
+            <div class="tab-pane" id="r2m-demo-js">
+                <!--<h5>SAMPLE JAVASCRIPT CODE</h5>-->
+                <div id="r2m-demo-js-code" class="code-container"></div>
+            </div>
+            <div class="tab-pane" id="r2m-demo-curl">
+                <!--<h5>SAMPLE CURL</h5>-->
+                <div id="r2m-demo-curl-code" class="code-container"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="newsletter-signup clearfix text-center general-bgk">
+    <h3>Keep up to date with rest2mobile</h3>
+    <p>by signing up for our newsletter</p>
+    <div class="form-group">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Email Address" name="email">
+            <div class="newsletter-signup-btn btn btn-primary invert input-group-addon" did="rest2mobile">Sign me up</div>
+        </div>
+    </div>
+</div>
+
+<div class="download-links clearfix text-center">
+    <!--<a href="https://github.com/magnetsystems/rest2mobile" class="hidden-xs hidden-sm" target="_blank" id="github-btn">-->
+        <!--<div>-->
+            <!--Find us<br />on GitHub-->
+        <!--</div>-->
+    <!--</a>-->
+    <h3>Getting Started is less than 5 steps:</h3>
+    <div class="row-fluid clearfix">
+        <div class="col-sm-4">
+            <div class="sdk-section">
+                <a href="/rest2mobile/android"><img src="/img/developer/andstudio_lg.png" /></a>
+                <div class="caption">
+                    <a href="/rest2mobile/android" class="btn btn-primary">Android guide</a>
+                </div>
+                <div>
+                    Plugin to generate Android code with Android Studio & IntelliJ IDEA.
                 </div>
             </div>
         </div>
-        <div class="col-sm-4 col-xs-12">
-            <ul class="list-group">
-                <li class="list-group-item first">FREE & Open Source</li>
-                <li class="list-group-item"><img src="/img/icon_ios.png" /> iOS</li>
-                <li class="list-group-item"><img src="/img/icon_android.png" /> Android</li>
-                <li class="list-group-item"><img src="/img/icon_js.png" /> Command Line</li>
-            </ul>
-            <a class="home-forkmeongithub-link" target="_blank" href="https://github.com/magnetsystems/rest2mobile"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
-        </div>
-    </div>
-    <div class="row-fluid clearfix">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <ul class="home-features-list clearfix">
-                <li>type safe</li>
-                <li>no marshalling</li>
-                <li>Android, iOS, and JS</li>
-            </ul>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
-</div>
-
-<div class="home-video-container">
-    <div class="row-fluid clearfix">
-        <div class="col-sm-7 text-center">
-            <img src="/img/r2m_video1.png" />
-            <p>Step-by-Step tutorial</p>
-        </div>
-        <div class="col-sm-5 text-center">
-            <img src="/img/r2m_video2.png" />
-            <p>Reference App</p>
-        </div>
-    </div>
-</div>
-
-<div class="text-center">
-    <img src="/img/r2m_diagram.png" />
-</div>
-
-<div id="footer1">
-    <a href="https://github.com/magnetsystems/rest2mobile" target="_blank" id="github-btn">
-        <div>
-            Find us<br />on GitHub
-        </div>
-    </a>
-    <div class="row-fluid clearfix">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-            <h3>FREE and open source:</h3>
-            <div class="row-fluid clearfix">
-                <div class="col-sm-4">
-                    <div class="sdk-section">
-                        <a href="/rest2mobile/ios"><img src="/img/xcode_lg.png" /></a>
-                        <div class="caption">
-                            <a href="/rest2mobile/ios" class="btn">iOS</a>
-                        </div>
-                        <div style="text-align:center;color:#ccc;margin:10px 35px 0 35px;font-size:15px;font-weight:300">
-                            Plugin to generate Objective-C code with Xcode 5 and 6.
-                        </div>
-                        <!--<ul>-->
-                            <!--<li>Android Studio & IntelliJ IDEA</li>-->
-                            <!--<li><a href="android/">Learn More</a></li>-->
-                        <!--</ul>-->
-                    </div>
+        <div class="col-sm-4">
+            <div class="sdk-section">
+                <a href="/rest2mobile/ios"><img src="/img/developer/xcode_lg.png" /></a>
+                <div class="caption">
+                    <a href="/rest2mobile/ios" class="btn btn-primary">iOS guide</a>
                 </div>
-                <div class="col-sm-4">
-                    <div class="sdk-section">
-                        <a href="/rest2mobile/cli"><img src="/img/cli_lg.png" /></a>
-                        <div class="caption">
-                            <a href="/rest2mobile/cli" class="btn">iOS, JS, Android</a>
-                        </div>
-                        <div style="text-align:center;color:#ccc;margin:10px 35px 0 35px;font-size:15px;font-weight:300">
-                            Command-line tool to generate cross platform code. 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="sdk-section">
-                        <a href="/rest2mobile/android"><img src="/img/andstudio_lg.png" /></a>
-                        <div class="caption">
-                            <a href="/rest2mobile/android" class="btn">Android</a>
-                        </div>
-                        <div style="text-align:center;color:#ccc;margin:10px 35px 0 35px;font-size:15px;font-weight:300">
-                            Plugin to generate Android code with Android Studio & IntelliJ IDEA.
-                        </div>
-                    </div>
+                <div>
+                    Plugin to generate Objective-C code with Xcode 5 and 6.
                 </div>
             </div>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <div class="sdk-section">
+                <a href="/rest2mobile/cli"><img src="/img/developer/cli_lg.png" /></a>
+                <div class="caption">
+                    <a href="/rest2mobile/cli" class="btn btn-primary">Command Line guide</a>
+                </div>
+                <div>
+                    Command-line tool to generate cross platform code.
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -240,12 +271,3 @@ controller.getSportsNews(requestData, {
     }
 });</pre>
 <pre id="sample-espn-curl" class="hidden">curl -X GET --header "Content-Type: application/json" --header "X-Mashape-Authorization: 1234456789" "https://wmerydith-espn.p.mashape.com/sports/news?apikey=fnbkkygduuavvvmg2y846vmh"</pre>
-
-<script src="js/dev/jquery.js"></script>
-<script src="js/dev/bootstrap.min.js"></script>
-<script src="js/dev/ace.js"></script>
-<script src="js/dev/mode-java.js"></script>
-<script src="js/dev/mode-javascript.js"></script>
-<script src="js/dev/mode-objectivec.js"></script>
-<script src="js/dev/mode-json.js"></script>
-<script src="js/dev/scripts.js"></script>
