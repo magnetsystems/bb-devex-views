@@ -20,7 +20,13 @@
 
 <div id="head">
     <div id="head-logo">
-        <a href="/"><img src="/img/site/logo_magnet.png" /> <p>Factory</p></a>
+        <a href="/"><img src="/img/site/logo_magnet_dark.png" /> <p>
+            {{ if(typeof page != 'undefined' && page == 'developer'){ }}
+                Developer
+            {{ }else{ }}
+                Factory
+            {{ } }}
+        </p></a>
     </div>
     {{ if(typeof sessionUser != 'undefined'){ }}
     <div id="head-controls">
