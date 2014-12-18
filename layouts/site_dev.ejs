@@ -21,13 +21,14 @@
 <div id="head">
     <div id="head-logo">
         <a href="/"><img src="/img/site/logo_magnet_dark.png" /> <p>
-            {{ if(typeof page != 'undefined' && page == 'developer'){ }}
+            {{ if(view == 'developer'){ }}
                 Developer
-            {{ }else{ }}
+            {{ }else if(view == 'factory'){ }}
                 Factory
             {{ } }}
         </p></a>
     </div>
+    {{ if(view == 'factory'){ }}
     {{ if(typeof sessionUser != 'undefined'){ }}
     <div id="head-controls">
         <!--<a href="#" id="invite-others"><span class="glyphicon glyphicon-plus"></span><span class="icon-user icon-white"></span>span></a>-->
@@ -38,6 +39,7 @@
         <a href="/account/registration">Register</a>
         <a href="#" class="show-login-popup">Sign In</a>
     </div>
+    {{ } }}
     {{ } }}
 </div>
 
@@ -68,15 +70,11 @@
         </div>
         <div class="collapse navbar-collapse" id="nav">
             <ul class="nav navbar-nav">
-                {{ if(typeof page != 'undefined' && page == 'developer' && 1 == 2){ }}
+                {{ if(view == 'developer'){ }}
                 <li class="{{- activePage == 'rest2mobile' ? 'active' : ''}}"><a href="/rest2mobile">rest2mobile</a></li>
                 <li class="divider"></li>
                 <li class="{{- activePage == 'messaging' ? 'active' : ''}}"><a href="/messaging">Mobile Messaging</a></li>
                 {{ }else{ }}
-                <li class="{{- activePage == 'rest2mobile' ? 'active' : ''}}"><a href="/rest2mobile">rest2mobile</a></li>
-                <li class="divider"></li>
-                <li class="{{- activePage == 'messaging' ? 'active' : ''}}"><a href="/messaging">Mobile Messaging</a></li>
-                <li class="divider"></li>
                 <li class="{{- activePage == 'resources' ? 'active' : ''}}"><a href="/resources">Resources</a></li>
                 <li class="divider"></li>
                 <li class="{{- activePage == 'get-started' ? 'active' : ''}}"><a href="/get-started">Get Started</a></li>
@@ -93,7 +91,7 @@
 {{-body}}
 
 <div id="footer" class="clearfix">
-    {{ if(typeof page != 'undefined' && page == 'developer'){ }}
+    {{ if(view == 'developer'){ }}
     <div class="row-fluid">
         <div class="col-sm-6">
             <p>Copyright &copy; Magnet Systems, Inc. 2014 | <a href="http://www.magnet.com/resources/tos.html">Terms of Service</a> | <a href="http://www.magnet.com/resources/privacy_policy.html">Privacy Policy</a></p>
@@ -102,7 +100,7 @@
             <div class="top-links lftflot" style="margin-left:60px"></div><div class="socailfollow top-co-inf rgtflot"><a href="https://www.facebook.com/MagnetSys" class="facebook"><i class="icomoon-facebook"></i></a><a href="https://twitter.com/@magnet_systems" class="twitter"><i class="icomoon-twitter"></i></a><a href="https://www.youtube.com/channel/UC09BNsXO7RXmI8bHHlZpZ8g" class="youtube"><i class="icomoon-youtube"></i></a><a href="https://plus.google.com/100758321520525101306/posts" class="google"><i class="icomoon-google"></i></a><a href="https://www.linkedin.com/company/1327301" class="linkedin"><i class="icomoon-linkedin"></i></a></div>
         </div>
     </div>
-    {{ }else{ }}
+    {{ }else if(view == 'factory'){ }}
     <div class="row-fluid">
         <div class="col-sm-12">
             Copyright &copy; Magnet Systems, Inc. 2014 | <a href="http://www.magnet.com/resources/tos.html">Terms of Service</a> | <a href="http://www.magnet.com/resources/privacy_policy.html">Privacy Policy</a>
@@ -239,7 +237,7 @@
 <script type="text/javascript" src="/js/libs/jquery.js"></script>
 <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/site_scripts.js"></script>
-{{ if(typeof page != 'undefined' && page == 'developer'){ }}
+{{ if(view == 'developer'){ }}
 <script type="text/javascript" src="/js/libs/ace.js"></script>
 <script type="text/javascript" src="/js/libs/mode-java.js"></script>
 <script type="text/javascript" src="/js/libs/mode-javascript.js"></script>
@@ -248,7 +246,7 @@
 <script type="text/javascript" src="/js/dev_scripts.js"></script>
 {{ } }}
 
-{{ if(typeof page != 'undefined' && page == 'developer'){ }}
+{{ if(view == 'developer'){ }}
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -261,7 +259,7 @@
 </script>
 <script type="text/javascript" language="javascript">llactid=18080</script>
 <!--<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>-->
-{{ }else{ }}
+{{ }else if(view == 'factory'){ }}
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
