@@ -79,14 +79,21 @@
     </div>
 </div>
 
-<script id="sample-push-android" type="text/template">public void sendPush(MMXClient mmxClient, MMXMessage message){
-    pushManager.push(message.getFromUserId(), message.getFromDeviceId(), String.class.getName(), new String("[%= val %]"));
-}
+<script id="sample-push-android" type="text/template">String pushMessage = "[%= val %]";
+String deviceId = "user1-device-1";
+String userId = "user1";
+mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
+PushManager pushManager = mmxClient.getPushManager();
+// send Push Notification
+pushManager.push(userId, deviceId, String.class.getName(), pushMessage);
 </script>
 
-<script id="sample-message-android" type="text/template">public void sendTextMessage(MMXClient mmxClient, String receiverId) {
-    Options messageOptions = new Options();
-    messageOptions.enableReceipt(true);
-    String msgid = mmxClient.sendMessage(new String[] {receiverId}, "text", "String", new String("[%= val %]"), null, messageOptions);
-}
+<script id="sample-message-android" type="text/template">String textMessage = "[%= val %]";
+String userId = "user1";
+mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
+Options messageOptions = new Options();
+messageOptions.enableReceipt(true); // for confirmation
+// send in-app message
+String msgid = mmxClient.sendMessage(new String[] {userId}
+, "text/plain", String.class.getName(),, textMessage, null, messageOptions);
 </script>
