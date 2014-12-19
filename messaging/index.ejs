@@ -9,10 +9,10 @@
                 <p>In-App messaging and notifications guaranteed to be delivered</p>
                 <hr />
                 <ul class="hero-list clearfix">
-                    <li>send text messages</li>
-                    <li>supports multiple apps</li>
-                    <li>track messages</li>
-                    <li>Android and iOS</li>
+                    <li>secure message exchange</li>
+                    <li>reliable message delivery</li>
+                    <li>trackable message status</li>
+                    <li>for Android and iOS</li>
                 </ul>
             </div>
         </div>
@@ -22,14 +22,14 @@
 </div>
 
 <div class="download-advertisement clearfix">
-    <h3 class="text-center">The client SDK will be available soon.</h3>
+    <h3 class="text-center">The client SDK will be <b>available soon</b>.</h3>
     <div class="row-fluid">
         <div class="col-sm-2"></div>
         <div class="col-sm-4 text-center">
-            <a href="#" class="btn btn-primary disabled"><img src="/img/site/logo_xs_download.png" /> Android SDK</a>
+            <a href="#" class="btn btn-primary android disabled">Android SDK</a>
         </div>
         <div class="col-sm-4 text-center">
-            <a href="#" class="btn btn-primary disabled"><img src="/img/site/logo_xs_download.png" /> iOS SDK</a>
+            <a href="#" class="btn btn-primary ios disabled">iOS SDK</a>
         </div>
         <div class="col-sm-2"></div>
     </div>
@@ -43,12 +43,8 @@
                 <div id="messaging-form">
                     <div class="form-group">
                         <select class="form-control" name="message-type">
-                            <option value="ping-android" selected="selected">Ping (GCM only)</option>
-                            <option value="ping-ios">Ping (APNS only)</option>
-                            <option value="push-android">Push (GCM with payload)</option>
-                            <option value="push-ios">Push (APNS with payload</option>
-                            <option value="message-android">In-App Message (Android)</option>
-                            <option value="message-ios">In-App Message (iOS)</option>
+                            <option value="push-android">Push </option>
+                            <option value="message-android">In-App Message</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -58,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="messaging-demo-code" class="clearfix"></div>
+                <div id="messaging-demo-code" class="code clearfix"></div>
             </div>
             <div class="col-sm-4 text-center">
                 <div id="messaging-demo-phone">
@@ -83,71 +79,14 @@
     </div>
 </div>
 
-<pre id="sample-ping-ios" class="hidden">// Create an instance
-RestController *controller = [[RestController alloc] init];
+<script id="sample-push-android" type="text/template">public void sendPush(MMXClient mmxClient, MMXMessage message){
+    pushManager.push(message.getFromUserId(), message.getFromDeviceId(), String.class.getName(), new String("[%= val %]"));
+}
+</script>
 
-// Call the controller
-[controller getTimeZone:@"39.6034810,-119.6822510"
-  timestamp:@"1331161200"
-     sensor:@"true"
-    success:^(TimeZoneResult *response) {
-        // NSLog(@"response is %@", response);
-    }
-    failure:^(NSError *error) {
-        // NSLog(@"error is %@", error);
-    }];</pre>
-
-<pre id="sample-ping-android" class="hidden">MagnetMobileClient magnetMobileClient = MagnetMobileClient.getInstance(this.getApplicationContext());
-// Create the controller instance
-RestControllerFactory restControllerFactory = new RestControllerFactory(magnetMobileClient);
-RestController restController = restControllerFactory.obtainInstance();
-
-// Call the controller
-Call&lt;TimeZoneResult&gt; callResponse = restController.getTimeZone("39.6034810,-119.6822510", "1331161200","true", null);
-TimeZoneResult timeZoneResult = callResponse.get();</pre>
-
-<pre id="sample-push-ios" class="hidden">// Create an instance
-RestController *controller = [[RestController alloc] init];
-
-// Call the controller
-[controller getTimeZone:@"39.6034810,-119.6822510"
-  timestamp:@"1331161200"
-     sensor:@"true"
-    success:^(TimeZoneResult *response) {
-        // NSLog(@"response is %@", response);
-    }
-    failure:^(NSError *error) {
-        // NSLog(@"error is %@", error);
-    }];</pre>
-
-<pre id="sample-push-android" class="hidden">MagnetMobileClient magnetMobileClient = MagnetMobileClient.getInstance(this.getApplicationContext());
-// Create the controller instance
-RestControllerFactory restControllerFactory = new RestControllerFactory(magnetMobileClient);
-RestController restController = restControllerFactory.obtainInstance();
-
-// Call the controller
-Call&lt;TimeZoneResult&gt; callResponse = restController.getTimeZone("39.6034810,-119.6822510", "1331161200","true", null);
-TimeZoneResult timeZoneResult = callResponse.get();</pre>
-
-<pre id="sample-message-ios" class="hidden">// Create an instance
-RestController *controller = [[RestController alloc] init];
-
-// Call the controller
-[controller getTimeZone:@"39.6034810,-119.6822510"
-  timestamp:@"1331161200"
-     sensor:@"true"
-    success:^(TimeZoneResult *response) {
-        // NSLog(@"response is %@", response);
-    }
-    failure:^(NSError *error) {
-        // NSLog(@"error is %@", error);
-    }];</pre>
-
-<pre id="sample-message-android" class="hidden">MagnetMobileClient magnetMobileClient = MagnetMobileClient.getInstance(this.getApplicationContext());
-// Create the controller instance
-RestControllerFactory restControllerFactory = new RestControllerFactory(magnetMobileClient);
-RestController restController = restControllerFactory.obtainInstance();
-
-// Call the controller
-Call&lt;TimeZoneResult&gt; callResponse = restController.getTimeZone("39.6034810,-119.6822510", "1331161200","true", null);
-TimeZoneResult timeZoneResult = callResponse.get();</pre>
+<script id="sample-message-android" type="text/template">public void sendTextMessage(MMXClient mmxClient, String receiverId) {
+    Options messageOptions = new Options();
+    messageOptions.enableReceipt(true);
+    String msgid = mmxClient.sendMessage(new String[] {receiverId}, "text", "String", new String("[%= val %]"), null, messageOptions);
+}
+</script>

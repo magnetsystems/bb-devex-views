@@ -74,6 +74,8 @@
                 <li class="{{- activePage == 'rest2mobile' ? 'active' : ''}}"><a href="/rest2mobile">rest2mobile</a></li>
                 <li class="divider"></li>
                 <li class="{{- activePage == 'messaging' ? 'active' : ''}}"><a href="/messaging">Mobile Messaging</a></li>
+                <li class="divider"></li>
+                <li class="{{- activePage == 'persistence' ? 'active' : ''}}"><a href="/persistence">Data Modeler</a></li>
                 {{ }else{ }}
                 <li class="{{- activePage == 'resources' ? 'active' : ''}}"><a href="/resources">Resources</a></li>
                 <li class="divider"></li>
@@ -84,6 +86,9 @@
                 <li class="{{- activePage == 'support' ? 'active' : ''}}"><a href="/support">Support</a></li>
                 {{ } }}
             </ul>
+            <div class="nav navbar-nav navbar-right">
+                <a href="http://www.magnet.com/dev-blog">Developer's Blog </a>
+            </div>
         </div>
     </div>
 </nav>
@@ -233,6 +238,7 @@
     </div>
 </div>
 {{ } }}
+<iframe id="downloader" style="display:none"></iframe>
 
 <script type="text/javascript" src="/js/libs/jquery.js"></script>
 <script type="text/javascript" src="/js/libs/bootstrap.min.js"></script>
@@ -258,7 +264,7 @@
     ga('send', 'pageview');
 </script>
 <script type="text/javascript" language="javascript">llactid=18080</script>
-<!--<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>-->
+<script type="text/javascript" language="javascript" src="https://trackalyzer.com/trackalyze_secure.js"></script>
 {{ }else if(view == 'factory'){ }}
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
