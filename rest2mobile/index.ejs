@@ -25,13 +25,13 @@
     <h3 class="text-center">Download Now. It's Free and Open Source</h3>
     <div class="row-fluid">
         <div class="col-sm-4 text-center">
-            <a onclick="ga('send', 'event', 'r2m-android-plugin-auto', 'Yes'); Trackalyzer(18080, 'https://developer.magnet.com/assets/r2m/android_plugin');" href="/rest2mobile/android?dl=1" class="btn btn-primary android">Android Plugin</a>
+            <a onclick="ga('send', 'event', 'r2m-android-plugin-auto', 'Yes'); Trackalyzer(18080, 'r2m-android-plugin-auto');" href="/rest2mobile/android?dl=1" class="btn btn-primary android">Android Plugin</a>
         </div>
         <div class="col-sm-4 text-center">
-            <a onclick="ga('send', 'event', 'r2m-ios-plugin-auto', 'Yes'); Trackalyzer(18080, 'https://developer.magnet.com/assets/r2m/ios_plugin');" href="/rest2mobile/ios?dl=1" class="btn btn-primary ios">iOS Plugin</a>
+            <a onclick="ga('send', 'event', 'r2m-ios-plugin-auto', 'Yes'); Trackalyzer(18080, 'r2m-ios-plugin-auto');" href="/rest2mobile/ios?dl=1" class="btn btn-primary ios">iOS Plugin</a>
         </div>
         <div class="col-sm-4 text-center">
-            <a onclick="ga('send', 'event', 'r2m-js-cli-auto', 'Yes'); Trackalyzer(18080, 'https://developer.magnet.com/assets/r2m/cli');" href="/rest2mobile/cli?dl=1" class="btn btn-primary cli">Command Line Tool</a>
+            <a onclick="ga('send', 'event', 'r2m-js-cli-auto', 'Yes'); Trackalyzer(18080, 'r2m-js-cli-auto');" href="/rest2mobile/cli?dl=1" class="btn btn-primary cli">Command Line Tool</a>
         </div>
     </div>
 </div>
@@ -48,21 +48,43 @@
         <h5>1. Import any REST API into rest2mobile.</h5>
         <div class="form-group select">
             <select class="form-control" name="url-select" id="url-select" data-placement="auto top" title="Try our interactive demo">
-                <option value="disable" selected="selected">Select an API to continue</option>
-                <option value="espn">ESPN</option>
-                <option value="distance">Google Distance</option>
+                <option value="disable">Select an API to continue</option>
+                <option value="earthquake">SEISMI Earthquake</option>
+                <option value="distance" selected="selected">Google Distance</option>
                 <option value="timezone">Google Time Zone</option>
             </select>
         </div>
-        <h5 id="r2m-step2" style="display:none">2. rest2mobile generates mobile APIs for your desired platform!</h5>
-        <ul class="nav nav-tabs" style="display:none">
-            <li did="android" class="android"><a href="#r2m-demo-android" data-toggle="tab"></a></li>
-            <li did="ios" class="ios"><a href="#r2m-demo-ios" data-toggle="tab"></a></li>
-            <li did="js" class="js"><a href="#r2m-demo-js" data-toggle="tab"></a></li>
-            <li did="curl" class="curl"><a href="#r2m-demo-curl" data-toggle="tab"></a></li>
+        <h5 id="r2m-step2">2. rest2mobile generates mobile APIs for your desired platform!</h5>
+
+        <ul class="nav nav-tabs tabs-backgrounded" role="tablist">
+            <li did="android" role="presentation" class="android active"><a href="#r2m-demo-android" aria-controls="home" role="tab" data-toggle="tab">
+                <div class="nav-tab-item">
+                    <img class="img-responsive" src="/img/developer/andstudio_on.png" />
+                </div>
+                <img class="nav-bottom" src="/img/site/tab_pointer.png" />
+            </a></li>
+            <li did="ios" role="presentation" class="ios"><a href="#r2m-demo-ios" aria-controls="profile" role="tab" data-toggle="tab">
+                <div class="nav-tab-item">
+                    <img class="img-responsive" src="/img/developer/logo_xcode_on.png" />
+                </div>
+                <img class="nav-bottom" src="/img/site/tab_pointer.png" />
+            </a></li>
+            <li did="js" role="presentation" class="js"><a href="#r2m-demo-js" aria-controls="profile" role="tab" data-toggle="tab">
+                <div class="nav-tab-item">
+                    <img class="img-responsive" src="/img/developer/js_on.png" />
+                </div>
+                <img class="nav-bottom" src="/img/site/tab_pointer.png" />
+            </a></li>
+            <li did="curl" role="presentation" class="curl"><a href="#r2m-demo-curl" aria-controls="profile" role="tab" data-toggle="tab">
+                <div class="nav-tab-item">
+                    <img class="img-responsive" src="/img/developer/curl_on.png" />
+                </div>
+                <img class="nav-bottom" src="/img/site/tab_pointer.png" />
+            </a></li>
         </ul>
-        <div class="tab-content" style="display:none">
-            <div class="tab-pane" id="r2m-demo-android">
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="r2m-demo-android">
                 <!--<h5>SAMPLE ANDROID CODE</h5>-->
                 <div id="r2m-demo-android-code" class="code-container"></div>
             </div>
@@ -84,7 +106,7 @@
 
 <div class="newsletter-signup clearfix text-center general-bgk">
     <h3>Keep up to date with rest2mobile</h3>
-    <p>by signing up for our newsletter</p>
+    <p>Sign up for our newsletter!</p>
     <div class="form-group">
         <div class="input-group">
             <input class="form-control" type="text" placeholder="Email Address" name="email">
@@ -99,7 +121,7 @@
             <!--Find us<br />on GitHub-->
         <!--</div>-->
     <!--</a>-->
-    <h3>Getting Started is less than 5 steps:</h3>
+    <h3>Getting Started is less than 3 steps:</h3>
     <div class="row-fluid clearfix">
         <div class="col-sm-4">
             <div class="sdk-section">
@@ -203,23 +225,23 @@ RestController *controller = [[RestController alloc] init];
 
 // Call the controller
 [controller getTimeZone:@"39.6034810,-119.6822510"
-  timestamp:@"1331161200"
-     sensor:@"true"
-    success:^(TimeZoneResult *response) {
-        // NSLog(@"response is %@", response);
-    }
-    failure:^(NSError *error) {
-        // NSLog(@"error is %@", error);
-    }];</pre>
+              timestamp:@"1331161200"
+                 sensor:@"true"
+                success:^(TimeZoneResult *response) {
+                    // NSLog(@"response is %@", response);
+                }
+                failure:^(NSError *error) {
+                    // NSLog(@"error is %@", error);
+                }];</pre>
 <pre id="sample-timezone-js" class="hidden">var controller = new MagnetJS.Controllers.RestController();
 
 var requestData = {
-    location : "39.6034810,-119.6822510",
+    location  : "39.6034810,-119.6822510",
     timestamp : "1331161200",
-    sensor : "true",
-    mode : "driving",
-    language : "en",
-    units : "imperial"
+    sensor    : "true",
+    mode      : "driving",
+    language  : "en",
+    units     : "imperial"
 }
 
 controller.getMapsApiTimezoneJson(requestData, {
@@ -232,37 +254,42 @@ controller.getMapsApiTimezoneJson(requestData, {
 });</pre>
 <pre id="sample-timezone-curl" class="hidden">curl -X GET --header "Content-Type: application/json"  "https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&amp;timestamp=1331161200&sensor=false&mode=driving&language=en&units=imperial"</pre>
 
-<pre id="sample-espn-android" class="hidden">MagnetMobileClient magnetMobileClient = MagnetMobileClient.getInstance(this.getApplicationContext());
+<pre id="sample-earthquake-android" class="hidden">MagnetMobileClient magnetMobileClient = MagnetMobileClient.getInstance(this.getApplicationContext());
 // Create the controller instance
 RestControllerFactory restControllerFactory = new RestControllerFactory(magnetMobileClient);
 RestController restController = restControllerFactory.obtainInstance();
 
 // Call the controller
-Call&lt;SportsNewsResult&gt; callResponse = restController.getSportsNews(
-    "fnbkkygduuavvvmg2y846vmh",
-    "1234456789",
-    null);
-SportsNewsResult sportsNewsResult = callResponse.get();</pre>
-<pre id="sample-espn-ios" class="hidden">// Create an instance
+Call&lt;EarthquakesResult&gt; callResponse = restController.getEarthquakes(
+    "2011",
+    "03",
+    "6",
+    "500");
+EarthquakesResult earthquakesResult = callResponse.get();</pre>
+<pre id="sample-earthquake-ios" class="hidden">// Create an instance
 RestController *controller = [[RestController alloc] init];
 
 // Call the controller
-[controller getSportNews:@"fnbkkygduuavvvmg2y846vmh"
-     authorizationHeader:@"1234456789"
-         success:^(SportNewsResult *response) {
-             // NSLog(@"response is %s", response);
-         }
-         failure:^(NSError *error) {
-             // NSLog(@"error is %@", error);
-         }];</pre>
-<pre id="sample-espn-js" class="hidden">var controller = new MagnetJS.Controllers.RestController();
+[controller getEarthquakes:@"2011"
+                        mm:@"03"
+             min_magnitude:@"6"
+                     limit:@"500"
+                   success:^(EarthquakesResult *response) {
+                       // NSLog(@"response is %s", response);
+                   }
+                   failure:^(NSError *error) {
+                       // NSLog(@"error is %@", error);
+                   }];</pre>
+<pre id="sample-earthquake-js" class="hidden">var controller = new MagnetJS.Controllers.RestController();
 
 var requestData = {
-    apikey : "fnbkkygduuavvvmg2y846vmh",
-    authorizationHeader : "1234456789"
+    "yyyy"          : "2011",
+    "mm"            : "03",
+    "min_magnitude" : "6",
+    "limit"         : "500"
 }
 
-controller.getSportsNews(requestData, {
+controller.getEarthquakes(requestData, {
     success : function(responseData, details){
         // do something with response data
     },
@@ -270,4 +297,4 @@ controller.getSportsNews(requestData, {
         // handle errors
     }
 });</pre>
-<pre id="sample-espn-curl" class="hidden">curl -X GET --header "Content-Type: application/json" --header "X-Mashape-Authorization: 1234456789" "https://wmerydith-espn.p.mashape.com/sports/news?apikey=fnbkkygduuavvvmg2y846vmh"</pre>
+<pre id="sample-earthquake-curl" class="hidden">curl -X GET --header "Content-Type: application/json" "http://www.seismi.org/api/eqs/2011/03?min_magnitude=6&limit=500"</pre>

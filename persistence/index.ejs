@@ -5,14 +5,14 @@
                 <img src="/img/site/logo_xl_data_white.png"  />
             </div>
             <div class="hero-title">
-                <h3>Data Modeler for Android</h3>
+                <h3>Entity Modeler for Android</h3>
                 <p>Free Visual ORM For Android</p>
                 <hr />
                 <ul class="hero-list clearfix">
-                    <li>Plugin for Android Studio and IntelliJ IDEA</li>
+                    <li>Complex relational modeler</li>
+                    <li>Contextual requests</li>
                     <li>Developer-friendly interface</li>
-                    <li>Support contextual requests</li>
-                    <li>Complex relational modeling capability</li>
+                    <li>Plugin for Android Studio and IntelliJ IDEA</li>
                 </ul>
             </div>
         </div>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="download-advertisement clearfix">
-    <h3 class="text-center">The client SDK will be <b>available soon</b>.</h3>
+    <h3 class="text-center">Available soon</h3>
     <div class="row-fluid">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 text-center">
@@ -33,17 +33,32 @@
 </div>
 
 <div class="clearfix text-center general-bgk">
-    <h3>Code Sample</h3>
+    <h3>How does it work?</h3>
     <div class="row-fluid clearfix">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <div id="persistence-demo">
+        <div class="col-sm-4">
+            <h5>Init</h5>
+            <div class="persistence-demo">
                 <div class="code">
-                    <div id="persistence-demo-code"></div>
+                    <div id="persistence-demo-code1"></div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <div class="persistence-demo">
+                <h5>Add & Query</h5>
+                <div class="code">
+                    <div id="persistence-demo-code2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="persistence-demo">
+                <h5>Update & Delete</h5>
+                <div class="code">
+                    <div id="persistence-demo-code3"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -60,7 +75,7 @@
 
 <div class="newsletter-signup general-bgk clearfix text-center">
     <h3>Get notified about this release</h3>
-    <p>Sign up and we will email you news and updates about this plugin.</p>
+    <p>Notify me when Entity Modeler for Android is available.</p>
     <div class="form-group">
         <div class="input-group">
             <input class="form-control" type="text" placeholder="Email Address" name="email">
@@ -69,12 +84,31 @@
     </div>
 </div>
 
-<script id="sample-persistence-android" type="text/template">// Read Entity for Delete
-EntityContext readContext = this.androidDataClient.createEntityContext(EntityContextType.READ_ONLY);
-List&lt;PrimitiveType&gt; primitiveTypeList = readContext.getPrimitiveTypes().executeList();
-PrimitiveType deletePrimitiveType = primitiveTypeList.get(0);
-readContext.close();
-// Delete Entity
-EntityContext deleteContext = this.androidDataClient.createEntityContext(EntityContextType.READ_WRITE);
-deleteContext.attach(deletePrimitiveType);
-deleteContext.delete()</script>
+<script id="sample-persistence-android-create" type="text/template">InputStream schemaManifest = appContext.getAssets().open("persistence/my-data-schema.mmodel");
+AndroidDataClient dataClient = new AndroidDataClient(appContext, schemaManifest);
+dataClient.initOrOpenLocalDataStore("local-store", false);
+</script>
+
+<script id="sample-persistence-android-read" type="text/template">EntityContext entityContext = dataClient.createEntityContext(EntityContextType.READ_WRITE);
+EmployeeBuilder employee = new EmployeeBuilder();
+    employee.id(UUID.randomUUID())
+    .Lastname("Smith")
+    .Firstname("John")
+    .HomeAddress("1234 HomeStreet");
+
+entityContext.add(employee);
+// Insert new employee into data store
+entityContext.flush();
+
+// Query all employees, order by last name
+EntityContext  entityContext2  = dataClient.createEntityContext(EntityContextType.READ_WRITE);
+List&lt;Employee&gt; empList = readContext.getEmployees().orderByName(Employee.LASTNAME).executeList();</script>
+
+<script id="sample-persistence-android-delete" type="text/template">Employee updEmpl = empList.get(0);
+String updFirstname = "New FirstName";
+updEmpl.setFirstname(updFirstname);
+// persist changes to data store
+entityContext2.flush();
+
+entityContext2.delete(updEmpl);
+entityContext2.flush();</script>

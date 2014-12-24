@@ -6,7 +6,7 @@
             </div>
             <div class="hero-title">
                 <h3>Mobile Messaging</h3>
-                <p>In-App messaging and notifications guaranteed to be delivered</p>
+                <p>Secure and Guaranteed Mobile Message Delivery</p>
                 <hr />
                 <ul class="hero-list clearfix">
                     <li>secure message exchange</li>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="download-advertisement clearfix">
-    <h3 class="text-center">The client SDK will be <b>available soon</b>.</h3>
+    <h3 class="text-center">Available soon</h3>
     <div class="row-fluid">
         <div class="col-sm-2"></div>
         <div class="col-sm-4 text-center">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" type="text" placeholder="your message" name="message-payload">
+                            <input class="form-control" type="text" placeholder="your message here" name="message-payload" maxlength="240">
                             <div class="btn btn-primary invert input-group-addon" did="messaging">Send</div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
             <div class="col-sm-4 text-center">
                 <div id="messaging-demo-phone">
                     <div id="messaging-demo-phone-wrapper">
-                        <div>my message</div>
+                        <div>Hello World!</div>
                     </div>
                     <img src="/img/developer/messaging_demo_phone.png" class="img-responsive" />
                 </div>
@@ -69,8 +69,8 @@
 </div>
 
 <div class="newsletter-signup clearfix text-center">
-    <h3>Request an Invite</h3>
-    <p>Sign up to be added to our list for an invite to this service.</p>
+    <h3>Get notified about this release</h3>
+    <p>Notify me when Magnet Mobile Messaging is available.</p>
     <div class="form-group">
         <div class="input-group">
             <input class="form-control" type="text" placeholder="Email Address" name="email">
@@ -95,5 +95,5 @@ Options messageOptions = new Options();
 messageOptions.enableReceipt(true); // for confirmation
 // send in-app message
 String msgid = mmxClient.sendMessage(new String[] {userId}
-, "text/plain", String.class.getName(),, textMessage, null, messageOptions);
+, "text/plain", String.class.getName(), textMessage, null, messageOptions);
 </script>
