@@ -7,24 +7,25 @@
                     <form class="form-inline">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <div class="input-group-addon btn"><i class="fa fa-search"></i></div>
+                                <input type="text" id="docs-search-input" class="form-control" placeholder="Search">
+                                <div class="input-group-addon btn" id="docs-search-btn"><i class="fa fa-search"></i></div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+
             <ul>
                 <li><a href="#">Welcome</a></li>
-                <li class="active">
-                    <a href="#">SDK</a>
-                    <ul>
-                        <li class="active">
-                            <a href="#">Android SDK</a>
-                            <ul>
-                                <li class="active">
-                                    <a href="#">Developer Guide</a>
-                                    <ul>
+                <li>
+                    <a data-toggle="collapse" href="#docs-sdk" aria-expanded="false" aria-controls="docs-sdk">SDK <i class="fa fa-caret-down"></i></a>
+                    <ul class="collapse" id="docs-sdk">
+                        <li>
+                            <a data-toggle="collapse" href="#docs-sdk-android" aria-expanded="false" aria-controls="docs-sdk-android">Android SDK <i class="fa fa-caret-down"></i></a>
+                            <ul class="collapse" id="docs-sdk-android">
+                                <li>
+                                    <a data-toggle="collapse" href="#docs-sdk-android-guide" aria-expanded="false" aria-controls="docs-sdk-android-guide">Developer Guide <i class="fa fa-caret-down"></i></a>
+                                    <ul class="collapse" id="docs-sdk-android-guide">
                                         <li class="active last"><a href="#">Chapter 1 <i class="fa fa-caret-down"></i></a></li>
                                         <li><a href="#">Chapter 2 <i class="fa fa-caret-down"></i></a></li>
                                         <li><a href="#">Chapter 3</a></li>
@@ -48,11 +49,8 @@
         <div class="table-cell collapsible-menu-content">
 
             <div class="row-fluid clearfix">
-                <div class="col-xs-6">
+                <div class="col-xs-12">
                     <h3 class="page-title">Documentation</h3>
-                </div>
-                <div class="col-xs-6 text-right">
-                    <a href="/archives">Archives for version 2.3</a>
                 </div>
             </div>
             <hr />
