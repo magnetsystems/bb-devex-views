@@ -1143,12 +1143,26 @@ function DocHelper(){
     }
     var docs = $('#documentation');
     if(docs.length){
+        var menu = $('.collapsible-menu-list');
+        menu.find('> ul ul').each(function(index, element){
+            $(element).addClass('collapse').attr('id', 'doc-el' + index).before('<a data-toggle="collapse" class="caret-container" href="#doc-el' + index + '" aria-expanded="false" aria-controls="' + index + '"><i class="fa fa-caret-right fa-2x"></i></a>');
+        });
+        var url = window.location.href;
+        menu.find('a').filter(function(){
+            return this.href == url || this.href == '/';
+        }).parent('li').addClass('active last').parent('ul').addClass('in').prev('a').attr('aria-expanded', 'true').children('i').attr('class', 'fa fa-caret-down fa-2x').parents('li').addClass('active');
+        menu.find('.caret-container').click(function(){
+            var tog = $(this).find('i');
+            if(tog.hasClass('fa-caret-down')) tog.removeClass('fa-caret-down').addClass('fa-caret-right');
+            else tog.removeClass('fa-caret-right').addClass('fa-caret-down');
+        });
         var active = docs.find('li.active.last');
         if(active.length){
             for(var i=0;i<4;++i){
                 active = active.parent().parent();
                 if(active.is('li')){
                     active.addClass('active');
+                    active.find('> .caret-container > .fa-caret-right').removeClass('fa-caret-right').addClass('fa-caret-down');
                     active.find('> ul').addClass('in');
                 }else{
                     break;

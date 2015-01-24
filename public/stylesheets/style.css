@@ -361,6 +361,11 @@ h4.step-title{font-weight:600;color:#7f878f;float:left;margin-left:-50px;margin-
 #documentation-content .aui-message.warning span.fa{color:#ffd152}
 #documentation-content .aui-message.success span.fa{color:#14872b}
 #documentation-content .aui-message.problem span.fa{color:#cf4438}
+#documentation-content .confluence-embedded-image{padding-bottom:10px}
+#documentation .collapsible-menu-list ul li{position:relative}
+#documentation .collapsible-menu-list ul .caret-container{position:absolute;top:0;right:0;width:40px;height:40px;font-size:13px;padding:0}
+#documentation .collapsible-menu-list ul li a .fa{top:8px}
+#documentation .collapsible-menu-list ul li.active .caret-container{border:none}
 #docs-search-input{margin-bottom:0}
 #docs-search-results{margin:30px 0 10px}
 #docs-search-results em{background:#cdcdcd;padding:0 2px;border-radius:4px;font-style:normal}
