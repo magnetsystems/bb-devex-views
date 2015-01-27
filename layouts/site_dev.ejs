@@ -70,6 +70,7 @@
         </div>
         <div class="collapse navbar-collapse" id="nav">
             <ul class="nav navbar-nav">
+                {{ if(typeof disableLinks !== 'undefined'){ }}
                 {{ if(view == 'developer'){ }}
                 <li class="{{- activePage == 'rest2mobile' ? 'active' : ''}}"><a href="/rest2mobile">rest2mobile</a></li>
                 <li class="divider"></li>
@@ -84,6 +85,7 @@
                 <li class="{{- activePage == 'docs' ? 'active' : ''}}"><a href="/docs">Documentation</a></li>
                 <li class="divider"></li>
                 <li class="{{- activePage == 'support' ? 'active' : ''}}"><a href="/support">Support</a></li>
+                {{ } }}
                 {{ } }}
             </ul>
             <div class="nav navbar-nav navbar-right">
