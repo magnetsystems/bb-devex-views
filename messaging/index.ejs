@@ -1,4 +1,12 @@
-<div class="hero hero-lg general-bgk clearfix">
+<div class="hero hero-lg scenic-bgk clearfix">
+    <div class="picture-notify">
+        <div class="visible-xs">
+            Early Access <p>(request an invite below)</p>
+        </div>
+        <div class="hidden-xs">
+            <img class="picture-notify" src="/img/site/early_access_ribbon.png"  />
+        </div>
+    </div>
     <div class="hero-content">
         <div class="media">
             <div class="hero-image">
@@ -6,37 +14,98 @@
             </div>
             <div class="hero-title">
                 <h3>Mobile Messaging</h3>
-                <p>Secure and Guaranteed Mobile Message Delivery</p>
                 <hr />
-                <ul class="hero-list clearfix">
-                    <li>secure message exchange</li>
-                    <li>reliable message delivery</li>
-                    <li>trackable message status</li>
-                    <li>for Android and iOS</li>
-                </ul>
+                <p>Mobile Messaging for Enterprise-grade Apps</p>
             </div>
         </div>
     </div>
-    <!--<a class="home-forkmeongithub-link" target="_blank" href="https://github.com/magnetsystems/rest2mobile"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>-->
-    <div class="hero-overlay"></div>
 </div>
 
-<div class="download-banner clearfix">
-    <h3 class="text-center">Available soon</h3>
-    <div class="row-fluid">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-4 text-center">
-            <a href="#" class="btn btn-primary android disabled">Android SDK</a>
+<div class="same-height-panel clearfix">
+    <div class="row-fluid clearfix">
+        <div class="col-sm-4">
+            <div class="img-section-v">
+                <div class="img-section-v-img">
+                    <img class="img-responsive" src="/img/site/lock.png"  />
+                </div>
+                <h5>Security</h5>
+                <hr />
+                <p>Messages are exchanged directly with authenticated users without going through third party providers.</p>
+            </div>
         </div>
-        <div class="col-sm-4 text-center">
-            <a href="#" class="btn btn-primary ios disabled">iOS SDK</a>
+        <div class="col-sm-4 mid">
+            <div class="img-section-v">
+                <div class="img-section-v-img">
+                    <img class="img-responsive" src="/img/site/arrows_in_circle.png"  />
+                </div>
+                <h5>Reliability</h5>
+                <hr />
+                <p>Message deliveries are confirmed (once a connection is established with the recipients).</p>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="img-section-v">
+                <div class="img-section-v-img">
+                    <img class="img-responsive" src="/img/site/eye.png"  />
+                </div>
+                <h5>Auditability</h5>
+                <hr />
+                <p>A history of all message deliveries is maintained for corporate and/or regulatory policy compliance.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="newsletter-signup clearfix text-center general-bgk">
+    <h3>Request an Invite</h3>
+    <p>Be a part of our Early Access preview and try Mobile Messaging before its public release</p>
+    <div class="form-group">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Email Address" name="email">
+            <div class="newsletter-signup-btn btn btn-primary invert input-group-addon" did="messaging">Request Invite</div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix general-bgk text-center">
+    <h3>Confirm In-App Messages and Push Notification</h3>
+    <div class="row-fluid clearfix">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <a href="/img/site/messaging_console_notes.png" data-lightbox="image-1" data-title="Messaging Console">
+                <img src="/img/site/messaging_console_notes.png" class="img-responsive" alt="screenshot of the Messaging Console" />
+            </a>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+
+<div class="clearfix general-bgk text-center">
+    <h3>Mobile Messaging SDK</h3>
+    <div class="clearfix div-list row-fluid">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="clearfix row-fluid">
+                <div class="col-sm-6">
+                    <span>•</span> Available for Android
+                </div>
+                <div class="col-sm-6">
+                    <span>•</span> Secure in-app message delivery and confirmation
+                </div>
+                <div class="col-sm-6">
+                    <span>•</span> iOS coming soon
+                </div>
+                <div class="col-sm-6">
+                    <span>•</span> Status tracked during the message lifecycle
+                </div>
+            </div>
         </div>
         <div class="col-sm-2"></div>
     </div>
 </div>
 
 <div class="clearfix text-center general-bgk">
-    <h3>Try it out</h3>
+    <h3>Try It Out</h3>
     <div id="messaging-demo">
         <div class="row-fluid clearfix">
             <div class="col-sm-8">
@@ -49,7 +118,7 @@
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" type="text" placeholder="your message here" name="message-payload" maxlength="240">
+                            <input class="form-control" type="text" placeholder="your message here" name="message-payload" maxlength="240" value="Hello, this is a message sent from the Magnet Messaging Server.">
                             <div class="btn btn-primary invert input-group-addon" did="messaging">Send</div>
                         </div>
                     </div>
@@ -59,35 +128,11 @@
             <div class="col-sm-4 text-center">
                 <div id="messaging-demo-phone">
                     <div id="messaging-demo-phone-wrapper">
-                        <div>Hello World!</div>
+                        <div>Hello, this is a message sent from the Magnet Messaging Server.</div>
                     </div>
                     <img src="/img/developer/messaging_demo_phone.png" class="img-responsive" />
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="clearfix text-center">
-    <h3>Sneak Peek of the Console</h3>
-    <div class="row-fluid clearfix">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <a href="/img/developer/mmx_screenshot.png" data-lightbox="image-1" data-title="Entity Modeler">
-                <img src="/img/developer/mmx_screenshot.png" class="img-responsive" alt="screenshot of the messaging console" />
-            </a>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
-</div>
-
-<div class="newsletter-signup general-bgk clearfix text-center">
-    <h3>Get notified about this release</h3>
-    <p>Notify me when Magnet Mobile Messaging is available.</p>
-    <div class="form-group">
-        <div class="input-group">
-            <input class="form-control" type="text" placeholder="Email Address" name="email">
-            <div class="newsletter-signup-btn btn btn-primary invert input-group-addon" did="messaging">Sign me up</div>
         </div>
     </div>
 </div>

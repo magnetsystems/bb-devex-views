@@ -1,4 +1,12 @@
-<div class="hero hero-lg general-bgk clearfix">
+<div class="hero hero-lg scenic-bgk clearfix">
+    <div class="picture-notify">
+        <div class="visible-xs">
+            Available <b>Soon</b>
+        </div>
+        <div class="hidden-xs">
+            <img class="picture-notify" src="/img/site/avaliable_soon_ribbon.png"  />
+        </div>
+    </div>
     <div class="hero-content">
         <div class="media">
             <div class="hero-image">
@@ -6,111 +14,56 @@
             </div>
             <div class="hero-title">
                 <h3>Entity Modeler for Android</h3>
-                <p>Free Visual ORM For Android</p>
                 <hr />
-                <ul class="hero-list clearfix">
-                    <li>Complex relational modeler</li>
-                    <li>Contextual requests</li>
-                    <li>Developer-friendly interface</li>
-                    <li>Plugin for Android Studio and IntelliJ IDEA</li>
-                </ul>
+                <p>Data modeler and ORM (Object Relational Mapping) Framework for Android</p>
             </div>
         </div>
     </div>
-    <!--<a class="home-forkmeongithub-link" target="_blank" href="https://github.com/magnetsystems/rest2mobile"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>-->
-    <div class="hero-overlay"></div>
 </div>
 
-<div class="download-banner clearfix">
-    <h3 class="text-center">Available soon</h3>
-    <div class="row-fluid">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8 text-center">
-            <a href="#" class="btn btn-primary android disabled">Android Plugin</a>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
-</div>
-
-<div class="clearfix text-center general-bgk">
-    <h3>How does it work?</h3>
+<div class="same-height-panel clearfix">
     <div class="row-fluid clearfix">
-        <div class="col-sm-4">
-            <h5>Init</h5>
-            <div class="persistence-demo">
-                <div class="code">
-                    <div id="persistence-demo-code1"></div>
+        <div class="col-sm-6 left">
+            <div class="img-section-v">
+                <h5>Plugin</h5>
+                <hr />
+                <div class="fixed-height-container">
+                    <p>The missing link between your data and your mobile app. Visually build and manage your model with entities, relationships, properties, and more.</p>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="persistence-demo">
-                <h5>Add & Query</h5>
-                <div class="code">
-                    <div id="persistence-demo-code2"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="persistence-demo">
-                <h5>Update & Delete</h5>
-                <div class="code">
-                    <div id="persistence-demo-code3"></div>
+        <div class="col-sm-6 right">
+            <div class="img-section-v">
+                <h5>ORM Framework</h5>
+                <hr />
+                <div class="fixed-height-container">
+                    <p>Query your data with simple request targeting entities with properties and complex relationships. Support roles and contextual request. No SQL required.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="clearfix text-center">
-    <h3>Sneak Peek of the Plugin</h3>
+<div class="newsletter-signup clearfix text-center general-bgk">
+    <h3>Request an Invite</h3>
+    <p>Be the first to be notified when Entity Modeler for Android is available</p>
+    <div class="form-group">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Email Address" name="email">
+            <div class="newsletter-signup-btn btn btn-primary invert input-group-addon" did="persistence">Request Invite</div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix general-bgk text-center">
+    <h3>Visually Define your Android Data Model</h3>
     <div class="row-fluid clearfix">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-            <a href="/img/developer/mp_screenshot.png" data-lightbox="image-1" data-title="Entity Modeler">
-                <img src="/img/developer/mp_screenshot.png" class="img-responsive" alt="screenshot of the entity modeler plugin" />
+            <a href="/img/site/entity_plugin_notes.png" data-lightbox="image-1" data-title="Entity Modeler">
+                <img src="/img/site/entity_plugin_notes.png" class="img-responsive" alt="screenshot of the entity modeler plugin" />
             </a>
         </div>
         <div class="col-sm-2"></div>
     </div>
 </div>
-
-<div class="newsletter-signup general-bgk clearfix text-center">
-    <h3>Get notified about this release</h3>
-    <p>Notify me when Entity Modeler for Android is available.</p>
-    <div class="form-group">
-        <div class="input-group">
-            <input class="form-control" type="text" placeholder="Email Address" name="email">
-            <div class="newsletter-signup-btn btn btn-primary invert input-group-addon" did="persistence">Sign me up</div>
-        </div>
-    </div>
-</div>
-
-<script id="sample-persistence-android-create" type="text/template">InputStream schemaManifest = appContext.getAssets().open("persistence/my-data-schema.mmodel");
-AndroidDataClient dataClient = new AndroidDataClient(appContext, schemaManifest);
-dataClient.initOrOpenLocalDataStore("local-store", false);
-</script>
-
-<script id="sample-persistence-android-read" type="text/template">EntityContext entityContext = dataClient.createEntityContext(EntityContextType.READ_WRITE);
-EmployeeBuilder employee = new EmployeeBuilder();
-    employee.id(UUID.randomUUID())
-    .Lastname("Smith")
-    .Firstname("John")
-    .HomeAddress("1234 HomeStreet");
-
-entityContext.add(employee);
-// Insert new employee into data store
-entityContext.flush();
-
-// Query all employees, order by last name
-EntityContext  entityContext2  = dataClient.createEntityContext(EntityContextType.READ_WRITE);
-List&lt;Employee&gt; empList = readContext.getEmployees().orderByName(Employee.LASTNAME).executeList();</script>
-
-<script id="sample-persistence-android-delete" type="text/template">Employee updEmpl = empList.get(0);
-String updFirstname = "New FirstName";
-updEmpl.setFirstname(updFirstname);
-// persist changes to data store
-entityContext2.flush();
-
-entityContext2.delete(updEmpl);
-entityContext2.flush();</script>
