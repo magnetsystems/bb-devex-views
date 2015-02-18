@@ -26,31 +26,31 @@
         <div class="col-sm-4">
             <div class="img-section-v">
                 <div class="img-section-v-img">
-                    <img class="img-responsive" src="/img/site/lock.png"  />
+                    <img class="img-responsive" src="/img/site/handshack.png"  />
                 </div>
-                <h5>Security</h5>
+                <h5>Engage</h5>
                 <hr />
-                <p>Messages are exchanged directly with authenticated users without going through third party providers.</p>
+                <p>Combine push, in-app messaging and chat capabilities to interact 1-on-1 with customers and employees.</p>
             </div>
         </div>
         <div class="col-sm-4 mid">
             <div class="img-section-v">
                 <div class="img-section-v-img">
-                    <img class="img-responsive" src="/img/site/arrows_in_circle.png"  />
+                    <img class="img-responsive" src="/img/site/lock2.png"  />
                 </div>
-                <h5>Reliability</h5>
+                <h5>Secure</h5>
                 <hr />
-                <p>Message deliveries are confirmed (once a connection is established with the recipients).</p>
+                <p>Manage enterprise deployment on premise or in the cloud and use message encryption to protect privacy.</p>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="img-section-v">
                 <div class="img-section-v-img">
-                    <img class="img-responsive" src="/img/site/eye.png"  />
+                    <img class="img-responsive" src="/img/site/messagecheck.png"  />
                 </div>
-                <h5>Auditability</h5>
+                <h5>Confirm</h5>
                 <hr />
-                <p>A history of all message deliveries is maintained for corporate and/or regulatory policy compliance.</p>
+                <p>Confirm message delivery and ‘read’ status with detailed message tracking.</p>
             </div>
         </div>
     </div>
@@ -58,11 +58,11 @@
 
 <div class="newsletter-signup clearfix text-center general-bgk">
     <h3>Request an Invite</h3>
-    <p>Be a part of our Early Access preview and try Mobile Messaging before its public release</p>
+    <p>Apply now to qualify for access to our Developer Preview.</p>
     <div class="form-group">
         <div class="input-group">
             <input class="form-control" type="text" placeholder="Email Address" name="email">
-            <div class="newsletter-signup-btn btn btn-primary invert input-group-addon" did="messaging">Request Invite</div>
+            <div class="newsletter-signup-btn btn btn-primary invert input-group-addon" did="messaging" success="We will send you news and updates about Mobile Messaging.">Request Invite</div>
         </div>
     </div>
 </div>
@@ -70,13 +70,13 @@
 <div class="clearfix general-bgk text-center">
     <h3>Confirm In-App Messages and Push Notification</h3>
     <div class="row-fluid clearfix">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
             <a href="/img/site/messaging_console_notes.png" data-lightbox="image-1" data-title="Messaging Console">
                 <img src="/img/site/messaging_console_notes.png" class="img-responsive" alt="screenshot of the Messaging Console" />
             </a>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-1"></div>
     </div>
 </div>
 
@@ -87,16 +87,16 @@
         <div class="col-sm-8">
             <div class="clearfix row-fluid">
                 <div class="col-sm-6">
-                    <span>•</span> Available for Android
+                    <span>•</span> Easy to get started
                 </div>
                 <div class="col-sm-6">
-                    <span>•</span> Secure in-app message delivery and confirmation
+                    <span>•</span> Sample code included
                 </div>
                 <div class="col-sm-6">
-                    <span>•</span> iOS coming soon
+                    <span>•</span> Support for Android & iOS
                 </div>
                 <div class="col-sm-6">
-                    <span>•</span> Status tracked during the message lifecycle
+                    <span>•</span> Send and receive messages
                 </div>
             </div>
         </div>
@@ -105,30 +105,54 @@
 </div>
 
 <div class="clearfix text-center general-bgk">
-    <h3>Try it Out</h3>
-    <div id="messaging-demo">
+    <h3>Try it Out!</h3>
+    <div id="messaging-demo" class="tabbed-demo">
         <div class="row-fluid clearfix">
             <div class="col-sm-8">
                 <div id="messaging-form">
                     <div class="form-group">
                         <select class="form-control" name="message-type">
-                            <option value="push-android">Push </option>
-                            <option value="message-android">In-App Message</option>
+                            <option value="push">Push </option>
+                            <option value="message">In-App Message</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" type="text" placeholder="your message here" name="message-payload" maxlength="240" value="Hello, this is a message sent from the Magnet Messaging Server.">
+                            <input class="form-control" type="text" placeholder="your message here" name="message-payload" maxlength="240" value="Hello, this is a mobile message.">
                             <div class="btn btn-primary invert input-group-addon" did="messaging">Send</div>
                         </div>
                     </div>
                 </div>
-                <div id="messaging-demo-code" class="code clearfix"></div>
+                <ul class="nav nav-tabs tabs-backgrounded" role="tablist">
+                    <li did="android" role="presentation" class="android active"><a href="#r2m-demo-android" aria-controls="home" role="tab" data-toggle="tab">
+                        <div class="nav-tab-item">
+                            <img class="img-responsive" src="/img/developer/andstudio_on.png" />
+                        </div>
+                    </a></li>
+                    <li did="ios" role="presentation" class="ios"><a href="#r2m-demo-ios" aria-controls="profile" role="tab" data-toggle="tab">
+                        <div class="nav-tab-item">
+                            <img class="img-responsive" src="/img/developer/logo_xcode_on.png" />
+                        </div>
+                    </a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="r2m-demo-android">
+                        <div id="messaging-demo-android-code" class="code-container"></div>
+                    </div>
+                    <div class="tab-pane" id="r2m-demo-ios">
+                        <div id="messaging-demo-ios-code" class="code-container"></div>
+                    </div>
+                </div>
             </div>
             <div class="col-sm-4 text-center">
                 <div id="messaging-demo-phone">
                     <div id="messaging-demo-phone-wrapper">
-                        <div>Hello, this is a message sent from the Magnet Messaging Server.</div>
+                        <div>
+                            <div>
+                                <p>Hello, this is a mobile message.</p>
+                                <div>OK</div>
+                            </div>
+                        </div>
                     </div>
                     <img src="/img/developer/messaging_demo_phone.png" class="img-responsive" />
                 </div>
@@ -150,6 +174,25 @@ pushManager.push(userId, deviceId, String.class.getName(), pushMessage);
 String userId = "user1";
 mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
 Options messageOptions = new Options();
+messageOptions.enableReceipt(true); // for confirmation
+// send in-app message
+String msgid = mmxClient.sendMessage(new String[] {userId}
+, "text/plain", String.class.getName(), textMessage, null, messageOptions);
+</script>
+
+<script id="sample-push-ios" type="text/template">String pushMessage = "[%= val %]";
+String deviceId = "user1-device-1";
+String userId = "user1"; ios;
+mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
+PushManager pushManager = mmxClient.getPushManager();
+// send Push Notification
+pushManager.push(userId, deviceId, String.class.getName(), pushMessage);
+</script>
+
+<script id="sample-message-ios" type="text/template">String textMessage = "[%= val %]";
+String userId = "user1";
+mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
+Options messageOptions = new Options(); ios;
 messageOptions.enableReceipt(true); // for confirmation
 // send in-app message
 String msgid = mmxClient.sendMessage(new String[] {userId}
