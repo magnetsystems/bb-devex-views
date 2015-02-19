@@ -112,7 +112,6 @@
                 <div id="messaging-form">
                     <div class="form-group">
                         <select class="form-control" name="message-type">
-                            <option value="push-android">Push for Android</option>
                             <option value="message-android">In-App Message for Android</option>
                             <option value="message-ios">In-App Message for iOS</option>
                         </select>
@@ -150,10 +149,7 @@
                 <div id="messaging-demo-phone">
                     <div id="messaging-demo-phone-wrapper">
                         <div>
-                            <div>
-                                <p>Hello, this is a mobile message.</p>
-                                <div>OK</div>
-                            </div>
+                            Hello, this is a mobile message.
                         </div>
                     </div>
                     <img src="/img/developer/messaging_demo_phone.png" class="img-responsive" />
@@ -184,11 +180,14 @@ String msgid = mmxClient.sendMessage(new String[] {userId}
 
 <script id="sample-push-ios" type="text/template"></script>
 
-<script id="sample-message-ios" type="text/template">MMXMessageOptions * options = [[MMXMessageOptions alloc] init];
+<script id="sample-message-ios" type="text/template">MMXClient *mmxClient = [[MMXClient alloc] initWithConfiguration:configuration delegate:self];
+MMXMessageOptions *options = [[MMXMessageOptions alloc] init];
 options.shouldRequestDeliveryReceipt = YES;
-MMXUser * recipient = [MMXUser recipientWithUsername:@"user1"];
-NSString * textMessage = "[%= val %]";
-MMXMessage * message = [MMXMessage messageTo:@[recipient]
-withContent:textMessage messageType:nil metaData:nil];
-[self.mmxClient sendMessage:message withOptions:options];
+MMXUser *recipient = [MMXUser recipientWithUsername:@"user1"];
+NSString *textMessage = @"[%= val %]";
+MMXMessage *message = [MMXMessage messageTo:@[recipient]
+                                withContent:textMessage
+                                messageType:nil
+                                   metaData:nil];
+[mmxClient sendMessage:message withOptions:options];
 </script>
