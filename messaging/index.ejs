@@ -112,8 +112,9 @@
                 <div id="messaging-form">
                     <div class="form-group">
                         <select class="form-control" name="message-type">
-                            <option value="push">Push </option>
-                            <option value="message">In-App Message</option>
+                            <option value="push-android">Push for Android</option>
+                            <option value="message-android">In-App Message for Android</option>
+                            <option value="message-ios">In-App Message for iOS</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -123,26 +124,27 @@
                         </div>
                     </div>
                 </div>
-                <ul class="nav nav-tabs tabs-backgrounded" role="tablist">
-                    <li did="android" role="presentation" class="android active"><a href="#r2m-demo-android" aria-controls="home" role="tab" data-toggle="tab">
-                        <div class="nav-tab-item">
-                            <img class="img-responsive" src="/img/developer/andstudio_on.png" />
-                        </div>
-                    </a></li>
-                    <li did="ios" role="presentation" class="ios"><a href="#r2m-demo-ios" aria-controls="profile" role="tab" data-toggle="tab">
-                        <div class="nav-tab-item">
-                            <img class="img-responsive" src="/img/developer/logo_xcode_on.png" />
-                        </div>
-                    </a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="r2m-demo-android">
-                        <div id="messaging-demo-android-code" class="code-container"></div>
-                    </div>
-                    <div class="tab-pane" id="r2m-demo-ios">
-                        <div id="messaging-demo-ios-code" class="code-container"></div>
-                    </div>
-                </div>
+                <div id="messaging-demo-code" class="code-container"></div>
+                <!--<ul class="nav nav-tabs tabs-backgrounded" role="tablist">-->
+                    <!--<li did="android" role="presentation" class="android active"><a href="#r2m-demo-android" aria-controls="home" role="tab" data-toggle="tab">-->
+                        <!--<div class="nav-tab-item">-->
+                            <!--<img class="img-responsive" src="/img/developer/andstudio_on.png" />-->
+                        <!--</div>-->
+                    <!--</a></li>-->
+                    <!--<li did="ios" role="presentation" class="ios"><a href="#r2m-demo-ios" aria-controls="profile" role="tab" data-toggle="tab">-->
+                        <!--<div class="nav-tab-item">-->
+                            <!--<img class="img-responsive" src="/img/developer/logo_xcode_on.png" />-->
+                        <!--</div>-->
+                    <!--</a></li>-->
+                <!--</ul>-->
+                <!--<div class="tab-content">-->
+                    <!--<div class="tab-pane active" id="r2m-demo-android">-->
+                        <!--<div id="messaging-demo-android-code" class="code-container"></div>-->
+                    <!--</div>-->
+                    <!--<div class="tab-pane" id="r2m-demo-ios">-->
+                        <!--<div id="messaging-demo-ios-code" class="code-container"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
             <div class="col-sm-4 text-center">
                 <div id="messaging-demo-phone">
@@ -180,21 +182,13 @@ String msgid = mmxClient.sendMessage(new String[] {userId}
 , "text/plain", String.class.getName(), textMessage, null, messageOptions);
 </script>
 
-<script id="sample-push-ios" type="text/template">String pushMessage = "[%= val %]";
-String deviceId = "user1-device-1";
-String userId = "user1"; ios;
-mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
-PushManager pushManager = mmxClient.getPushManager();
-// send Push Notification
-pushManager.push(userId, deviceId, String.class.getName(), pushMessage);
-</script>
+<script id="sample-push-ios" type="text/template"></script>
 
-<script id="sample-message-ios" type="text/template">String textMessage = "[%= val %]";
-String userId = "user1";
-mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
-Options messageOptions = new Options(); ios;
-messageOptions.enableReceipt(true); // for confirmation
-// send in-app message
-String msgid = mmxClient.sendMessage(new String[] {userId}
-, "text/plain", String.class.getName(), textMessage, null, messageOptions);
+<script id="sample-message-ios" type="text/template">MMXMessageOptions * options = [[MMXMessageOptions alloc] init];
+options.shouldRequestDeliveryReceipt = YES;
+MMXUser * recipient = [MMXUser recipientWithUsername:@"user1"];
+NSString * textMessage = "[%= val %]";
+MMXMessage * message = [MMXMessage messageTo:@[recipient]
+withContent:textMessage messageType:nil metaData:nil];
+[self.mmxClient sendMessage:message withOptions:options];
 </script>
