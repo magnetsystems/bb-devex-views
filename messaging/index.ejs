@@ -160,22 +160,27 @@
 </div>
 
 <script id="sample-push-android" type="text/template">String pushMessage = "[%= val %]";
-String deviceId = "user1-device-1";
-String userId = "user1";
+String deviceId = "johnw-device-1";
+String userId = "johnw";
+
 mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
 PushManager pushManager = mmxClient.getPushManager();
-// send Push Notification
+
+// send push notification
 pushManager.push(userId, deviceId, String.class.getName(), pushMessage);
 </script>
 
 <script id="sample-message-android" type="text/template">String textMessage = "[%= val %]";
-String userId = "user1";
+String userId = “johnw";
+
 mmxClient = MMXClient.getInstance(this, R.raw.quickstart);
+
+// for confirmation
 Options messageOptions = new Options();
-messageOptions.enableReceipt(true); // for confirmation
+messageOptions.enableReceipt(true);
+
 // send in-app message
-String msgid = mmxClient.sendMessage(new String[] {userId}
-, "text/plain", String.class.getName(), textMessage, null, messageOptions);
+String msgid = mmxClient.sendMessage(userId, textMessage, messageOptions);
 </script>
 
 <script id="sample-push-ios" type="text/template"></script>
@@ -183,7 +188,7 @@ String msgid = mmxClient.sendMessage(new String[] {userId}
 <script id="sample-message-ios" type="text/template">MMXClient *mmxClient = [[MMXClient alloc] initWithConfiguration:configuration delegate:self];
 MMXMessageOptions *options = [[MMXMessageOptions alloc] init];
 options.shouldRequestDeliveryReceipt = YES;
-MMXUser *recipient = [MMXUser recipientWithUsername:@"user1"];
+MMXUser *recipient = [MMXUser recipientWithUsername:@"johnw"];
 NSString *textMessage = @"[%= val %]";
 MMXMessage *message = [MMXMessage messageTo:@[recipient]
                                 withContent:textMessage
