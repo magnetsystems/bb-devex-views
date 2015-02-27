@@ -1,1 +1,123 @@
-curl --header "Authorization: {{-authHeader}}" -o mmx-standalone-dist.zip "{{-appUrl}}/resources/files/mmx-standalone-dist.zip"
+baselineUbuntu() {
+    # update OS
+    apt-get -y update 1>/dev/null && apt-get -y upgrade 1>/dev/null
+
+    #install nodejs
+    apt-get -y install nodejs 1>/dev/null
+    ln -s /usr/bin/nodejs /usr/bin/node >/dev/null
+
+    # install zip and unzip
+    apt-get -y install unzip 1>/dev/null
+
+    echo
+    echo 'Linux prepared'
+    echo
+}
+
+installJre() {
+    if type -p java >/dev/null; then
+        _java=java
+    elif [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]];  then
+        _java="$JAVA_HOME/bin/java"
+    else
+        echo "No java detected."
+        apt-get -y install openjdk-6-jre 1>/dev/null
+        echo
+        echo 'openjdk-6-jre Installed'
+        echo
+    fi
+
+    if [[ "$_java" ]]; then
+        version=$("$_java" -version 2>&1 | awk -F '"' '/version/ {print $2}')
+        if [[ "$version" < "1.6" ]]; then
+            echo "version is less than 1.6"
+            apt-get -y install openjdk-6-jre 1>/dev/null
+            echo
+            echo 'openjdk-6-jre Installed'
+            echo
+        fi
+    fi
+}
+
+install_MySQL () {
+    if type -p mysql >/dev/null; then
+        echo
+        echo '!!! MySQL present. Please create the database for Magnet Messaging (the default name used by the wizard is "MagnetMessaging") !!!'
+        echo
+    else
+        debconf-set-selections <<< 'mysql-server mysql-server/root_password password test'
+        debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password test'
+        apt-get -y install mysql-server 1>/dev/null
+
+        echo
+        echo 'MySQL installed'
+        echo
+
+        # pre-create the default database
+        mysql -u root -ptest -e "create database magnetmessaging character set utf8" 1>/dev/null
+
+        echo
+        echo "Default database magnetmessaging prepared"
+        echo
+    fi
+}
+
+case "`uname`" in
+    CYGWIN*)
+        echo
+        echo '!!! Please note that Magnet Messaging does not support cygwin. The Windows installer is coming soon !!!'
+        echo
+        exit 1
+        ;;
+    Darwin*)
+        echo
+        echo '!!! Please note that this installation does not support Mac. Please download the Mac installer pkg from factory.magnet.com !!!'
+        echo
+        exit 1
+        ;;
+    Linux*)
+        if ! which apt-get >/dev/null; then
+            echo
+            echo '!!! This installation is meant for Ubuntu and Debian Linux only. For other flavors, please visit factory.magnet.com !!!'
+            echo
+            exit 1
+        fi
+        ;;
+esac
+
+DIR="mmx-standalone-dist"
+PACKAGE="$DIR.zip"
+TIME=`date +%F-%H%M%S`
+
+echo
+echo 'Installing Magnet Messaging and its dependency (if needed: openjdk-6-jre, mysql, nodejs, etc), and upgrading Linux. It may take minutes depending on the network speed.'
+echo
+
+baselineUbuntu
+installJre
+install_MySQL
+
+if [ -f $PACKAGE ]; then
+    mv $PACKAGE $PACKAGE.$TIME
+fi
+
+if [ -d $DIR ]; then
+    pushd $DIR 1>/dev/null
+    nohup ./mmx.sh stop &>/dev/null &
+    popd 1>/dev/null
+    mv $DIR $DIR.$TIME
+fi
+
+curl -sS --header "Authorization: {{-authHeader}}" -o $PACKAGE "{{-appUrl}}/resources/files/mmx-standalone-dist.zip"
+unzip ./$PACKAGE 1>/dev/null
+
+echo
+echo 'Magnet Messaging installed'
+echo
+cd mmx-standalone-dist
+nohup ./mmx.sh start &>/dev/null &
+
+echo
+echo "Please continue with the setup by configuring the Magnet Messaging Admin Console at http://<ip_address>:3000/wizard"
+echo
+echo
