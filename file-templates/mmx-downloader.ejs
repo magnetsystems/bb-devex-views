@@ -78,7 +78,7 @@ case "`uname`" in
     Linux*)
         if ! which apt-get >/dev/null; then
             echo
-            echo '!!! This installation is meant for Ubuntu and Debian Linux only. For other flavors, please visit factory.magnet.com !!!'
+            echo '!!! This installation supports Ubuntu and Debian Linux only. For other flavors, please visit factory.magnet.com !!!'
             echo
             exit 1
         fi
@@ -93,10 +93,6 @@ echo
 echo 'Installing Magnet Messaging and its dependency (if needed: openjdk-6-jre, mysql, nodejs, etc), and upgrading Linux. It may take minutes depending on the network speed.'
 echo
 
-baselineUbuntu
-installJre
-install_MySQL
-
 if [ -f $PACKAGE ]; then
     mv $PACKAGE $PACKAGE.$TIME
 fi
@@ -106,6 +102,10 @@ if [ -d $DIR ]; then
     nohup ./mmx.sh stop &>/dev/null &
     popd 1>/dev/null
     mv $DIR $DIR.$TIME
+else
+    baselineUbuntu
+    installJre
+    install_MySQL
 fi
 
 curl -sS --header "Authorization: {{-authHeader}}" -o $PACKAGE "{{-appUrl}}/resources/files/mmx-standalone-dist.zip"
