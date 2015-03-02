@@ -1,4 +1,4 @@
-obaselineUbuntu() {
+baselineUbuntu() {
     # update OS
     sudo apt-get -y update 1>/dev/null && sudo apt-get -y upgrade 1>/dev/null
 
@@ -61,7 +61,7 @@ install_MySQL () {
 case "`uname`" in
     CYGWIN*)
         echo
-        echo '!!! Please note that Magnet Messaging does not support cygwin. The Windows installer is coming soon !!!'
+        echo '!!! Please note that Magnet Messaging does not support cygwin. Please visit factory.magnet.com and download the zip file !!!'
         echo
         exit 1
         ;;
