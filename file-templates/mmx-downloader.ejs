@@ -1,16 +1,16 @@
-baselineUbuntu() {
-    # update OS
+ibaselineUbuntu() {
+    # update apt-get
     sudo apt-get -y update 1>/dev/null && sudo apt-get -y upgrade 1>/dev/null
 
     #install nodejs
     sudo apt-get -y install nodejs 1>/dev/null
 
+    echo
+    echo 'nodejs prepared'
+    echo
+
     # install zip and unzip
     sudo apt-get -y install unzip 1>/dev/null
-
-    echo
-    echo 'Linux prepared'
-    echo
 }
 
 installJre() {
@@ -51,10 +51,6 @@ install_MySQL () {
         echo
         echo 'MySQL installed'
         echo
-
-        echo
-        echo "Default database magnetmessaging prepared"
-        echo
     fi
 }
 
@@ -79,6 +75,10 @@ case "`uname`" in
             exit 1
         fi
         ;;
+    *)
+            echo
+            echo '!!! Unfortunately, this installation does not support your environment. Please download the zip file from factory.magnet.com in order to experience Magnet Messaging !!!'
+            echo
 esac
 
 DIR="mmx-standalone-dist"
@@ -86,7 +86,7 @@ PACKAGE="$DIR.zip"
 TIME=`date +%F-%H%M%S`
 
 echo
-echo 'Installing Magnet Messaging and its dependency (if not already available: openjdk-6-jre, mysql, and node.js), and upgrading Linux. It may take minutes depending on the network speed. When installing the dependency, it may prompt you for the root password.'
+echo 'Installing Magnet Messaging and its dependency software (if not already available: jre 1.6, mysql, and node.js). It may take minutes depending on the network speed. When installing the dependency, it may prompt you for the root password.'
 echo 'For EC2 instances, you may see "sudo: unable to resolve host...", which is ignorable.'
 echo
 
@@ -117,7 +117,7 @@ unzip ./$PACKAGE 1>/dev/null
 echo
 echo 'Magnet Messaging installed'
 echo "Magnet Messaging home: $PWD/$DIR"
-echo "To operate the server, please use $PWD/mmx.sh"
+echo "To start/stop/restart the server, please use $PWD/$DIR/mmx.sh"
 echo 'To uninstall, please stop the server and then remove the Magnet Messaging home directory.'
 echo
 cd mmx-standalone-dist
