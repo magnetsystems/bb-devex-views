@@ -2,6 +2,9 @@ baselineUbuntu() {
     # update apt-get
     sudo apt-get -y update 1>/dev/null && sudo apt-get -y upgrade 1>/dev/null
 
+    #install lsof
+    sudo apt-get -y install lsof 1>/dev/null
+
     #install nodejs
     sudo apt-get -y install nodejs 1>/dev/null
 
